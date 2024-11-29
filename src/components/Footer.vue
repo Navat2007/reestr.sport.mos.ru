@@ -1,9 +1,10 @@
 <script setup>
-import Icon from '@/components/Icon.vue'
 import logo from '@/assets/images/logo.svg'
 import logoMin from '@/assets/images/logo-min.svg'
 import qrCode from '@/assets/images/qr-code.svg'
 import device from '@/assets/images/footer__image.png'
+import telephone from '@/assets/images/icons/telephone.svg'
+import envelope from '@/assets/images/icons/envelope.svg'
 </script>
 
 <template>
@@ -18,12 +19,7 @@ import device from '@/assets/images/footer__image.png'
               target="_blank"
               rel="nofollow noopener"
             >
-              <img
-                class="footer__logo-image"
-                :src="logoMin"
-                alt="Логотип Департамента спорта города Москвы"
-                width="134"
-              />
+              <logoMin class="footer__logo-image" />
             </a>
             <a
               href="https://sport.mos.ru/"
@@ -31,12 +27,7 @@ import device from '@/assets/images/footer__image.png'
               target="_blank"
               rel="nofollow noopener"
             >
-              <img
-                class="footer__logo-image"
-                :src="logo"
-                alt="Логотип Департамента спорта города Москвы"
-                width="134"
-              />
+              <logo class="footer__logo-image" />
             </a>
           </div>
           <address class="footer__address">
@@ -44,19 +35,18 @@ import device from '@/assets/images/footer__image.png'
             <ul class="footer__list">
               <li>
                 <a href="tel:84991120160" class="footer__link" rel="nofollow noopener">
-                  <span class="icon icon_type_phone" aria-label="hidden"></span>
+                  <telephone class="footer__link-icon" aria-label="hidden" />
                   +7 (499) 112-01-60
                 </a>
               </li>
               <li>
-                <Icon :src="logoMin" />
                 <a
                   href="https://sport.mos.ru/feedback"
                   class="footer__link"
                   rel="nofollow noopener"
                   target="_blank"
                 >
-                  <span class="icon icon_type_envelope" aria-label="hidden"></span>
+                  <envelope class="footer__link-icon" aria-label="hidden" />
                   Обратная связь
                 </a>
               </li>
