@@ -1,68 +1,32 @@
 <script setup>
 import Logo from '@/assets/images/logo.svg'
+import Search from '@/assets/images/icons/search.svg'
+import Menu from '@/assets/images/icons/menu.svg'
 </script>
 
 <template>
-  <header class="header">
-    <div class="header__wrap">
-      <Logo class="header__logo" />
-      <menu class="header__menu">
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li><a href="#" class="header__link">Афиша</a></li>
-            <li><a href="#" class="header__link">Спортобъекты</a></li>
-            <li><a href="#" class="header__link">Тренеры</a></li>
-            <li><a href="#" class="header__link">Услуги</a></li>
-            <li><a href="#" class="header__link">Сообщество</a></li>
+  <header class="bg-main text-textAccent rounded-b-2xl">
+    <div class="w-viewport max-w-full mx-auto px-main py-3 flex items-center gap-4 sm:gap-12">
+      <Logo class="text-iconAccent w-36 flex-none" />
+      <menu class="flex-auto">
+        <nav>
+          <ul class="flex items-center justify-end">
+            <li><a href="#" class="font-heading uppercase text-2xl px-3 py-2">Афиша</a></li>
+            <li><a href="#" class="font-heading uppercase text-2xl px-3 py-2">Спортобъекты</a></li>
+            <li><a href="#" class="font-heading uppercase text-2xl px-3 py-2">Тренеры</a></li>
+            <li><a href="#" class="font-heading uppercase text-2xl px-3 py-2">Услуги</a></li>
+            <li><a href="#" class="font-heading uppercase text-2xl px-3 py-2">Сообщество</a></li>
           </ul>
         </nav>
       </menu>
-      <div class="header__search"></div>
-      <div class="header__burger"></div>
+      <div class="flex-none flex gap-4">
+        <button class="w-10 h-10 flex items-center justify-center" type="button">
+          <Search class="text-iconAccent w-5" aria-hidden="true" />
+        </button>
+        <button class="w-10 h-10 flex items-center justify-center bg-bgSecondaryColor rounded-full" type="button">
+          <Menu class="text-textMain w-5" aria-hidden="true" />
+        </button>
+      </div>
     </div>
   </header>
 </template>
-
-<style scoped lang="scss">
-.header {
-  background-color: var(--main-color);
-  border-radius: 0 0 1em 1em;
-
-  &__wrap {
-    inline-size: var(--main-inline-size);
-    padding-inline: var(--main-indent);
-    max-inline-size: 100%;
-
-    display: flex;
-    align-items: center;
-    gap: 3em;
-  }
-
-  &__logo {
-    fill: var(--text-accent-color);
-  }
-
-  &__menu {
-  }
-
-  &__nav {
-  }
-
-  &__list {
-  }
-
-  &__link {
-    text-decoration: none;
-    font-family: var(--heading-font-family);
-    text-transform: uppercase;
-    font-size: 1.5em;
-    color: var(--text-accent-color);
-  }
-
-  &__search {
-  }
-
-  &__burger {
-  }
-}
-</style>

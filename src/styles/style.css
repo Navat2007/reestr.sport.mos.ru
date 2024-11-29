@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Mossport;
+    src:
+      url(/public/fonts/Mossport.woff2) format('woff2'),
+      url(/public/fonts/Mossport.woff) format('woff');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Gotham Pro';
+    src:
+      url(/public/fonts/Gothampro.woff2) format('woff2'),
+      url(/public/fonts/Gothampro.woff) format('woff');
+    font-display: swap;
+    font-weight: normal;
+  }
+
+  @font-face {
+    font-family: 'Gotham Pro';
+    src:
+      url(/public/fonts/Gothampro_medium.woff2) format('woff2'),
+      url(/public/fonts/Gothampro_medium.woff) format('woff');
+    font-display: swap;
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'Gotham Pro';
+    src:
+      url(/public/fonts/Gothampro_bold.woff2) format('woff2'),
+      url(/public/fonts/Gothampro_bold.woff) format('woff');
+    font-display: swap;
+    font-weight: 700;
+  }
+}
