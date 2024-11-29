@@ -16,4 +16,7 @@
 
   --error-color: var(--main-color);
   --info-color: #334CEB;
+
+  --main-inline-size: 90em;
+  --main-indent: 4.375em;
 }
