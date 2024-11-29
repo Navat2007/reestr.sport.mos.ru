@@ -1,9 +1,11 @@
-<script setup></script>
+<script setup>
+import Logo from '@/assets/images/logo.svg'
+</script>
 
 <template>
   <header class="header">
     <div class="header__wrap">
-      <div class="header__logo"></div>
+      <Logo class="header__logo" />
       <menu class="header__menu">
         <nav class="header__nav">
           <ul class="header__list">
@@ -23,12 +25,21 @@
 
 <style scoped lang="scss">
 .header {
+  background-color: var(--main-color);
+  border-radius: 0 0 1em 1em;
+
   &__wrap {
     inline-size: var(--main-inline-size);
+    padding-inline: var(--main-indent);
     max-inline-size: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 3em;
   }
 
   &__logo {
+    fill: var(--text-accent-color);
   }
 
   &__menu {
@@ -41,6 +52,11 @@
   }
 
   &__link {
+    text-decoration: none;
+    font-family: var(--heading-font-family);
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: var(--text-accent-color);
   }
 
   &__search {

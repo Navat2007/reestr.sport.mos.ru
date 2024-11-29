@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-family: var(--main-font-family, 'Gotham Pro', sans-serif);
   font-size: 1em;
-  color: var(--text-main-color, #2A3B4D);
+  color: var(--text-main-color, #2a3b4d);
   background-color: var(--bg-color, #ffffff);
 }
 
@@ -30,6 +30,13 @@ p {
 picture {
   margin: 0;
   padding: 0;
+}
+
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 button,
