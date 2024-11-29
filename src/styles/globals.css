@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-inline-size: 320px;
+  margin: 0;
+  font-family: var(--main-font-family, 'Gotham Pro', sans-serif);
+  font-size: 1em;
+  color: var(--text-main-color, #2A3B4D);
+  background-color: var(--bg-color, #ffffff);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+picture {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+a {
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+:focus,
+:focus-visible {
+  outline: none;
+}

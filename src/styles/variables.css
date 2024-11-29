@@ -1,0 +1,19 @@
+:root {
+  --bg-color: #ffffff;
+  --bg-secondary-color: #F3F3F3;
+
+  --main-color: #e22b36;
+  --main-color-hover: #c11a24;
+
+  --text-main-color: #2A3B4D;
+  --text-secondary-color: #687482;
+  --text-accent-color: #ffffff;
+  --icon-color: #6D7885;
+  --icon-accent-color: #ffffff;
+
+  --heading-font-family: Mossport, sans-serif;
+  --main-font-family: 'Gotham Pro', sans-serif;
+
+  --error-color: var(--main-color);
+  --info-color: #334CEB;
+}
