@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
   src: {
-    type: String,
+    type: Object,
     required: true
   }
 });
