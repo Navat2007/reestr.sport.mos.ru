@@ -17,27 +17,35 @@ export default {
         info: '#334CEB',
       },
       fontSize: {
+        '3xs': '8px',
         '2xs': '10px',
       },
       width: {
         viewport: '90em',
         footerAddress: '40%',
         footerApp: '60%',
+        address: '310px',
+      },
+      maxWidth: {
+        footerImage: '300px',
       },
       spacing: {
-        main: '4.375em',
+        main: 'clamp(1rem, -1.25rem + 6.25vw, 4.375rem)',
       },
       boxShadow: {
-        footer: '0px 10px 36px 0px rgba(0, 0, 0, 0.19), 0px 3px 13px 0px rgba(0, 0, 0, 0.04);',
-        footerApp: '0px 0px 15px 0px rgba(0, 0, 0, 0.15);'
+        footer: '0px 10px 36px 0px rgba(0, 0, 0, 0.19), 0px 3px 13px 0px rgba(0, 0, 0, 0.04)',
+        footerApp: '0px 0px 15px 0px rgba(0, 0, 0, 0.15)',
       },
+    },
+    screens: {
+      mobile: '576px',
+      laptop: '768px',
+      desktop: '1440px',
     },
     fontFamily: {
       heading: ['Mossport', 'sans-serif'],
       sans: ['Gotham Pro', 'sans-serif'],
     },
   },
-  plugins: [
-    require('tailwindcss-primeui')
-  ],
+  plugins: [require('tailwindcss-primeui')],
 }
