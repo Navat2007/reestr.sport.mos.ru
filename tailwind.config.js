@@ -37,5 +37,7 @@ export default {
       sans: ['Gotham Pro', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-primeui')
+  ],
 }
