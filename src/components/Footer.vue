@@ -18,8 +18,8 @@ import appStore from '@/assets/images/icons/appstore.svg'
 
 <template>
   <footer class="footer">
-    <div class="w-viewport max-w-full mx-auto px-main pt-9 pb-5 flex">
-      <div class="w-footerAddress flex flex-col gap-4">
+    <div class="w-viewport max-w-full mx-auto px-main pt-9 pb-8 flex overflow-hidden">
+      <div class="w-footerAddress flex flex-col gap-4 pr-10">
         <div class="flex gap-10">
           <a href="https://www.mos.ru/moskomsport/" target="_blank" rel="nofollow noopener">
             <logoMin class="h-11" />
@@ -89,7 +89,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
           </li>
         </ul>
       </div>
-      <div class="w-footerApp flex flex-col gap-6 relative overflow-hidden">
+      <div class="w-footerApp flex flex-col gap-6 pl-10 relative z-20">
         <h2 class="text-lg font-medium">Мобильное приложение «Московский спорт»</h2>
         <div class="flex items-center gap-6 max-w-80">
           <div class="flex-none qr-code">
@@ -136,7 +136,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
           </li>
         </ul>
         <img
-          class="absolute right-0 top-4"
+          class="absolute right-0 -top-4 -z-10"
           :src="device"
           alt="Изображение мобильного телефона с открытым приложением"
           width="300"
