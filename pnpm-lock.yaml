@@ -14,9 +14,18 @@ importers:
       '@primevue/themes':
         specifier: ^4.2.4
         version: 4.2.4
+      '@vicons/material':
+        specifier: ^0.12.0
+        version: 0.12.0
+      '@vicons/utils':
+        specifier: ^0.1.4
+        version: 0.1.4(vue@3.5.13)
       pinia:
         specifier: ^2.2.6
         version: 2.2.8(vue@3.5.13)
+      primeicons:
+        specifier: ^7.0.0
+        version: 7.0.0
       primevue:
         specifier: ^4.2.4
         version: 4.2.4(vue@3.5.13)
@@ -227,6 +236,9 @@ packages:
 
   '@bufbuild/protobuf@2.2.2':
     resolution: {integrity: sha512-UNtPCbrwrenpmrXuRwn9jYpPoweNXj8X5sMvYgsqYyaH8jQ6LfUJSk3dJLnBK+6sfYPrF4iAIo5sd5HQ+tg75A==}
+
+  '@emotion/hash@0.8.0':
+    resolution: {integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==}
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -693,6 +705,17 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
+  '@types/node@14.14.45':
+    resolution: {integrity: sha512-DssMqTV9UnnoxDWu959sDLZzfvqCF0qDNRjaWeYSui9xkFe61kKo4l1TWNTQONpuXEm+gLMRvdlzvNHBamzmEw==}
+
+  '@vicons/material@0.12.0':
+    resolution: {integrity: sha512-chv1CYAl8P32P3Ycwgd5+vw/OFNc2mtkKdb1Rw4T5IJmKy6GVDsoUKV3N2l208HATn7CCQphZtuPDdsm7K2kmA==}
+
+  '@vicons/utils@0.1.4':
+    resolution: {integrity: sha512-OHI19qVNN6i+uPQ+Y3f2s0dUxwsYnOCcKBW7XOU4yXXO1aU3ZoKpblCc3+4N0qmgoJs5rWKRAaMisipqEXJwAg==}
+    peerDependencies:
+      vue: ^3.0.6
+
   '@vitejs/plugin-vue@5.2.1':
     resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -764,6 +787,9 @@ packages:
 
   '@vue/shared@3.5.13':
     resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
+
+  '@xicons/utils@0.1.4':
+    resolution: {integrity: sha512-uXxKDLz9abr80yJC05XSTq6wlyFcdW+N/1IYJkeHjzzXVc4VQ0sEYMoMMTjAH7HQBOyOkzOB4pf5NGF72lwa8Q==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -907,6 +933,9 @@ packages:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
+  css-render@0.13.9:
+    resolution: {integrity: sha512-n3C4ZH59rveBrUlAD7n0Ze9/gUMKa4dlH1C9CWKpGcIHR/xRcIVXzBGy1iw8WWq2ySmn2/ZqOpySQNAK5Pb6sw==}
+
   css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
 
@@ -930,6 +959,9 @@ packages:
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+
+  csstype@3.0.11:
+    resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
@@ -1590,6 +1622,9 @@ packages:
   pretty-ms@9.2.0:
     resolution: {integrity: sha512-4yf0QO/sllf/1zbZWYnvWw3NxCQwLXKzIj0G849LSufP15BXKM0rbD2Z3wVnkMfjdn/CB0Dpp444gYAACdsplg==}
     engines: {node: '>=18'}
+
+  primeicons@7.0.0:
+    resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
 
   primevue@4.2.4:
     resolution: {integrity: sha512-aMQymoO489isReSF/bScypswOnLBU29qkeTulGj3Wntb9plvzTIWjA4+iyDOsyxGmV5GVIvD+DuTw5FNCDWgSw==}
@@ -2287,6 +2322,8 @@ snapshots:
 
   '@bufbuild/protobuf@2.2.2': {}
 
+  '@emotion/hash@0.8.0': {}
+
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
 
@@ -2615,6 +2652,15 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/node@14.14.45': {}
+
+  '@vicons/material@0.12.0': {}
+
+  '@vicons/utils@0.1.4(vue@3.5.13)':
+    dependencies:
+      '@xicons/utils': 0.1.4
+      vue: 3.5.13
+
   '@vitejs/plugin-vue@5.2.1(vite@5.4.11(sass-embedded@1.81.0)(sass@1.81.0))(vue@3.5.13)':
     dependencies:
       vite: 5.4.11(sass-embedded@1.81.0)(sass@1.81.0)
@@ -2740,6 +2786,10 @@ snapshots:
       vue: 3.5.13
 
   '@vue/shared@3.5.13': {}
+
+  '@xicons/utils@0.1.4':
+    dependencies:
+      css-render: 0.13.9
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
@@ -2874,6 +2924,12 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  css-render@0.13.9:
+    dependencies:
+      '@emotion/hash': 0.8.0
+      '@types/node': 14.14.45
+      csstype: 3.0.11
+
   css-select@5.1.0:
     dependencies:
       boolbase: 1.0.0
@@ -2899,6 +2955,8 @@ snapshots:
   csso@5.0.5:
     dependencies:
       css-tree: 2.2.1
+
+  csstype@3.0.11: {}
 
   csstype@3.1.3: {}
 
@@ -3521,6 +3579,8 @@ snapshots:
   pretty-ms@9.2.0:
     dependencies:
       parse-ms: 4.0.0
+
+  primeicons@7.0.0: {}
 
   primevue@4.2.4(vue@3.5.13):
     dependencies:
