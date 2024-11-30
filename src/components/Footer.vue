@@ -11,6 +11,9 @@ import vkontakte from '@/assets/images/icons/vkontakte.svg'
 import vkontakteHover from '@/assets/images/icons/vkontakte-hover.svg'
 import rutube from '@/assets/images/icons/rutube.svg'
 import rutubeHover from '@/assets/images/icons/rutube-hover.svg'
+import ruStore from '@/assets/images/icons/rustore.svg'
+import ruMarket from '@/assets/images/icons/rumarket.svg'
+import appStore from '@/assets/images/icons/appstore.svg'
 </script>
 
 <template>
@@ -86,54 +89,54 @@ import rutubeHover from '@/assets/images/icons/rutube-hover.svg'
           </li>
         </ul>
       </div>
-      <div class="w-footerApp flex flex-col gap-6">
+      <div class="w-footerApp flex flex-col gap-6 relative overflow-hidden">
         <h2 class="text-lg font-medium">Мобильное приложение «Московский спорт»</h2>
-        <div class="footer__app">
-          <div class="bg-bgColor rounded-sm shadow-sm w-36 h-36">
-            <qrCode class="w-full h-full contain-size" />
+        <div class="flex items-center gap-6 max-w-80">
+          <div class="flex-none qr-code">
+            <qrCode class="w-full h-full" />
           </div>
-          <p class="footer__app-text">Сканируй QR-код, чтобы скачать приложение</p>
+          <p class="leading-6 tracking-wide">Сканируй QR-код, чтобы скачать приложение</p>
         </div>
-        <ul class="footer__app-list">
+        <ul class="flex gap-5">
           <li>
             <a
               href="https://apps.rustore.ru/app/com.moscowsport"
-              class="footer__app-link"
+              class="grid gap-x-2 bg-bgColor p-3 border border-textMain shadow-footerApp rounded-3xl"
               target="_blank"
               rel="nofollow noopener"
             >
-              <span class="icon icon_type_rustore" aria-label="hidden"></span>
-              <p class="footer__app-label">Доступно в</p>
-              <p class="footer__app-text">RuStore</p>
+              <ruStore class="h-8 w-8 row-start-1 row-end-3 col-start-1 col-end-2" aria-label="hidden" />
+              <p class="text-2xs tracking-wide row-start-1 leading-3 row-end-2 col-start-2 col-end-3">Доступно в</p>
+              <p class="text-xl font-medium leading-5">RuStore</p>
             </a>
           </li>
           <li>
             <a
               href="https://ruplay.market/apps/com.moscowsport"
-              class="footer__app-link"
+              class="grid gap-x-2 bg-bgColor p-3 border border-textMain shadow-footerApp rounded-3xl"
               target="_blank"
               rel="nofollow noopener"
             >
-              <span class="icon icon_type_rustore" aria-label="hidden"></span>
-              <p class="footer__app-label">Доступно в</p>
-              <p class="footer__app-text">RuMarket</p>
+              <ruMarket class="h-8 w-8 row-start-1 row-end-3 col-start-1 col-end-2" aria-label="hidden" />
+              <p class="text-2xs tracking-wide row-start-1 leading-3 row-end-2 col-start-2 col-end-3">Доступно в</p>
+              <p class="text-xl font-medium leading-5">RuMarket</p>
             </a>
           </li>
           <li>
             <a
               href="https://apps.apple.com/ru/app/московский-спорт/id1673448468"
-              class="footer__app-link"
+              class="grid gap-x-2 bg-bgColor p-3 border border-textMain shadow-footerApp rounded-3xl"
               target="_blank"
               rel="nofollow noopener"
             >
-              <span class="icon icon_type_rustore" aria-label="hidden"></span>
-              <p class="footer__app-label">Доступно в</p>
-              <p class="footer__app-text">App Store</p>
+              <appStore class="h-8 w-8 row-start-1 row-end-3 col-start-1 col-end-2" aria-label="hidden" />
+              <p class="text-2xs tracking-wide row-start-1 leading-3 row-end-2 col-start-2 col-end-3">Доступно в</p>
+              <p class="text-xl font-medium leading-5">App&nbsp;Store</p>
             </a>
           </li>
         </ul>
         <img
-          class="footer__img"
+          class="absolute right-0 top-4"
           :src="device"
           alt="Изображение мобильного телефона с открытым приложением"
           width="300"
@@ -161,5 +164,13 @@ import rutubeHover from '@/assets/images/icons/rutube-hover.svg'
 .footer {
   @apply bg-bgColor shadow-footer;
   background-image: linear-gradient(to right, #ffffff 40%, #f3f3f3 40%, #f3f3f3 100%);
+}
+.qr-code {
+  @apply bg-bgColor;
+  inline-size: 130px;
+  block-size: 130px;
+  padding: 8px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.25);
 }
 </style>

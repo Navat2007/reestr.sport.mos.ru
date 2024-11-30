@@ -16,16 +16,20 @@ export default {
         error: '#e22b36',
         info: '#334CEB',
       },
+      fontSize: {
+        '2xs': '10px',
+      },
       width: {
         viewport: '90em',
-        footerAddress: '45%',
-        footerApp: '45%',
+        footerAddress: '40%',
+        footerApp: '60%',
       },
       spacing: {
         main: '4.375em',
       },
       boxShadow: {
         footer: '0px 10px 36px 0px rgba(0, 0, 0, 0.19), 0px 3px 13px 0px rgba(0, 0, 0, 0.04);',
+        footerApp: '0px 0px 15px 0px rgba(0, 0, 0, 0.15);'
       },
     },
     fontFamily: {
