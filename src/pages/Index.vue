@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 import Dialog from 'primevue/dialog'
 
 import Info from '@/assets/images/icons/info.svg'
@@ -9,8 +9,14 @@ import ArrowDown from '@/assets/images/icons/arrow-down.svg'
 import Company from '@/assets/images/icons/company.svg'
 
 const tabValue = ref("0");
-const isDialogOpen = ref(false)
-const sportObject = ref(null)
+const isFilterShow = ref(false);
+const isDialogOpen = ref(false);
+const searchInput = ref(null);
+const state = reactive({
+  searchInput: '',
+});
+
+const sportObject = ref(null);
 const sportObjects = ref([
   {
     name: 'ООО «3СПОРТ»',
@@ -109,11 +115,20 @@ const sportObjects = ref([
     ]
   }
 ]);
+const filteredSportObjects = ref([]);
 
 const onSportObjectClick = (item) => {
   sportObject.value = item
   isDialogOpen.value = true
 }
+const onSearch = () => {
+  console.log(state.searchInput);
+  filteredSportObjects.value = sportObjects.value.filter(item => item.name.toLowerCase().includes(state.searchInput.toLowerCase()));
+}
+
+onMounted(() => {
+  onSearch();
+});
 </script>
 
 <template>
@@ -135,23 +150,26 @@ const onSportObjectClick = (item) => {
             type="search"
             class="w-full py-2 px-4 rounded-full focus:outline-none"
             placeholder="Поиск по наименованию, адресу и виду спорта"
+            v-model="state.searchInput" v-on:keyup.enter="onSearch"
           />
           <div class="search-divider"></div>
           <Button
             class="p-2 flex items-center justify-center bg-transparent border-transparent active:translate-y-px"
+            @click="onSearch"
           >
             <Search class="text-icon w-5 h-5" aria-hidden="true" />
           </Button>
         </div>
         <Button
           class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover laptop:bg-bgColor laptop:text-icon"
+          @click="isFilterShow = !isFilterShow"
         >
           <Filter class="w-6 h-6" aria-hidden="true" />
         </Button>
       </div>
     </div>
     <!-- Фильтры -->
-    <div class="hidden gap-4 flex-wrap laptop:flex">
+    <div v-if="isFilterShow" class="hidden gap-4 flex-wrap laptop:flex">
       <Button
         rounded
         class="bg-bgColor bg-transparent border-transparent shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
@@ -184,11 +202,16 @@ const onSportObjectClick = (item) => {
   </section>
   <!-- Результаты поиска -->
   <section class="w-viewport max-w-full mx-auto px-main pb-section" aria-label="Результаты поиска">
-    <p class="text-center mb-10 laptop:text-right">Всего найдено: {{ sportObjects.length }}</p>
+    <p class="text-center mb-10 laptop:text-right">Всего найдено: {{ filteredSportObjects.length }}</p>
     <div class="card-deck">
+      <!-- TODO нет карточек -->
+      <article v-if="filteredSportObjects.length === 0">
+        Спортивные объекты не найдены
+      </article>
+
       <!-- Карточка организации -->
       <article
-        v-for="item in sportObjects"
+        v-for="item in filteredSportObjects"
         class="p-6 pb-4 bg-bgColor shadow-card rounded-2xl flex flex-col gap-3 cursor-pointer border-icon hover:shadow-cardHover transition-shadow active:shadow-card"
         @click="() => onSportObjectClick(item)"
       >
@@ -223,7 +246,6 @@ const onSportObjectClick = (item) => {
       <h1 class="text-3xl font-bold">{{ sportObject.name }}</h1>
     </template>
 
-    <!-- Детальная карточки - Общие сведения -->
     <Tabs :value="tabValue" scrollable>
       <TabList>
         <Tab value="0" class="flex gap-2">Общие сведения</Tab>
@@ -308,7 +330,6 @@ const onSportObjectClick = (item) => {
         </TabPanel>
       </TabPanels>
     </Tabs>
-
   </Dialog>
 </template>
 
