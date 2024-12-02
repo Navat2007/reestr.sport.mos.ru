@@ -21,6 +21,7 @@ export default {
       fontSize: {
         '3xs': '8px',
         '2xs': '10px',
+        'heading': '44px',
       },
       width: {
         viewport: '90em',
@@ -34,9 +35,11 @@ export default {
       },
       spacing: {
         main: 'clamp(1rem, -1.25rem + 6.25vw, 4.375rem)',
+        section: 'clamp(1rem, -1.25rem + 6.25vw, 4.375rem)',
       },
       boxShadow: {
-        AuthButton: 'rgba(0, 0, 0, 0.04) 0px 0.5px 1.75px, rgba(0, 0, 0, 0.19) 0px 1.85px 6.25px',
+        button: '0px 1px 2px 0px rgba(0, 0, 0, 0.20)',
+        authButton: 'rgba(0, 0, 0, 0.04) 0px 0.5px 1.75px, rgba(0, 0, 0, 0.19) 0px 1.85px 6.25px',
         footer: '0px 10px 36px 0px rgba(0, 0, 0, 0.19), 0px 3px 13px 0px rgba(0, 0, 0, 0.04)',
         footerApp: '0px 0px 15px 0px rgba(0, 0, 0, 0.15)',
       },

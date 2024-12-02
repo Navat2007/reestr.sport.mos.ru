@@ -1,23 +1,23 @@
 <script setup>
-import logo from '@/assets/images/logo.svg'
-import logoMin from '@/assets/images/logo-min.svg'
-import qrCode from '@/assets/images/qr-code.svg'
-import device from '@/assets/images/footer__image.png'
-import telephone from '@/assets/images/icons/telephone.svg'
-import envelope from '@/assets/images/icons/envelope.svg'
-import telegram from '@/assets/images/icons/telegram.svg'
-import telegramHover from '@/assets/images/icons/telegram-hover.svg'
-import vkontakte from '@/assets/images/icons/vkontakte.svg'
-import vkontakteHover from '@/assets/images/icons/vkontakte-hover.svg'
-import rutube from '@/assets/images/icons/rutube.svg'
-import rutubeHover from '@/assets/images/icons/rutube-hover.svg'
-import ruStore from '@/assets/images/icons/rustore.svg'
-import ruMarket from '@/assets/images/icons/rumarket.svg'
-import appStore from '@/assets/images/icons/appstore.svg'
+import Logo from '@/assets/images/logo.svg'
+import LogoMin from '@/assets/images/logo-min.svg'
+import QrCode from '@/assets/images/qr-code.svg'
+import Device from '@/assets/images/footer__image.png'
+import Telephone from '@/assets/images/icons/telephone.svg'
+import Envelope from '@/assets/images/icons/envelope.svg'
+import Telegram from '@/assets/images/icons/telegram.svg'
+import TelegramHover from '@/assets/images/icons/telegram-hover.svg'
+import Vkontakte from '@/assets/images/icons/vkontakte.svg'
+import VkontakteHover from '@/assets/images/icons/vkontakte-hover.svg'
+import Rutube from '@/assets/images/icons/rutube.svg'
+import RutubeHover from '@/assets/images/icons/rutube-hover.svg'
+import RuStore from '@/assets/images/icons/rustore.svg'
+import RuMarket from '@/assets/images/icons/rumarket.svg'
+import AppStore from '@/assets/images/icons/appstore.svg'
 </script>
 
 <template>
-  <footer>
+  <footer class="flex-none mt-auto">
     <div class="footer">
       <div class="w-viewport max-w-full mx-auto px-main flex flex-col desktop:flex-row">
         <div
@@ -25,10 +25,10 @@ import appStore from '@/assets/images/icons/appstore.svg'
         >
           <div class="w-address flex gap-10">
             <a href="https://www.mos.ru/moskomsport/" target="_blank" rel="nofollow noopener">
-              <logoMin class="h-11" />
+              <LogoMin class="h-11" />
             </a>
             <a href="https://sport.mos.ru/" target="_blank" rel="nofollow noopener">
-              <logo class="h-11 text-main" />
+              <Logo class="h-11 text-main" />
             </a>
           </div>
           <address class="w-address flex flex-col gap-4 not-italic">
@@ -36,7 +36,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
             <ul class="flex gap-3 flex-col">
               <li>
                 <a href="tel:84991120160" class="flex gap-3 text-xs" rel="nofollow noopener">
-                  <telephone class="w-4 fill-icon" aria-label="hidden" />
+                  <Telephone class="w-4 fill-icon" aria-label="hidden" />
                   +7 (499) 112-01-60
                 </a>
               </li>
@@ -47,7 +47,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
                   rel="nofollow noopener"
                   target="_blank"
                 >
-                  <envelope class="w-4 fill-icon" aria-label="hidden" />
+                  <Envelope class="w-4 fill-icon" aria-label="hidden" />
                   Обратная связь
                 </a>
               </li>
@@ -55,36 +55,36 @@ import appStore from '@/assets/images/icons/appstore.svg'
           </address>
           <ul class="flex gap-4 mt-5 w-full justify-center desktop:w-auto desktop:justify-normal">
             <li>
-              <a href="https://t.me/MoscowSportOfficial" class="grid" rel="noopener nofollow">
-                <telegram
+              <a href="https://t.me/MoscowSportOfficial" class="grid active:translate-y-px" rel="noopener nofollow">
+                <Telegram
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
                 />
-                <telegramHover
+                <TelegramHover
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-0 hover:opacity-100 transition-opacity"
                   aria-label="hidden"
                 />
               </a>
             </li>
             <li>
-              <a href="https://.com/moscowsportofficial" class="grid" rel="noopener nofollow">
-                <vkontakte
+              <a href="https://.com/moscowsportofficial" class="grid active:translate-y-px" rel="noopener nofollow">
+                <Vkontakte
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
                 />
-                <vkontakteHover
+                <VkontakteHover
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-0 hover:opacity-100 transition-opacity"
                   aria-label="hidden"
                 />
               </a>
             </li>
             <li>
-              <a href="https://rutube.ru/channel/24673075" class="grid" rel="noopener nofollow">
-                <rutube
+              <a href="https://rutube.ru/channel/24673075" class="grid active:translate-y-px" rel="noopener nofollow">
+                <Rutube
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
                 />
-                <rutubeHover
+                <RutubeHover
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-0 hover:opacity-100 transition-opacity"
                   aria-label="hidden"
                 />
@@ -100,7 +100,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
           </h2>
           <div class="flex items-center gap-5 laptop:gap-6 max-w-80">
             <div class="flex-none qr-code">
-              <qrCode class="w-full h-full" />
+              <QrCode class="w-full h-full" />
             </div>
             <p class="leading-6 tracking-wide">Сканируй QR-код, чтобы скачать приложение</p>
           </div>
@@ -114,7 +114,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
                 target="_blank"
                 rel="nofollow noopener"
               >
-                <ruStore
+                <RuStore
                   class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 laptop:h-8 laptop:w-8"
                   aria-label="hidden"
                 />
@@ -133,7 +133,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
                 target="_blank"
                 rel="nofollow noopener"
               >
-                <ruMarket
+                <RuMarket
                   class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 laptop:h-8 laptop:w-8"
                   aria-label="hidden"
                 />
@@ -152,7 +152,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
                 target="_blank"
                 rel="nofollow noopener"
               >
-                <appStore
+                <AppStore
                   class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 laptop:h-8 laptop:w-8"
                   aria-label="hidden"
                 />
@@ -167,7 +167,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
           </ul>
           <img
             class="absolute right-0 top-64 -z-10 w-1/2 max-w-footerImage mobile:top-auto mobile:bottom-0 mobile:translate-y-1/2 laptop:translate-y-0 laptop:bottom-auto laptop:top-4"
-            :src="device"
+            :src="Device"
             alt="Изображение мобильного телефона с открытым приложением"
             width="300"
           />

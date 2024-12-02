@@ -1,64 +1,63 @@
 <script setup>
-import {ref, onBeforeMount, onMounted} from "vue";
-import {RouterLink} from "vue-router";
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
+import { ref, onBeforeMount, onMounted } from 'vue'
+import { RouterLink } from 'vue-router'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
-const appButton = ref();
+const appButton = ref()
 const userScroll = () => {
   if (window.scrollY > 0) {
-    appButton.value.classList.add("showButton");
+    appButton.value.classList.add('showButton')
   } else {
-    appButton.value.classList.remove("showButton");
+    appButton.value.classList.remove('showButton')
   }
-};
+}
 
 onMounted(() => {
-  window.addEventListener("scroll", userScroll);
-});
+  window.addEventListener('scroll', userScroll)
+})
 onBeforeMount(() => {
-  window.removeEventListener("scroll", userScroll);
-});
+  window.removeEventListener('scroll', userScroll)
+})
 
 const scrollToTop = () => {
-  window.scrollTo({top: 0, behavior: "smooth"});
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
 
 <template>
-  <div>
-    <!-- Header -->
-    <Header />
-    <!-- Main -->
-    <main>
-      <slot/>
-    </main>
-    <!-- Footer -->
-    <Footer />
-  </div>
+  <!-- Header -->
+  <Header />
+  <!-- Main -->
+  <main>
+    <slot />
+  </main>
+  <!-- Footer -->
+  <Footer />
   <button
-      :onclick="scrollToTop" ref="appButton"
-      type="button"
-      data-twe-ripple-init
-      data-twe-ripple-color="light"
-      class="!fixed bottom-5 end-5 hidden rounded-full bg-red-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
+    :onclick="scrollToTop"
+    ref="appButton"
+    type="button"
+    data-twe-ripple-init
+    data-twe-ripple-color="light"
+    class="!fixed bottom-5 end-5 hidden rounded-full bg-red-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
   >
     <span class="[&>svg]:w-4">
       <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="3"
-          stroke="currentColor">
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+      >
         <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"/>
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"
+        />
       </svg>
     </span>
   </button>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
