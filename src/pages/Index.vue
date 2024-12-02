@@ -10,6 +10,10 @@ import ArrowDown from '@/assets/images/icons/arrow-down.svg'
 import Company from '@/assets/images/icons/company.svg'
 import CheckCircle from '@/assets/images/icons/check-circle.svg'
 import ArrowLeft from '@/assets/images/icons/arrow-left.svg'
+import Telephone from '@/assets/images/icons/telephone.svg'
+import Envelope from '@/assets/images/icons/envelope.svg'
+import Website from '@/assets/images/icons/website.svg'
+import Avatar from '@/assets/images/avatar.jpg'
 
 const tabValue = ref('0')
 const isFilterShow = ref(false)
@@ -290,12 +294,19 @@ onMounted(() => {
   </section>
   <!-- Результаты поиска -->
   <section class="w-viewport max-w-full mx-auto px-main pb-section" aria-label="Результаты поиска">
-    <p class="text-center mb-10 laptop:text-right">
+    <p v-if="filteredSportObjects.length !== 0" class="text-center mb-10 laptop:text-right">
       Всего найдено: {{ filteredSportObjects.length }}
     </p>
-    <div class="card-deck">
+    <div class="grid laptop:grid-cols-2 desktop:grid-cols-3 gap-4 mb-10">
       <!-- TODO нет карточек -->
-      <article v-if="filteredSportObjects.length === 0">Спортивные объекты не найдены</article>
+      <p
+        v-if="filteredSportObjects.length === 0"
+        class="col-span-full flex items-center justify-center gap-4"
+      >
+        <Search class="text-icon w-8 h-8" aria-hidden="true" />
+        Не найдено ни одного объекта. <br />
+        Попробуйте изменить критерии поиска
+      </p>
 
       <!-- Карточка организации -->
       <article
@@ -333,15 +344,15 @@ onMounted(() => {
     class="mobile:w-8/12 w-full"
   >
     <template #header>
-      <h1 class="text-3xl font-bold">{{ sportObject.name }}</h1>
+      <h2 class="text-modalHeading font-medium">{{ sportObject.name }}</h2>
     </template>
 
     <Tabs :value="tabValue" scrollable>
       <TabList>
-        <Tab value="0" class="flex gap-2">Общие сведения</Tab>
-        <Tab value="1" class="flex gap-2">Характеристики</Tab>
-        <Tab value="2" class="flex gap-2">Контакты</Tab>
-        <Tab value="3" class="flex gap-2">Финансы</Tab>
+        <Tab value="0"><span class="text-sm font-normal">Общие сведения</span></Tab>
+        <Tab value="1"><span class="text-sm font-normal">Характеристики</span></Tab>
+        <Tab value="2"><span class="text-sm font-normal">Контакты</span></Tab>
+        <Tab value="3"><span class="text-sm font-normal">Финансы</span></Tab>
       </TabList>
       <TabPanels>
         <TabPanel value="0">
@@ -407,11 +418,160 @@ onMounted(() => {
                 </div>
               </div>
             </div>
+            <div class="h-px bg-divider"></div>
+            <h2 class="text-2xl font-medium">Руководитель</h2>
+            <div class="flex items-center gap-4">
+              <img class="w-16 h-16 rounded-md" :src="Avatar" alt="Фото руководителя" />
+              <div>
+                <h3 class="text-base">Генеральный директор</h3>
+                <p class="text-xl">Громов Михаил Николаевич</p>
+              </div>
+            </div>
           </section>
         </TabPanel>
-        <TabPanel value="1"> </TabPanel>
-        <TabPanel value="2"> </TabPanel>
-        <TabPanel value="3"> </TabPanel>
+        <TabPanel value="1">
+          <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-medium">Характеристики</h2>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xs text-textSecondary">
+                ОКВЭД основной
+                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+              </h3>
+              <p>Деятельность в области спорта</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xs text-textSecondary">
+                ОКВЭД дополнительный
+                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>Торговля розничная спортивной одежой в специализированных магазинах</li>
+                <li>Производство пищевой продукции для питания спортсменов</li>
+                <li>
+                  Производство спортивных костюмов, лыжных костюмов, купальных костюмов и прочей
+                  трикотажной или вязаной одежды
+                </li>
+                <li>Производство спортивной обуви</li>
+                <li>Торговля оптовая спортивными товарами, включая велосипеды</li>
+                <li>
+                  Торговля розничная спортивным оборудованием и спортивными товарами
+                  в специализированных магазинах
+                </li>
+                <li>Торговля розничная спортивной одеждой в специализированных магазинах</li>
+                <li>Прокат и аренда товаров для отдыха и спортивных товаров</li>
+                <li>Деятельность спортивных объектов</li>
+                <li>Деятельность спортивных клубов</li>
+                <li>Деятельность фитнес-центров</li>
+                <li>Ремонт спортивного и туристского оборудования</li>
+                <li>Деятельность физкультурно — оздоровительная</li>
+                <li>Деятельность в области спорта прочая</li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xs text-textSecondary">
+                Организационно-правовая форма
+                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+              </h3>
+              <p>Общества с ограниченной ответственностью</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xs text-textSecondary">
+                Форма собственности
+                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+              </h3>
+              <p>Частная собственность</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xs text-textSecondary">
+                Ведомственная принадлежность
+                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+              </h3>
+              <p>
+                Организации, учреждённые юридическими лицами или гражданами, или юридическими лицами
+                и гражданами совместно
+              </p>
+            </div>
+          </section>
+        </TabPanel>
+        <TabPanel value="2">
+          <section class="flex flex-col gap-4">
+            <h2 class="text-2xl font-medium">Контактная информация</h2>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex-auto flex flex-col gap-1">
+                <h3 class="text-xs text-textSecondary">Телефон</h3>
+                <a href="tel:+79268600934" class="flex items-center gap-2">
+                  <Telephone class="flex-none w-4 h-4 text-icon" />
+                  +7 926 860-09-34</a
+                >
+              </div>
+              <div class="flex-auto flex flex-col gap-1">
+                <h3 class="text-xs text-textSecondary">Почта</h3>
+                <a href="mailto:grom@3sport.org" class="flex items-center gap-2">
+                  <Envelope class="flex-none w-4 h-4 text-icon" />
+                  grom@3sport.org</a
+                >
+              </div>
+              <div class="flex-auto flex flex-col gap-1">
+                <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
+                <a href="mailto:grom@3sport.org" class="flex items-center gap-2">
+                  <Website class="flex-none w-4 h-4 text-icon" />
+                  www.test.ru</a
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h3 class="text-xs text-textSecondary">
+                Юридический адрес (адрес регистрации организации)
+              </h3>
+              <p>
+                105082, г. Москва, вн.тёр.г. муниципальный округ Басманный, пл. Спартаковская,
+                д. 10, стр. 12 (Бизнес-центр «Флеш Ланж 10с12»)
+              </p>
+            </div>
+            <div class="min-h-96 bg-bgSecondaryColor rounded-2xl">
+              <!-- Место для карты -->
+            </div>
+          </section>
+        </TabPanel>
+        <TabPanel value="3">
+          <section class="flex flex-col gap-4">
+            <div>
+              <h2 class="text-2xl font-medium">Финансы</h2>
+              <h3 class="text-sm text-textSecondary">
+                Основные показатели за
+                <span class="select-yrs"
+                  >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+                /></span>
+              </h3>
+            </div>
+            <div class="grid grid-cols-2 gap-2 laptopWide:grid-cols-4">
+              <article
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+              >
+                <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
+                <p class="text-lg desktop:text-2xl">90 041 000</p>
+              </article>
+              <article
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+              >
+                <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
+                <p class="text-lg desktop:text-2xl">1 784 494</p>
+              </article>
+              <article
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+              >
+                <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
+                <p class="text-lg desktop:text-2xl">80 926 000</p>
+              </article>
+              <article
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+              >
+                <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
+                <p class="text-lg desktop:text-2xl">92 823 000</p>
+              </article>
+            </div>
+          </section>
+        </TabPanel>
       </TabPanels>
     </Tabs>
   </Dialog>
@@ -422,11 +582,6 @@ onMounted(() => {
   @apply bg-divider;
   inline-size: 1px;
   block-size: 24px;
-}
-
-.card-deck {
-  @apply grid gap-4 mb-10;
-  grid-template-columns: repeat(auto-fit, minmax(min(370px, 100%), 1fr));
 }
 
 .select-yrs {
