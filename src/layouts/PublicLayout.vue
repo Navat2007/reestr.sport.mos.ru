@@ -29,7 +29,7 @@ const scrollToTop = () => {
   <!-- Header -->
   <Header />
   <!-- Main -->
-  <main>
+  <main class="pt-20">
     <slot />
   </main>
   <!-- Footer -->

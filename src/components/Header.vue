@@ -11,7 +11,7 @@ const isDrawerOpen = ref(false)
 </script>
 
 <template>
-  <header class="position-sticky top-0 bg-main text-textAccent rounded-b-2xl">
+  <header class="fixed top-0 left-0 right-0 z-30 bg-main text-textAccent rounded-b-2xl">
     <div class="w-viewport max-w-full mx-auto px-main py-4 flex items-center gap-4 sm:gap-12">
       <a href="https://sport.mos.ru/" target="_blank" class="flex-none" rel="nofollow noopener">
         <Logo class="text-iconAccent w-36" />
