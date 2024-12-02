@@ -12,16 +12,14 @@ import Company from '@/assets/images/icons/company.svg'
     <div
       class="flex gap-3 flex-col laptop:mb-3 desktop:flex-row desktop:items-center desktop:justify-between"
     >
-      <div class="flex items-start">
-        <h1 class="max-w-max font-heading text-heading uppercase leading-10">
-          Реестр физкультурно-спортивных организаций
-        </h1>
-        <button class="px-2 py-2 text-main active:translate-y-px" type="button" aria-label="Поиск">
-          <Info class="flex-none w-6 h-6" aria-hidden="true" />
-        </button>
-      </div>
+      <h1 class="max-w-max font-heading text-heading uppercase leading-none">
+        Реестр физкультурно-спортивных организаций
+        <Info class="inline align-top w-6 h-6 text-main active:translate-y-px" role="button" aria-label="Подробная информация" />
+      </h1>
       <div class="flex-auto flex gap-4 desktop:justify-end">
-        <div class="w-full laptop:max-w-96 rounded-full bg-bgColor shadow-button flex gap-2 items-center pr-4">
+        <div
+          class="w-full laptop:max-w-96 rounded-full bg-bgColor shadow-button flex gap-2 items-center pr-4"
+        >
           <input
             type="search"
             class="w-full py-2 px-4 rounded-full focus:outline-none"
@@ -219,16 +217,89 @@ import Company from '@/assets/images/icons/company.svg'
       </article>
     </div>
   </section>
+  <!-- Детальная карточки - Общие сведения -->
+  <section class="flex flex-col gap-4">
+    <h2 class="text-2xl font-medium">Общие сведения</h2>
+    <div class="flex flex-col gap-1">
+      <h3 class="text-xs text-textSecondary">Полное наименование организации</h3>
+      <p>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «3СПОРТ»</p>
+    </div>
+    <div class="flex flex-col gap-4 laptop:flex-row">
+      <div class="flex-auto flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">Краткое наименование организации</h3>
+          <p>ООО «3СПОРТ»</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">Регион регистрации</h3>
+          <p>Москва</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">
+            Размер организации
+            <Info class="inline align-top w-4 h-4 text-main" role="button" />
+          </h3>
+          <p>Микропредприятие</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">Дата регистрации</h3>
+          <p>04.05.2012</p>
+        </div>
+      </div>
+      <div class="w-px bg-divider"></div>
+      <div class="flex-auto flex flex-col gap-4">
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">
+            ИНН
+            <Info class="inline align-top w-4 h-4 text-main" role="button" />
+          </h3>
+          <p>7708762136</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">
+            ОГРН
+            <Info class="inline align-top w-4 h-4 text-main" role="button" />
+          </h3>
+          <p>1127746355670</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">
+            Уставный капитал, руб.
+            <Info class="inline align-top w-4 h-4 text-main" role="button" />
+          </h3>
+          <p>10 000,00</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <h3 class="text-xs text-textSecondary">
+            Среднесписочная численность сотрудников в
+            <span class="select-yrs"
+              >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+            /></span>
+          </h3>
+          <p>3 чел.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
 .search-divider {
-  background-color: rgba(0, 0, 0, 0.2);
+  @apply bg-divider;
   inline-size: 1px;
   block-size: 24px;
 }
 .card-deck {
   @apply grid gap-4 mb-10;
   grid-template-columns: repeat(auto-fit, minmax(min(370px, 100%), 1fr));
+}
+.select-yrs {
+  @apply text-main cursor-pointer active:translate-y-px;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 8%;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
 }
 </style>

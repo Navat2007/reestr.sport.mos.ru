@@ -102,7 +102,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
             <div class="flex-none qr-code">
               <QrCode class="w-full h-full" />
             </div>
-            <p class="leading-6 tracking-wide">Сканируй QR-код, чтобы скачать приложение</p>
+            <p class="leading-normal tracking-wide">Сканируй QR-код, чтобы скачать приложение</p>
           </div>
           <ul
             class="flex gap-5 flex-col items-start flex-wrap laptop:flex-row laptop:items-stretch"
@@ -179,14 +179,14 @@ import AppStore from '@/assets/images/icons/appstore.svg'
     >
       <a
         href="https://www.mos.ru/upload/documents/files/5620/Politikavotnosheniiobrabotkipersonalnihdannih.pdf"
-        class="text-textSecondary text-2xs leading-3 desktop:text-xs"
+        class="text-textSecondary text-2xs desktop:text-xs"
         download
         target="_blank"
         >Политика в отношении обработки персональных данных</a
       >
       <a
         href="https://www.mos.ru/legal/rules/"
-        class="text-textSecondary text-2xs leading-3 desktop:text-xs"
+        class="text-textSecondary text-2xs desktop:text-xs"
         target="_blank"
         >Соглашение о пользовании информационными системами и ресурсами города Москвы</a
       >

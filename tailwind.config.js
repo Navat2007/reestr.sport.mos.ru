@@ -16,6 +16,7 @@ export default {
         iconAccent: '#ffffff',
         error: '#e22b36',
         info: '#334CEB',
+        divider: 'rgba(0, 0, 0, 0.15)',
         linkHover: 'rgba(0, 0, 0, 0.04)',
       },
       fontSize: {
