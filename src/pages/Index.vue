@@ -154,7 +154,7 @@ onMounted(() => {
     <div
       class="flex gap-3 flex-col laptop:mb-3 desktop:flex-row desktop:items-center desktop:justify-between"
     >
-      <h1 class="max-w-max font-heading text-heading uppercase leading-none">
+      <h1 class="max-w-max font-heading text-4xl laptop:text-heading uppercase leading-none">
         Реестр физкультурно-спортивных организаций
         <Info
           class="inline align-top w-6 h-6 text-main active:translate-y-px"
@@ -356,58 +356,58 @@ onMounted(() => {
       </TabList>
       <TabPanels>
         <TabPanel value="0">
-          <section class="flex flex-col gap-4">
+          <section class="-mx-4 flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Общие сведения</h2>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">Полное наименование организации</h3>
               <p>{{ sportObject.fullName }}</p>
             </div>
             <div class="flex flex-col gap-4 laptop:flex-row">
               <div class="flex-auto flex flex-col gap-4">
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">Краткое наименование организации</h3>
                   <p>{{ sportObject.name }}</p>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">Регион регистрации</h3>
                   <p>{{ sportObject.region }}</p>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Размер организации
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
                   <p>{{ sportObject.firmSize }}</p>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">Дата регистрации</h3>
                   <p>{{ sportObject.registrationDate }}</p>
                 </div>
               </div>
               <div class="w-px bg-divider"></div>
               <div class="flex-auto flex flex-col gap-4">
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     ИНН
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
                   <p>{{ sportObject.ogrn }}</p>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     ОГРН
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
                   <p>{{ sportObject.inn }}</p>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Уставный капитал, руб.
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
                   <p>{{ sportObject.capital }}</p>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Среднесписочная численность сотрудников в
                     <span class="select-yrs"
@@ -430,16 +430,16 @@ onMounted(() => {
           </section>
         </TabPanel>
         <TabPanel value="1">
-          <section class="flex flex-col gap-4">
+          <section class="-mx-4 flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Характеристики</h2>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 ОКВЭД основной
                 <Info class="inline align-top w-4 h-4 text-main" role="button" />
               </h3>
               <p>Деятельность в области спорта</p>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 ОКВЭД дополнительный
                 <Info class="inline align-top w-4 h-4 text-main" role="button" />
@@ -467,21 +467,21 @@ onMounted(() => {
                 <li>Деятельность в области спорта прочая</li>
               </ul>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Организационно-правовая форма
                 <Info class="inline align-top w-4 h-4 text-main" role="button" />
               </h3>
               <p>Общества с ограниченной ответственностью</p>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Форма собственности
                 <Info class="inline align-top w-4 h-4 text-main" role="button" />
               </h3>
               <p>Частная собственность</p>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Ведомственная принадлежность
                 <Info class="inline align-top w-4 h-4 text-main" role="button" />
@@ -494,24 +494,24 @@ onMounted(() => {
           </section>
         </TabPanel>
         <TabPanel value="2">
-          <section class="flex flex-col gap-4">
+          <section class="-mx-4 flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Контактная информация</h2>
             <div class="flex flex-wrap gap-4">
-              <div class="flex-auto flex flex-col gap-1">
+              <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
                 <a href="tel:+79268600934" class="flex items-center gap-2">
                   <Telephone class="flex-none w-4 h-4 text-icon" />
                   +7 926 860-09-34</a
                 >
               </div>
-              <div class="flex-auto flex flex-col gap-1">
+              <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Почта</h3>
                 <a href="mailto:grom@3sport.org" class="flex items-center gap-2">
                   <Envelope class="flex-none w-4 h-4 text-icon" />
                   grom@3sport.org</a
                 >
               </div>
-              <div class="flex-auto flex flex-col gap-1">
+              <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
                 <a href="mailto:grom@3sport.org" class="flex items-center gap-2">
                   <Website class="flex-none w-4 h-4 text-icon" />
@@ -519,7 +519,7 @@ onMounted(() => {
                 >
               </div>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Юридический адрес (адрес регистрации организации)
               </h3>
@@ -534,7 +534,7 @@ onMounted(() => {
           </section>
         </TabPanel>
         <TabPanel value="3">
-          <section class="flex flex-col gap-4">
+          <section class="-mx-4 flex flex-col gap-4">
             <div>
               <h2 class="text-2xl font-medium">Финансы</h2>
               <h3 class="text-sm text-textSecondary">
@@ -546,25 +546,25 @@ onMounted(() => {
             </div>
             <div class="grid grid-cols-2 gap-2 laptopWide:grid-cols-4">
               <article
-                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
                 <p class="text-lg desktop:text-2xl">90 041 000</p>
               </article>
               <article
-                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
                 <p class="text-lg desktop:text-2xl">1 784 494</p>
               </article>
               <article
-                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
                 <p class="text-lg desktop:text-2xl">80 926 000</p>
               </article>
               <article
-                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-2 px-4 pt-4 pb-3"
+                class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs laptop:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
                 <p class="text-lg desktop:text-2xl">92 823 000</p>

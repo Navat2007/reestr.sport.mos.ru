@@ -23,7 +23,7 @@ export default {
         '3xs': '8px',
         '2xs': '10px',
         'heading': '44px',
-        'modalHeading': '40px',
+        'modalHeading': 'clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem)',
       },
       width: {
         viewport: '90em',
