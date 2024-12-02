@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, reactive, ref } from 'vue'
 import Dialog from 'primevue/dialog'
+import Popover from 'primevue/popover'
 
 import Info from '@/assets/images/icons/info.svg'
 import Filter from '@/assets/images/icons/filter.svg'
@@ -8,15 +9,17 @@ import Search from '@/assets/images/icons/search.svg'
 import ArrowDown from '@/assets/images/icons/arrow-down.svg'
 import Company from '@/assets/images/icons/company.svg'
 
-const tabValue = ref("0");
-const isFilterShow = ref(false);
-const isDialogOpen = ref(false);
-const searchInput = ref(null);
+const tabValue = ref('0')
+const isFilterShow = ref(false)
+const isDialogOpen = ref(false)
+const searchInput = ref(null)
+const isFilterActivityTypeOpen = ref(false)
 const state = reactive({
   searchInput: '',
-});
+  selectedActivityTypes: []
+})
 
-const sportObject = ref(null);
+const sportObject = ref(null)
 const sportObjects = ref([
   {
     name: 'ООО «3СПОРТ»',
@@ -29,9 +32,9 @@ const sportObjects = ref([
     firmSize: 'Микропредприятие',
     capital: '10 000,00',
     employers: [
-      {year: 2022, count: 3},
-      {year: 2023, count: 2},
-      {year: 2024, count: 4},
+      { year: 2022, count: 3 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 4 }
     ]
   },
   {
@@ -45,9 +48,9 @@ const sportObjects = ref([
     firmSize: 'Микропредприятие',
     capital: '10 000,00',
     employers: [
-      {year: 2022, count: 3},
-      {year: 2023, count: 2},
-      {year: 2024, count: 4},
+      { year: 2022, count: 3 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 4 }
     ]
   },
   {
@@ -61,9 +64,9 @@ const sportObjects = ref([
     firmSize: 'Микропредприятие',
     capital: '10 000,00',
     employers: [
-      {year: 2022, count: 3},
-      {year: 2023, count: 2},
-      {year: 2024, count: 4},
+      { year: 2022, count: 3 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 4 }
     ]
   },
   {
@@ -77,9 +80,9 @@ const sportObjects = ref([
     firmSize: 'Микропредприятие',
     capital: '10 000,00',
     employers: [
-      {year: 2022, count: 3},
-      {year: 2023, count: 2},
-      {year: 2024, count: 4},
+      { year: 2022, count: 3 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 4 }
     ]
   },
   {
@@ -93,9 +96,9 @@ const sportObjects = ref([
     firmSize: 'Микропредприятие',
     capital: '10 000,00',
     employers: [
-      {year: 2022, count: 3},
-      {year: 2023, count: 2},
-      {year: 2024, count: 4},
+      { year: 2022, count: 3 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 4 }
     ]
   },
   {
@@ -109,26 +112,31 @@ const sportObjects = ref([
     firmSize: 'Микропредприятие',
     capital: '10 000,00',
     employers: [
-      {year: 2022, count: 3},
-      {year: 2023, count: 2},
-      {year: 2024, count: 4},
+      { year: 2022, count: 3 },
+      { year: 2023, count: 2 },
+      { year: 2024, count: 4 }
     ]
   }
-]);
-const filteredSportObjects = ref([]);
+])
+const filteredSportObjects = ref([])
+const activityTypes = ref([
+  { name: 'Деятельность 1', value: 'Деятельность 1' },
+  { name: 'Деятельность 2', value: 'Деятельность 2' },
+  { name: 'Деятельность 3', value: 'Деятельность 3' }
+])
 
 const onSportObjectClick = (item) => {
   sportObject.value = item
   isDialogOpen.value = true
 }
 const onSearch = () => {
-  console.log(state.searchInput);
-  filteredSportObjects.value = sportObjects.value.filter(item => item.name.toLowerCase().includes(state.searchInput.toLowerCase()));
+  console.log(state.searchInput)
+  filteredSportObjects.value = sportObjects.value.filter(item => item.name.toLowerCase().includes(state.searchInput.toLowerCase()))
 }
 
 onMounted(() => {
-  onSearch();
-});
+  onSearch()
+})
 </script>
 
 <template>
@@ -173,6 +181,7 @@ onMounted(() => {
       <Button
         rounded
         class="bg-bgColor bg-transparent border-transparent shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
+        @click="(event) => isFilterActivityTypeOpen.toggle(event)"
       >
         <span>Вид деятельности</span>
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
@@ -198,6 +207,18 @@ onMounted(() => {
         <span>Ведомственная принадлежность</span>
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
+
+      <Popover ref="isFilterActivityTypeOpen">
+        <div class="flex flex-col gap-4">
+          <div>
+            <span class="font-medium block mb-2">Вид деятельности</span>
+            <MultiSelect v-model="state.selectedActivityTypes" :options="activityTypes" filter optionLabel="name" optionValue="value"
+                         placeholder="" class="w-full md:w-56">
+
+            </MultiSelect>
+          </div>
+        </div>
+      </Popover>
     </div>
   </section>
   <!-- Результаты поиска -->
