@@ -194,7 +194,7 @@ import appStore from '@/assets/images/icons/appstore.svg'
   </footer>
 </template>
 
-<style>
+<style setup>
 .footer {
   @apply bg-bgColor shadow-footer;
   background-image: linear-gradient(to bottom, #f3f3f3 63%, #ffffff 63%, #ffffff 100%);

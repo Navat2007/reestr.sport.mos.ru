@@ -6,6 +6,7 @@ export default {
       colors: {
         bgColor: '#ffffff',
         bgSecondaryColor: '#F3F3F3',
+        bgAccentColor: '#2A3B4D',
         main: '#e22b36',
         mainHover: '#c11a24',
         textMain: '#2A3B4D',
@@ -15,6 +16,7 @@ export default {
         iconAccent: '#ffffff',
         error: '#e22b36',
         info: '#334CEB',
+        linkHover: 'rgba(0, 0, 0, 0.04)',
       },
       fontSize: {
         '3xs': '8px',
@@ -28,11 +30,13 @@ export default {
       },
       maxWidth: {
         footerImage: '300px',
+        mobileMenu: '470px',
       },
       spacing: {
         main: 'clamp(1rem, -1.25rem + 6.25vw, 4.375rem)',
       },
       boxShadow: {
+        AuthButton: 'rgba(0, 0, 0, 0.04) 0px 0.5px 1.75px, rgba(0, 0, 0, 0.19) 0px 1.85px 6.25px',
         footer: '0px 10px 36px 0px rgba(0, 0, 0, 0.19), 0px 3px 13px 0px rgba(0, 0, 0, 0.04)',
         footerApp: '0px 0px 15px 0px rgba(0, 0, 0, 0.15)',
       },
@@ -40,6 +44,7 @@ export default {
     screens: {
       mobile: '576px',
       laptop: '768px',
+      laptopWide: '1024px',
       desktop: '1440px',
     },
     fontFamily: {
