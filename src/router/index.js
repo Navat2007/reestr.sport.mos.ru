@@ -11,7 +11,16 @@ const router = createRouter({
       component: Index,
       meta: {
         layout: PublicLayout,
-        requiresAuth: true,
+        requiresAuth: false,
+      }
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: '404',
+      component: Index,
+      meta: {
+        layout: PublicLayout,
+        requiresAuth: false,
       }
     },
   ],
