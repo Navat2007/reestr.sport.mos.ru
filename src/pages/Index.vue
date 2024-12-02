@@ -8,6 +8,8 @@ import Filter from '@/assets/images/icons/filter.svg'
 import Search from '@/assets/images/icons/search.svg'
 import ArrowDown from '@/assets/images/icons/arrow-down.svg'
 import Company from '@/assets/images/icons/company.svg'
+import CheckCircle from '@/assets/images/icons/check-circle.svg'
+import ArrowLeft from '@/assets/images/icons/arrow-left.svg'
 
 const tabValue = ref('0')
 const isFilterShow = ref(false)
@@ -16,7 +18,7 @@ const searchInput = ref(null)
 const isFilterActivityTypeOpen = ref(false)
 const state = reactive({
   searchInput: '',
-  selectedActivityTypes: []
+  selectedActivityTypes: [],
 })
 
 const sportObject = ref(null)
@@ -24,7 +26,8 @@ const sportObjects = ref([
   {
     name: 'ООО «3СПОРТ»',
     fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «3СПОРТ»',
-    address: '105082, г.Москва, вн.тёр.г. муниципальный округ Басманный, пл Спартаковская, д.10, стр.12 (Бизнес-центр «Флеш Ланж 10с12»)',
+    address:
+      '105082, г.Москва, вн.тёр.г. муниципальный округ Басманный, пл Спартаковская, д.10, стр.12 (Бизнес-центр «Флеш Ланж 10с12»)',
     ogrn: '1127746355670',
     registrationDate: '04.05.2012',
     inn: '7708762136',
@@ -34,8 +37,8 @@ const sportObjects = ref([
     employers: [
       { year: 2022, count: 3 },
       { year: 2023, count: 2 },
-      { year: 2024, count: 4 }
-    ]
+      { year: 2024, count: 4 },
+    ],
   },
   {
     name: 'АНО «КЛУБ «САМБО-80»',
@@ -50,8 +53,8 @@ const sportObjects = ref([
     employers: [
       { year: 2022, count: 3 },
       { year: 2023, count: 2 },
-      { year: 2024, count: 4 }
-    ]
+      { year: 2024, count: 4 },
+    ],
   },
   {
     name: 'АНО «ПБЛ»',
@@ -66,8 +69,8 @@ const sportObjects = ref([
     employers: [
       { year: 2022, count: 3 },
       { year: 2023, count: 2 },
-      { year: 2024, count: 4 }
-    ]
+      { year: 2024, count: 4 },
+    ],
   },
   {
     name: 'АНО «ЦРД «БГ КОДОКАН»',
@@ -82,8 +85,8 @@ const sportObjects = ref([
     employers: [
       { year: 2022, count: 3 },
       { year: 2023, count: 2 },
-      { year: 2024, count: 4 }
-    ]
+      { year: 2024, count: 4 },
+    ],
   },
   {
     name: 'АНО РИВС «Ноев ковчег»',
@@ -98,8 +101,8 @@ const sportObjects = ref([
     employers: [
       { year: 2022, count: 3 },
       { year: 2023, count: 2 },
-      { year: 2024, count: 4 }
-    ]
+      { year: 2024, count: 4 },
+    ],
   },
   {
     name: 'АССОЦИАЦИЯ «МСКЛП «СТРАННИК»',
@@ -114,15 +117,15 @@ const sportObjects = ref([
     employers: [
       { year: 2022, count: 3 },
       { year: 2023, count: 2 },
-      { year: 2024, count: 4 }
-    ]
-  }
+      { year: 2024, count: 4 },
+    ],
+  },
 ])
 const filteredSportObjects = ref([])
 const activityTypes = ref([
   { name: 'Деятельность 1', value: 'Деятельность 1' },
   { name: 'Деятельность 2', value: 'Деятельность 2' },
-  { name: 'Деятельность 3', value: 'Деятельность 3' }
+  { name: 'Деятельность 3', value: 'Деятельность 3' },
 ])
 
 const onSportObjectClick = (item) => {
@@ -131,7 +134,9 @@ const onSportObjectClick = (item) => {
 }
 const onSearch = () => {
   console.log(state.searchInput)
-  filteredSportObjects.value = sportObjects.value.filter(item => item.name.toLowerCase().includes(state.searchInput.toLowerCase()))
+  filteredSportObjects.value = sportObjects.value.filter((item) =>
+    item.name.toLowerCase().includes(state.searchInput.toLowerCase()),
+  )
 }
 
 onMounted(() => {
@@ -147,8 +152,11 @@ onMounted(() => {
     >
       <h1 class="max-w-max font-heading text-heading uppercase leading-none">
         Реестр физкультурно-спортивных организаций
-        <Info class="inline align-top w-6 h-6 text-main active:translate-y-px" role="button"
-              aria-label="Подробная информация" />
+        <Info
+          class="inline align-top w-6 h-6 text-main active:translate-y-px"
+          role="button"
+          aria-label="Подробная информация"
+        />
       </h1>
       <div class="flex-auto flex gap-4 desktop:justify-end">
         <div
@@ -158,7 +166,8 @@ onMounted(() => {
             type="search"
             class="w-full py-2 px-4 rounded-full focus:outline-none"
             placeholder="Поиск по наименованию, адресу и виду спорта"
-            v-model="state.searchInput" v-on:keyup.enter="onSearch"
+            v-model="state.searchInput"
+            v-on:keyup.enter="onSearch"
           />
           <div class="search-divider"></div>
           <Button
@@ -177,58 +186,116 @@ onMounted(() => {
       </div>
     </div>
     <!-- Фильтры -->
-    <div v-if="isFilterShow" class="hidden gap-4 flex-wrap laptop:flex">
+    <div
+      v-if="isFilterShow"
+      class="flex flex-col gap-4 max-laptop:px-main max-laptop:shadow-filter bg-bgColor max-laptop:fixed max-laptop:left-0 max-laptop:right-0 max-laptop:bottom-0 laptop:flex-wrap laptop:flex-row desktop:justify-end"
+    >
+      <div class="flex gap-3 items-center py-10 laptop:hidden">
+        <Button
+          class="flex-none p-0 flex items-center justify-center bg-bgColor text-main rounded-2xl active:translate-y-px border-transparent"
+          @click="isFilterShow = !isFilterShow"
+        >
+          <ArrowLeft class="w-6 h-6" />
+        </Button>
+        <h3 class="text-2xl">Фильтры</h3>
+      </div>
       <Button
         rounded
-        class="bg-bgColor bg-transparent border-transparent shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
+        class="bg-bgColor bg-transparent border-divider desktop:border-transparent desktop:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
         @click="(event) => isFilterActivityTypeOpen.toggle(event)"
       >
-        <span>Вид деятельности</span>
+        <span class="flex-auto text-left desktop:text-center desktop:flex-none"
+          >Вид деятельности</span
+        >
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
       <Button
         rounded
-        class="bg-bgColor bg-transparent border-transparent shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
+        class="bg-bgColor bg-transparent border-divider desktop:border-transparent desktop:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
       >
-        <span>Правовая форма</span>
+        <span class="flex-auto text-left desktop:text-center desktop:flex-none"
+          >Правовая форма</span
+        >
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
       <Button
         rounded
-        class="bg-bgColor bg-transparent border-transparent shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
+        class="bg-bgColor bg-transparent border-divider desktop:border-transparent desktop:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
       >
-        <span>Форма собственности</span>
+        <span class="flex-auto text-left desktop:text-center desktop:flex-none"
+          >Форма собственности</span
+        >
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
       <Button
         rounded
-        class="bg-bgColor bg-transparent border-transparent shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
+        class="bg-bgColor bg-transparent border-divider desktop:border-transparent desktop:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
       >
-        <span>Ведомственная принадлежность</span>
+        <span class="flex-auto text-left desktop:text-center desktop:flex-none"
+          >Ведомственная принадлежность</span
+        >
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
+      <div class="flex gap-3 justify-center py-10 laptop:hidden">
+        <Button
+          class="flex-none px-12 py-2 bg-main text-textAccent text-sm rounded-full active:translate-y-px border-transparent shadow-authButton tracking-wide"
+        >
+          <span>Искать</span>
+        </Button>
+        <Button
+          class="flex-none px-12 py-2 bg-bgColor text-main text-sm rounded-full active:translate-y-px border-transparent tracking-wide"
+        >
+          <span>Очистить</span>
+        </Button>
+      </div>
 
       <Popover ref="isFilterActivityTypeOpen">
-        <div class="flex flex-col gap-4">
-          <div>
-            <span class="font-medium block mb-2">Вид деятельности</span>
-            <MultiSelect v-model="state.selectedActivityTypes" :options="activityTypes" filter optionLabel="name" optionValue="value"
-                         placeholder="" class="w-full md:w-56">
-
-            </MultiSelect>
+        <div class="-m-3">
+          <div class="m-2 flex gap-2 px-2 items-center rounded-xl bg-bgColor border border-divider">
+            <Button
+              class="flex-none p-0 flex items-center justify-center bg-transparent border-transparent active:translate-y-px"
+            >
+              <Search class="text-icon w-6 h-6" aria-hidden="true" />
+            </Button>
+            <input
+              type="search"
+              class="w-full py-2 rounded-2xl focus:outline-none"
+              placeholder="Поиск по наименованию, адресу и виду спорта"
+            />
           </div>
+          <ul class="max-w-lg max-h-48 desktop:max-w-none overflow-y-auto">
+            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
+              <CheckCircle class="flex-none w-5 h-5 text-icon" />
+              <p>
+                Растениеводство и животноводство, охота и предоставление соответствующих услуг в
+                этих областях
+              </p>
+            </li>
+            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
+              <CheckCircle class="flex-none w-5 h-5 text-main" />
+              <p>Лесоводство и лесозаготовки</p>
+            </li>
+            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
+              <CheckCircle class="flex-none w-5 h-5 text-icon" />
+              <p>Предоставление услуг в области добычи полезных ископаемых</p>
+            </li>
+            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
+              <CheckCircle class="flex-none w-5 h-5 text-icon" />
+              <p>Деятельность в области спорта</p>
+            </li>
+          </ul>
         </div>
       </Popover>
     </div>
   </section>
   <!-- Результаты поиска -->
   <section class="w-viewport max-w-full mx-auto px-main pb-section" aria-label="Результаты поиска">
-    <p class="text-center mb-10 laptop:text-right">Всего найдено: {{ filteredSportObjects.length }}</p>
+    <p class="text-center mb-10 laptop:text-right">
+      Всего найдено: {{ filteredSportObjects.length }}
+    </p>
     <div class="card-deck">
       <!-- TODO нет карточек -->
-      <article v-if="filteredSportObjects.length === 0">
-        Спортивные объекты не найдены
-      </article>
+      <article v-if="filteredSportObjects.length === 0">Спортивные объекты не найдены</article>
 
       <!-- Карточка организации -->
       <article
@@ -259,7 +326,9 @@ onMounted(() => {
   </section>
 
   <Dialog
-    v-model:visible="isDialogOpen" modal close-on-escape
+    v-model:visible="isDialogOpen"
+    modal
+    close-on-escape
     pt:mask:class="backdrop-blur-sm"
     class="mobile:w-8/12 w-full"
   >
@@ -331,7 +400,7 @@ onMounted(() => {
                   <h3 class="text-xs text-textSecondary">
                     Среднесписочная численность сотрудников в
                     <span class="select-yrs"
-                    >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+                      >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
                     /></span>
                   </h3>
                   <p>3 чел.</p>
@@ -340,15 +409,9 @@ onMounted(() => {
             </div>
           </section>
         </TabPanel>
-        <TabPanel value="1">
-
-        </TabPanel>
-        <TabPanel value="2">
-
-        </TabPanel>
-        <TabPanel value="3">
-
-        </TabPanel>
+        <TabPanel value="1"> </TabPanel>
+        <TabPanel value="2"> </TabPanel>
+        <TabPanel value="3"> </TabPanel>
       </TabPanels>
     </Tabs>
   </Dialog>

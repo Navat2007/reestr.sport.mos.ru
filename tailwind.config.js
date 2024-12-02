@@ -45,6 +45,7 @@ export default {
         footerApp: '0px 0px 15px 0px rgba(0, 0, 0, 0.15)',
         card: '0px 1.85px 6.25px 0px rgba(0, 0, 0, 0.19)',
         cardHover: '0px 3px 13px 0px rgba(0, 0, 0, 0.04), 0px 10px 36px 0px rgba(0, 0, 0, 0.19)',
+        filter: '0px 3px 13px 0px rgba(0, 0, 0, 0.04), 0px 10px 36px 0px rgba(0, 0, 0, 0.19)',
       },
     },
     screens: {
