@@ -215,7 +215,10 @@ const onSportObjectClick = (item) => {
   </section>
 
 
-  <Dialog v-model:visible="isDialogOpen" modal class="w-8/12">
+  <Dialog
+    v-model:visible="isDialogOpen" modal close-on-escape
+    class="w-8/12"
+  >
     <template #header>
       <h1 class="text-3xl font-bold">{{ sportObject.name }}</h1>
     </template>
@@ -234,28 +237,28 @@ const onSportObjectClick = (item) => {
             <h2 class="text-2xl font-medium">Общие сведения</h2>
             <div class="flex flex-col gap-1">
               <h3 class="text-xs text-textSecondary">Полное наименование организации</h3>
-              <p>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «3СПОРТ»</p>
+              <p>{{ sportObject.fullName }}</p>
             </div>
             <div class="flex flex-col gap-4 laptop:flex-row">
               <div class="flex-auto flex flex-col gap-4">
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">Краткое наименование организации</h3>
-                  <p>ООО «3СПОРТ»</p>
+                  <p>{{ sportObject.name }}</p>
                 </div>
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">Регион регистрации</h3>
-                  <p>Москва</p>
+                  <p>{{ sportObject.region }}</p>
                 </div>
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">
                     Размер организации
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
-                  <p>Микропредприятие</p>
+                  <p>{{ sportObject.firmSize }}</p>
                 </div>
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">Дата регистрации</h3>
-                  <p>04.05.2012</p>
+                  <p>{{ sportObject.registrationDate }}</p>
                 </div>
               </div>
               <div class="w-px bg-divider"></div>
@@ -265,21 +268,21 @@ const onSportObjectClick = (item) => {
                     ИНН
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
-                  <p>7708762136</p>
+                  <p>{{ sportObject.ogrn }}</p>
                 </div>
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">
                     ОГРН
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
-                  <p>1127746355670</p>
+                  <p>{{ sportObject.inn }}</p>
                 </div>
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">
                     Уставный капитал, руб.
                     <Info class="inline align-top w-4 h-4 text-main" role="button" />
                   </h3>
-                  <p>10 000,00</p>
+                  <p>{{ sportObject.capital }}</p>
                 </div>
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xs text-textSecondary">
