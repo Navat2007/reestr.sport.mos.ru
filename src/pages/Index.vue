@@ -214,10 +214,10 @@ const onSportObjectClick = (item) => {
     </div>
   </section>
 
-
   <Dialog
     v-model:visible="isDialogOpen" modal close-on-escape
-    class="w-8/12"
+    pt:mask:class="backdrop-blur-sm"
+    class="mobile:w-8/12 w-full"
   >
     <template #header>
       <h1 class="text-3xl font-bold">{{ sportObject.name }}</h1>
@@ -298,10 +298,13 @@ const onSportObjectClick = (item) => {
           </section>
         </TabPanel>
         <TabPanel value="1">
+
         </TabPanel>
         <TabPanel value="2">
+
         </TabPanel>
         <TabPanel value="3">
+
         </TabPanel>
       </TabPanels>
     </Tabs>
