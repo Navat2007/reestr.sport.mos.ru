@@ -19,9 +19,9 @@ import AppStore from '@/assets/images/icons/appstore.svg'
 <template>
   <footer class="flex-none mt-auto">
     <div class="footer">
-      <div class="w-viewport max-w-full mx-auto px-main flex flex-col desktop:flex-row">
+      <div class="w-viewport max-w-full mx-auto px-main flex flex-col xl:flex-row">
         <div
-          class="flex flex-col flex-wrap items-center justify-around gap-4 py-8 px-2 laptop:items-start laptop:flex-row desktop:w-footerAddress desktop:flex-col desktop:pr-10 desktop:pl-0"
+          class="flex flex-col flex-wrap items-center justify-around gap-4 py-8 px-2 md:items-start md:flex-row xl:w-footerAddress xl:flex-col xl:pr-10 xl:pl-0"
         >
           <div class="w-address flex gap-10">
             <a href="https://www.mos.ru/moskomsport/" target="_blank" rel="nofollow noopener">
@@ -53,7 +53,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
               </li>
             </ul>
           </address>
-          <ul class="flex gap-4 mt-5 w-full justify-center desktop:w-auto desktop:justify-normal">
+          <ul class="flex gap-4 mt-5 w-full justify-center xl:w-auto xl:justify-normal">
             <li>
               <a href="https://t.me/MoscowSportOfficial" class="grid active:translate-y-px" rel="noopener nofollow">
                 <Telegram
@@ -93,19 +93,19 @@ import AppStore from '@/assets/images/icons/appstore.svg'
           </ul>
         </div>
         <div
-          class="flex flex-col gap-6 py-8 px-2 relative z-20 overflow-hidden -order-1 desktop:w-footerApp desktop:order-none desktop:pl-10 desktop:pr-0"
+          class="flex flex-col gap-6 py-8 px-2 relative z-20 overflow-hidden -order-1 xl:w-footerApp xl:order-none xl:pl-10 xl:pr-0"
         >
-          <h2 class="text-lg font-medium w-60 laptop:w-full">
+          <h2 class="text-lg font-medium w-60 md:w-full">
             Мобильное приложение «Московский спорт»
           </h2>
-          <div class="flex items-center gap-5 laptop:gap-6 max-w-80">
+          <div class="flex items-center gap-5 md:gap-6 max-w-80">
             <div class="flex-none qr-code">
               <QrCode class="w-full h-full" />
             </div>
             <p class="leading-normal tracking-wide">Сканируй QR-код, чтобы скачать приложение</p>
           </div>
           <ul
-            class="flex gap-5 flex-col items-start flex-wrap laptop:flex-row laptop:items-stretch"
+            class="flex gap-5 flex-col items-start flex-wrap md:flex-row md:items-stretch"
           >
             <li>
               <a
@@ -115,15 +115,15 @@ import AppStore from '@/assets/images/icons/appstore.svg'
                 rel="nofollow noopener"
               >
                 <RuStore
-                  class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 laptop:h-8 laptop:w-8"
+                  class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 md:h-8 md:w-8"
                   aria-label="hidden"
                 />
                 <p
-                  class="text-3xs tracking-wide row-start-1 row-end-2 col-start-2 col-end-3 laptop:text-2xs"
+                  class="text-3xs tracking-wide row-start-1 row-end-2 col-start-2 col-end-3 md:text-2xs"
                 >
                   Доступно в
                 </p>
-                <p class="text-sm font-medium laptop:text-xl">RuStore</p>
+                <p class="text-sm font-medium md:text-xl">RuStore</p>
               </a>
             </li>
             <li>
@@ -134,15 +134,15 @@ import AppStore from '@/assets/images/icons/appstore.svg'
                 rel="nofollow noopener"
               >
                 <RuMarket
-                  class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 laptop:h-8 laptop:w-8"
+                  class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 md:h-8 md:w-8"
                   aria-label="hidden"
                 />
                 <p
-                  class="text-3xs tracking-wide row-start-1 row-end-2 col-start-2 col-end-3 laptop:text-2xs"
+                  class="text-3xs tracking-wide row-start-1 row-end-2 col-start-2 col-end-3 laptmdop:text-2xs"
                 >
                   Доступно в
                 </p>
-                <p class="text-sm font-medium laptop:text-xl">RuMarket</p>
+                <p class="text-sm font-medium md:text-xl">RuMarket</p>
               </a>
             </li>
             <li>
@@ -153,20 +153,20 @@ import AppStore from '@/assets/images/icons/appstore.svg'
                 rel="nofollow noopener"
               >
                 <AppStore
-                  class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 laptop:h-8 laptop:w-8"
+                  class="h-6 w-6 row-start-1 row-end-3 col-start-1 col-end-2 md:h-8 md:w-8"
                   aria-label="hidden"
                 />
                 <p
-                  class="text-3xs tracking-wide row-start-1 row-end-2 col-start-2 col-end-3 laptop:text-2xs"
+                  class="text-3xs tracking-wide row-start-1 row-end-2 col-start-2 col-end-3 md:text-2xs"
                 >
                   Доступно в
                 </p>
-                <p class="text-sm font-medium laptop:text-xl">App&nbsp;Store</p>
+                <p class="text-sm font-medium md:text-xl">App&nbsp;Store</p>
               </a>
             </li>
           </ul>
           <img
-            class="absolute right-0 top-64 -z-10 w-1/2 max-w-footerImage mobile:top-auto mobile:bottom-0 mobile:translate-y-1/2 laptop:translate-y-0 laptop:bottom-auto laptop:top-4"
+            class="absolute right-0 top-64 -z-10 w-1/2 max-w-footerImage sm:top-auto sm:bottom-0 sm:translate-y-1/2 md:translate-y-0 md:bottom-auto md:top-4"
             :src="Device"
             alt="Изображение мобильного телефона с открытым приложением"
             width="300"
@@ -175,18 +175,18 @@ import AppStore from '@/assets/images/icons/appstore.svg'
       </div>
     </div>
     <div
-      class="bg-bgColor px-main py-3 flex flex-col gap-x-10 flex-wrap shadow-footer desktop:justify-center desktop:text-center desktop:items-center"
+      class="bg-bgColor px-main py-3 flex flex-col gap-x-10 flex-wrap shadow-footer xl:justify-center xl:text-center xl:items-center"
     >
       <a
         href="https://www.mos.ru/upload/documents/files/5620/Politikavotnosheniiobrabotkipersonalnihdannih.pdf"
-        class="text-textSecondary text-2xs desktop:text-xs"
+        class="text-textSecondary text-2xs xl:text-xs"
         download
         target="_blank"
         >Политика в отношении обработки персональных данных</a
       >
       <a
         href="https://www.mos.ru/legal/rules/"
-        class="text-textSecondary text-2xs desktop:text-xs"
+        class="text-textSecondary text-2xs xl:text-xs"
         target="_blank"
         >Соглашение о пользовании информационными системами и ресурсами города Москвы</a
       >
@@ -214,7 +214,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
   box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.25);
 }
 .app-link {
-  @apply w-36 grid gap-x-2 bg-bgColor p-2 border border-textMain shadow-footerApp rounded-3xl laptop:w-auto laptop:p-3;
+  @apply w-36 grid gap-x-2 bg-bgColor p-2 border border-textMain shadow-footerApp rounded-3xl md:w-auto md:p-3;
   grid-template-columns: auto max-content;
   align-items: center;
   justify-content: center;

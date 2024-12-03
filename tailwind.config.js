@@ -2,6 +2,16 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      sm: '576px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
+    },
+    fontFamily: {
+      sans: ['Gotham Pro', 'sans-serif'],
+      heading: ['Mossport', 'sans-serif'],
+    },
     extend: {
       colors: {
         bgColor: '#ffffff',
@@ -22,8 +32,8 @@ export default {
       fontSize: {
         '3xs': '8px',
         '2xs': '10px',
-        'heading': '44px',
-        'modalHeading': 'clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem)',
+        heading: '44px',
+        modalHeading: 'clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem)',
       },
       width: {
         viewport: '90em',
@@ -48,16 +58,6 @@ export default {
         cardHover: '0px 3px 13px 0px rgba(0, 0, 0, 0.04), 0px 10px 36px 0px rgba(0, 0, 0, 0.19)',
         filter: '0px 3px 13px 0px rgba(0, 0, 0, 0.04), 0px 10px 36px 0px rgba(0, 0, 0, 0.19)',
       },
-    },
-    screens: {
-      mobile: '576px',
-      laptop: '768px',
-      laptopWide: '1024px',
-      desktop: '1440px',
-    },
-    fontFamily: {
-      heading: ['Mossport', 'sans-serif'],
-      sans: ['Gotham Pro', 'sans-serif'],
     },
   },
   plugins: [require('tailwindcss-primeui')],
