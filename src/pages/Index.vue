@@ -347,13 +347,13 @@ onMounted(() => {
     </template>
 
     <Tabs :value="tabValue" scrollable>
-      <TabList>
-        <Tab value="0"><span class="text-sm font-normal">Общие сведения</span></Tab>
-        <Tab value="1"><span class="text-sm font-normal">Характеристики</span></Tab>
-        <Tab value="2"><span class="text-sm font-normal">Контакты</span></Tab>
-        <Tab value="3"><span class="text-sm font-normal">Финансы</span></Tab>
+      <TabList pt:root="border-b border-bgSecondaryColor">
+        <Tab value="0" pt:root="py-1 px-0 mr-5 text-sm font-normal">Общие сведения</Tab>
+        <Tab value="1" pt:root="py-1 px-0 mr-5 text-sm font-normal">Характеристики</Tab>
+        <Tab value="2" pt:root="py-1 px-0 mr-5 text-sm font-normal">Контакты</Tab>
+        <Tab value="3" pt:root="py-1 px-0 mr-5 text-sm font-normal">Финансы</Tab>
       </TabList>
-      <TabPanels>
+      <TabPanels pt:root="p-0">
         <TabPanel value="0">
           <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Общие сведения</h2>
