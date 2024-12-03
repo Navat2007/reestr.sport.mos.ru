@@ -152,9 +152,7 @@ onMounted(() => {
 <template>
   <!-- Главный поиск -->
   <section class="w-viewport max-w-full mx-auto px-main py-section">
-    <div
-      class="flex gap-3 flex-col md:mb-3 xl:flex-row xl:items-center xl:justify-between"
-    >
+    <div class="flex gap-3 flex-col md:mb-3 xl:flex-row xl:items-center xl:justify-between">
       <h1 class="max-w-max font-heading text-4xl md:text-heading uppercase leading-none">
         Реестр физкультурно-спортивных организаций
         <Info
@@ -209,27 +207,21 @@ onMounted(() => {
         class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
         @click="(event) => isFilterActivityTypeOpen.toggle(event)"
       >
-        <span class="flex-auto text-left xl:text-center xl:flex-none"
-          >Вид деятельности</span
-        >
+        <span class="flex-auto text-left xl:text-center xl:flex-none">Вид деятельности</span>
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
       <Button
         rounded
         class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
       >
-        <span class="flex-auto text-left xl:text-center xl:flex-none"
-          >Правовая форма</span
-        >
+        <span class="flex-auto text-left xl:text-center xl:flex-none">Правовая форма</span>
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
       <Button
         rounded
         class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
       >
-        <span class="flex-auto text-left xl:text-center xl:flex-none"
-          >Форма собственности</span
-        >
+        <span class="flex-auto text-left xl:text-center xl:flex-none">Форма собственности</span>
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
       <Button
@@ -341,22 +333,20 @@ onMounted(() => {
     v-model:visible="isDialogOpen"
     modal
     close-on-escape
-    pt:mask:class="backdrop-blur-sm"
-    class="sm:w-8/12 w-full"
-    dialog.header.padding="0"
-    :pt="{
-      CloseButton: 'w-10 h-10',
-    }"
+    pt:root="max-w-5xl w-full"
+    pt:mask="backdrop-blur-lg"
+    pt:header="lg:px-9 pt-9 pb-5"
+    pt:content="lg:px-9 pt-0 pb-9"
   >
     <template #header>
       <h2 class="text-modalHeading font-medium">{{ sportObject.name }}</h2>
     </template>
 
     <template #closeicon>
-      <CloseModal />
+      <CloseModal class="w-8 h-8 text-main" />
     </template>
 
-    <Tabs :value="tabValue" scrollable>
+    <Tabs :value="tabValue" unstyled scrollable pt:tabList="gap-3" pt:activeBar="max-w-5xl w-full">
       <TabList>
         <Tab value="0"><span class="text-sm font-normal">Общие сведения</span></Tab>
         <Tab value="1"><span class="text-sm font-normal">Характеристики</span></Tab>
