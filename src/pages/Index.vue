@@ -346,7 +346,7 @@ onMounted(() => {
       <CloseModal class="w-8 h-8 text-main" />
     </template>
 
-    <Tabs :value="tabValue" unstyled scrollable pt:tabList="gap-3" pt:activeBar="max-w-5xl w-full">
+    <Tabs :value="tabValue" scrollable>
       <TabList>
         <Tab value="0"><span class="text-sm font-normal">Общие сведения</span></Tab>
         <Tab value="1"><span class="text-sm font-normal">Характеристики</span></Tab>
@@ -355,7 +355,7 @@ onMounted(() => {
       </TabList>
       <TabPanels>
         <TabPanel value="0">
-          <section class="-mx-4 flex flex-col gap-4">
+          <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Общие сведения</h2>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">Полное наименование организации</h3>
@@ -429,7 +429,7 @@ onMounted(() => {
           </section>
         </TabPanel>
         <TabPanel value="1">
-          <section class="-mx-4 flex flex-col gap-4">
+          <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Характеристики</h2>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -493,7 +493,7 @@ onMounted(() => {
           </section>
         </TabPanel>
         <TabPanel value="2">
-          <section class="-mx-4 flex flex-col gap-4">
+          <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Контактная информация</h2>
             <div class="flex flex-wrap gap-4">
               <div class="flex-auto flex flex-col">
@@ -533,7 +533,7 @@ onMounted(() => {
           </section>
         </TabPanel>
         <TabPanel value="3">
-          <section class="-mx-4 flex flex-col gap-4">
+          <section class="flex flex-col gap-4">
             <div>
               <h2 class="text-2xl font-medium">Финансы</h2>
               <h3 class="text-sm text-textSecondary">
