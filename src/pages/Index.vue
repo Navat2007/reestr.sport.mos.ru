@@ -188,8 +188,8 @@ onMounted(() => {
           v-tooltip.top="{
             value: 'Скрыть и очистить все',
             pt: {
-              arrow: 'border-b-bgColor',
-              text: 'bg-bgColor text-textMain text-xs text-center',
+              arrow: 'border-b-bgColor border-t-bgColor',
+              text: 'p-3 rounded-lg bg-bgColor text-textMain text-xs text-center shadow-card',
             },
           }"
         >
@@ -343,7 +343,7 @@ onMounted(() => {
     modal
     close-on-escape
     :pt="{
-      root: 'w-[calc(100%-32px)] lg:w-full max-w-5xl',
+      root: 'w-[calc(100%-32px)] lg:w-full max-w-5xl m-0 max-h-[calc(100%-32px)]',
       mask: 'backdrop-blur-lg',
       header: 'px-4 pt-6 pb-5 lg:px-9 lg:pt-9',
       content: 'px-4 pb-6 pt-0 lg:px-9 lg:pb-9',
@@ -389,10 +389,12 @@ onMounted(() => {
                       class="inline align-top w-4 h-4 text-main"
                       role="button"
                       v-tooltip.top="{
-                        value: 'Размер организации (микропредприятия/малые предприятия/средние предприятия/ крупные предприятия)',
+                        value:
+                          'Размер организации (микропредприятия/малые предприятия/средние предприятия/ крупные предприятия)',
                         pt: {
-                          arrow: 'border-b-bgToolpitColor',
-                          text: 'bg-bgToolpitColor text-textMain text-xs text-center',
+                          root: 'ml-2',
+                          arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                          text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
                         },
                       }"
                     />
@@ -409,21 +411,57 @@ onMounted(() => {
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     ИНН
-                    <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                    <Info
+                      class="inline align-top w-4 h-4 text-main"
+                      role="button"
+                      v-tooltip.top="{
+                        value:
+                          'Идентификационный номер налогоплательщика-организации, ИНН (цифровой код, который упорядочивает учёт налогоплательщиков)',
+                        pt: {
+                          root: 'ml-2',
+                          arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                          text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                        },
+                      }"
+                    />
                   </h3>
                   <p>{{ sportObject.ogrn }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     ОГРН
-                    <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                    <Info
+                      class="inline align-top w-4 h-4 text-main"
+                      role="button"
+                      v-tooltip.top="{
+                        value:
+                          'Регистрационный номер организации, ОГРН (цифровой идентификатор организации, который подтверждает, что сведения о ней внесены в Единый государственный реестр юридических лиц)',
+                        pt: {
+                          root: 'ml-2',
+                          arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                          text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                        },
+                      }"
+                    />
                   </h3>
                   <p>{{ sportObject.inn }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Уставный капитал, руб.
-                    <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                    <Info
+                      class="inline align-top w-4 h-4 text-main"
+                      role="button"
+                      v-tooltip.top="{
+                        value:
+                          'Уставный капитал (сумма средств, которую учредители или собственники организации вносят с целью обеспечения её функционирования)',
+                        pt: {
+                          root: 'ml-2',
+                          arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                          text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                        },
+                      }"
+                    />
                   </h3>
                   <p>{{ sportObject.capital }}</p>
                 </div>
@@ -455,14 +493,38 @@ onMounted(() => {
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 ОКВЭД основной
-                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                <Info
+                  class="inline align-top w-4 h-4 text-main"
+                  role="button"
+                  v-tooltip.top="{
+                    value:
+                      'Вид деятельности/отрасль, основная (общероссийский классификатор видов экономической деятельности, ОКВЭД)',
+                    pt: {
+                      root: 'ml-2',
+                      arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                      text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                    },
+                  }"
+                />
               </h3>
               <p>Деятельность в области спорта</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 ОКВЭД дополнительный
-                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                <Info
+                  class="inline align-top w-4 h-4 text-main"
+                  role="button"
+                  v-tooltip.top="{
+                    value:
+                      'Вид деятельности/отрасль, дополнительная (общероссийский классификатор видов экономической деятельности, ОКВЭД) (при наличии)',
+                    pt: {
+                      root: 'ml-2',
+                      arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                      text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                    },
+                  }"
+                />
               </h3>
               <ul class="list-disc pl-6">
                 <li>Торговля розничная спортивной одежой в специализированных магазинах</li>
@@ -490,21 +552,57 @@ onMounted(() => {
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Организационно-правовая форма
-                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                <Info
+                  class="inline align-top w-4 h-4 text-main"
+                  role="button"
+                  v-tooltip.top="{
+                    value:
+                      'Организационно-правовая форма (характеристика юридического лица, которая раскрывает его внутреннюю структуру и механизмы взаимодействия между структурными элементами)',
+                    pt: {
+                      root: 'ml-2',
+                      arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                      text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                    },
+                  }"
+                />
               </h3>
               <p>Общества с ограниченной ответственностью</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Форма собственности
-                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                <Info
+                  class="inline align-top w-4 h-4 text-main"
+                  role="button"
+                  v-tooltip.top="{
+                    value:
+                      'Форма собственности (форма прав владельца на определённое имущество: частная, коммерческая, иностранная, совместная)',
+                    pt: {
+                      root: 'ml-2',
+                      arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                      text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                    },
+                  }"
+                />
               </h3>
               <p>Частная собственность</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Ведомственная принадлежность
-                <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                <Info
+                  class="inline align-top w-4 h-4 text-main"
+                  role="button"
+                  v-tooltip.top="{
+                    value:
+                      'Ведомственная принадлежность (показывает, какому именно ведомству принадлежит организация: федерального, регионального, либо иного органа исполнительной (законодательной, судебной) власти на территории города Москвы)',
+                    pt: {
+                      root: 'ml-2',
+                      arrow: 'border-b-bgToolpitColor border-t-bgToolpitColor',
+                      text: 'p-3 rounded-lg bg-bgToolpitColor text-textMain text-xs shadow-card',
+                    },
+                  }"
+                />
               </h3>
               <p>
                 Организации, учреждённые юридическими лицами или гражданами, или юридическими лицами
