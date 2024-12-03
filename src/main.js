@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
+import {definePreset} from "@primevue/themes";
 import Aura from '@primevue/themes/aura';
+import Material from '@primevue/themes/material';
+import Nora from '@primevue/themes/nora';
+import Lara from '@primevue/themes/lara';
 import Tooltip from 'primevue/tooltip';
 
 import App from './App.vue'
@@ -11,6 +15,24 @@ import './styles/style.css'
 import 'primeicons/primeicons.css'
 
 const app = createApp(App)
+
+const MyPreset = definePreset(Material, {
+  semantic: {
+    primary: {
+      50: '#6366F1',
+      100: '#6366F1',
+      200: '#6366F1',
+      300: '#6366F1',
+      400: '#6366F1',
+      500: '#6366F1',
+      600: '#6366F1',
+      700: '#6366F1',
+      800: '#6366F1',
+      900: '#6366F1',
+      950: '#6366F1'
+    },
+  }
+});
 
 app.use(createPinia())
 app.use(router)
@@ -206,7 +228,7 @@ app.use(PrimeVue, {
     },
   },
   theme: {
-    preset: Aura,
+    preset: MyPreset,
     options: {
       darkModeSelector: '.dark',
       cssLayer: {
