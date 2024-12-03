@@ -347,11 +347,11 @@ onMounted(() => {
     </template>
 
     <Tabs :value="tabValue" scrollable>
-      <TabList pt:root="border-b border-bgSecondaryColor">
-        <Tab value="0" pt:root="py-1 px-0 mr-5 text-sm font-normal">Общие сведения</Tab>
-        <Tab value="1" pt:root="py-1 px-0 mr-5 text-sm font-normal">Характеристики</Tab>
-        <Tab value="2" pt:root="py-1 px-0 mr-5 text-sm font-normal">Контакты</Tab>
-        <Tab value="3" pt:root="py-1 px-0 mr-5 text-sm font-normal">Финансы</Tab>
+      <TabList pt:root="border-divider" pt:activeBar="border-2 border-main">
+        <Tab value="0" pt:root="py-2 px-0 mr-5 text-sm font-normal">Общие сведения</Tab>
+        <Tab value="1" pt:root="py-2 px-0 mr-5 text-sm font-normal">Характеристики</Tab>
+        <Tab value="2" pt:root="py-2 px-0 mr-5 text-sm font-normal">Контакты</Tab>
+        <Tab value="3" pt:root="py-2 px-0 mr-5 text-sm font-normal">Финансы</Tab>
       </TabList>
       <TabPanels pt:root="p-0">
         <TabPanel value="0">
