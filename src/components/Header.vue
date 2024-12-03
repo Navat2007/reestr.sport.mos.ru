@@ -44,7 +44,7 @@ const isDrawerOpen = ref(false)
       v-model:visible="isDrawerOpen"
       position="right"
       :show-close-icon="false"
-      class="w-full max-w-mobileMenu bg-bgAccentColor border-0 sm:rounded-l-2xl px-5 lg:px-11"
+      class="w-full max-w-[470px] bg-bgAccentColor border-0 sm:rounded-l-2xl px-5 lg:px-11"
     >
       <template #header>
         <Button

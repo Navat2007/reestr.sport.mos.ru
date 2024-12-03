@@ -37,13 +37,6 @@ export default {
       },
       width: {
         viewport: '90em',
-        footerAddress: '40%',
-        footerApp: '60%',
-        address: '310px',
-      },
-      maxWidth: {
-        footerImage: '300px',
-        mobileMenu: '470px',
       },
       spacing: {
         main: 'clamp(1rem, -1.25rem + 6.25vw, 4.375rem)',

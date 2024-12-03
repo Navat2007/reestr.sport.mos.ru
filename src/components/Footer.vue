@@ -21,9 +21,9 @@ import AppStore from '@/assets/images/icons/appstore.svg'
     <div class="footer">
       <div class="w-viewport max-w-full mx-auto px-main flex flex-col xl:flex-row">
         <div
-          class="flex flex-col flex-wrap items-center justify-around gap-4 py-8 px-2 md:items-start md:flex-row xl:w-footerAddress xl:flex-col xl:pr-10 xl:pl-0"
+          class="flex flex-col flex-wrap items-center justify-around gap-4 py-8 px-2 md:items-start md:flex-row xl:w-[40%] xl:flex-col xl:pr-10 xl:pl-0"
         >
-          <div class="w-address flex gap-10">
+          <div class="w-[310px] flex gap-10">
             <a href="https://www.mos.ru/moskomsport/" target="_blank" rel="nofollow noopener">
               <LogoMin class="h-11" />
             </a>
@@ -31,7 +31,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
               <Logo class="h-11 text-main" />
             </a>
           </div>
-          <address class="w-address flex flex-col gap-4 not-italic">
+          <address class="w-[310px] flex flex-col gap-4 not-italic">
             <p class="text-sm font-medium">Служба поддержки пользователей:</p>
             <ul class="flex gap-3 flex-col">
               <li>
@@ -93,7 +93,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
           </ul>
         </div>
         <div
-          class="flex flex-col gap-6 py-8 px-2 relative z-20 overflow-hidden -order-1 xl:w-footerApp xl:order-none xl:pl-10 xl:pr-0"
+          class="flex flex-col gap-6 py-8 px-2 relative z-20 overflow-hidden -order-1 xl:w-[60%] xl:order-none xl:pl-10 xl:pr-0"
         >
           <h2 class="text-lg font-medium w-60 md:w-full">
             Мобильное приложение «Московский спорт»
@@ -166,7 +166,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
             </li>
           </ul>
           <img
-            class="absolute right-0 top-64 -z-10 w-1/2 max-w-footerImage sm:top-auto sm:bottom-0 sm:translate-y-1/2 md:translate-y-0 md:bottom-auto md:top-4"
+            class="absolute right-0 top-64 -z-10 w-1/2 max-w-[300px] sm:top-auto sm:bottom-0 sm:translate-y-1/2 md:translate-y-0 md:bottom-auto md:top-4"
             :src="Device"
             alt="Изображение мобильного телефона с открытым приложением"
             width="300"
