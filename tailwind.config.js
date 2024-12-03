@@ -17,6 +17,7 @@ export default {
         bgColor: '#ffffff',
         bgSecondaryColor: '#F3F3F3',
         bgAccentColor: '#2A3B4D',
+        bgToolpitColor: '#FFF9B2',
         main: '#e22b36',
         mainHover: '#c11a24',
         textMain: '#2A3B4D',

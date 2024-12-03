@@ -2,6 +2,8 @@
 import { onMounted, reactive, ref } from 'vue'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
+import Chart from 'primevue/chart'
+import Tooltip from 'primevue/tooltip'
 
 import Info from '@/assets/images/icons/info.svg'
 import Filter from '@/assets/images/icons/filter.svg'
@@ -183,6 +185,13 @@ onMounted(() => {
         <Button
           class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover md:bg-bgColor md:text-icon"
           @click="isFilterShow = !isFilterShow"
+          v-tooltip.top="{
+            value: 'Скрыть и очистить все',
+            pt: {
+              arrow: 'border-b-bgColor',
+              text: 'bg-bgColor text-textMain text-xs text-center',
+            },
+          }"
         >
           <Filter class="w-6 h-6" aria-hidden="true" />
         </Button>
@@ -333,17 +342,19 @@ onMounted(() => {
     v-model:visible="isDialogOpen"
     modal
     close-on-escape
-    pt:root="max-w-5xl w-full"
-    pt:mask="backdrop-blur-lg"
-    pt:header="lg:px-9 pt-9 pb-5"
-    pt:content="lg:px-9 pt-0 pb-9"
+    :pt="{
+      root: 'w-[calc(100%-32px)] lg:w-full max-w-5xl',
+      mask: 'backdrop-blur-lg',
+      header: 'px-4 pt-6 pb-5 lg:px-9 lg:pt-9',
+      content: 'px-4 pb-6 pt-0 lg:px-9 lg:pb-9',
+    }"
   >
     <template #header>
-      <h2 class="text-modalHeading font-medium">{{ sportObject.name }}</h2>
+      <h2 class="text-modalHeading font-medium truncate">{{ sportObject.name }}</h2>
     </template>
 
     <template #closeicon>
-      <CloseModal class="w-8 h-8 text-main" />
+      <CloseModal class="w-6 h-6 lg:w-8 lg:h-8 text-main" />
     </template>
 
     <Tabs :value="tabValue" scrollable>
@@ -353,7 +364,7 @@ onMounted(() => {
         <Tab value="2" pt:root="py-2 px-0 mr-5 text-sm font-normal">Контакты</Tab>
         <Tab value="3" pt:root="py-2 px-0 mr-5 text-sm font-normal">Финансы</Tab>
       </TabList>
-      <TabPanels pt:root="p-0">
+      <TabPanels pt:root="px-0 pt-5 pb-0">
         <TabPanel value="0">
           <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Общие сведения</h2>
@@ -374,7 +385,17 @@ onMounted(() => {
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Размер организации
-                    <Info class="inline align-top w-4 h-4 text-main" role="button" />
+                    <Info
+                      class="inline align-top w-4 h-4 text-main"
+                      role="button"
+                      v-tooltip.top="{
+                        value: 'Размер организации (микропредприятия/малые предприятия/средние предприятия/ крупные предприятия)',
+                        pt: {
+                          arrow: 'border-b-bgToolpitColor',
+                          text: 'bg-bgToolpitColor text-textMain text-xs text-center',
+                        },
+                      }"
+                    />
                   </h3>
                   <p>{{ sportObject.firmSize }}</p>
                 </div>
@@ -495,7 +516,7 @@ onMounted(() => {
         <TabPanel value="2">
           <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Контактная информация</h2>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex max-sm:flex-col flex-wrap gap-4">
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
                 <a href="tel:+79268600934" class="flex items-center gap-2">
@@ -569,6 +590,7 @@ onMounted(() => {
                 <p class="text-lg xl:text-2xl">92 823 000</p>
               </article>
             </div>
+            <Chart type="bar" :data="chartData" :options="chartOptions" class="h-[30rem]" />
           </section>
         </TabPanel>
       </TabPanels>
