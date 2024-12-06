@@ -300,7 +300,6 @@ onMounted(() => {
       Всего найдено: {{ filteredSportObjects.length }}
     </p>
     <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
-      <!-- TODO нет карточек -->
       <p
         v-if="filteredSportObjects.length === 0"
         class="col-span-full flex items-center justify-center gap-4"
