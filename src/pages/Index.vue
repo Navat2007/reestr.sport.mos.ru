@@ -862,21 +862,23 @@ onMounted(() => {
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
                 <a
-                  v-bind:href="'tel:' + sportObject.phones[0]"
+                  v-for="phone in sportObject.phones"
+                  v-bind:href="'tel:' + phone"
                   class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
                 >
                   <Telephone class="flex-none w-4 h-4 text-icon" />
-                  {{ sportObject.phones[0] }}</a
+                  {{ phone }}</a
                 >
               </div>
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Почта</h3>
                 <a
-                  v-bind:href="'mailto:' + sportObject.emails[0]"
+                  v-for="email in sportObject.emails"
+                  v-bind:href="'mailto:' + email"
                   class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
                 >
                   <Envelope class="flex-none w-4 h-4 text-icon" />
-                  {{ sportObject.emails[0] }}</a
+                  {{ email }}</a
                 >
               </div>
               <div class="flex-auto flex flex-col">
