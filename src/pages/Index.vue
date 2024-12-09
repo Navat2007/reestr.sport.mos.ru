@@ -94,7 +94,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
@@ -128,7 +127,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
@@ -162,7 +160,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
@@ -196,7 +193,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
@@ -230,7 +226,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
@@ -264,7 +259,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
@@ -298,7 +292,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
       {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
 ])
