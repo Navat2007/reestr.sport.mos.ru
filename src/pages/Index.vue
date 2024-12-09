@@ -33,265 +33,357 @@ const sportObjects = ref([
   {
     reestrNumber: 1,
     ogrn: '1127746355670',
-    alterName: 'ООО "3СПОРТ"',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "3СПОРТ"',
-    name: 'ООО "3СПОРТ"',
-    address: '105082, г. Москва, вн.тер.г. муниципальный округ Басманный, пл Спартаковская, д. 10, стр. 12 (Бизнес-центр «Флеш Ланж 10с12»)',
+    alterName: 'ООО «3СПОРТ»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «3СПОРТ»',
+    name: 'ООО «3СПОРТ»',
+    address:
+      '105082, г. Москва, вн.тер.г. муниципальный округ Басманный, пл Спартаковская, д. 10, стр. 12 (Бизнес-центр «Флеш Ланж 10с12»)',
     directorPosition: 'генеральный директор',
     directorName: 'Громов Михаил Николаевич',
     registrationDate: '04.05.2012',
     inn: '7708762136',
     region: 'Москва',
-    activityType: 'Деятельность в области спорта',
-    activityTypeAdditional: 'Торговля розничная спортивной одеждой в специализированных магазинах; Производство пищевой продукции для питания спортсменов; Производство спортивных костюмов, лыжных костюмов, купальных костюмов и прочей трикотажной или вязаной одежды; Производство спортивной обуви; Торговля оптовая спортивными товарами, включая велосипеды; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах; Торговля розничная спортивной одеждой в специализированных магазинах; Прокат и аренда товаров для отдыха и спортивных товаров; Деятельность спортивных объектов; Деятельность спортивных клубов; Деятельность фитнес-центров; Ремонт спортивного и туристского оборудования; Деятельность физкультурно- оздоровительная; Деятельность в области спорта прочая',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    activityType: 'Деятельность в области спорта',
+    activityTypeAdditional:
+      'Торговля розничная спортивной одеждой в специализированных магазинах; Производство пищевой продукции для питания спортсменов; Производство спортивных костюмов, лыжных костюмов, купальных костюмов и прочей трикотажной или вязаной одежды; Производство спортивной обуви; Торговля оптовая спортивными товарами, включая велосипеды; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах; Торговля розничная спортивной одеждой в специализированных магазинах; Прокат и аренда товаров для отдыха и спортивных товаров; Деятельность спортивных объектов; Деятельность спортивных клубов; Деятельность фитнес-центров; Ремонт спортивного и туристского оборудования; Деятельность физкультурно- оздоровительная; Деятельность в области спорта прочая',
     ownershipForm: 'Частная собственность',
-    departmentAffiliation: 'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
     organizationCategory: 'Организация прочая спортивная',
     FK1Form: 'да',
-    phones: [
-      '+7 (926) 860-09-34',
-    ],
-    emails: [
-      'grom@3sport.ru'
-    ],
+    phones: ['+7 (926) 860-09-34'],
+    emails: ['grom@3sport.ru'],
     site: 'www.3sport.ru',
     firmSize: 'Микропредприятия',
     capital: 10000,
     years: [
-      {year: 2022, employers: 3, income: 92823000, expense: 80926000, tax: 1784494, earnings: 90041000},
-      {year: 2023, employers: 5, income: 113456890, expense: 56999000, tax: 2310345, earnings: 92560000},
+      {
+        year: 2022,
+        employers: 3,
+        income: 92823000,
+        expense: 80926000,
+        tax: 1784494,
+        earnings: 90041000,
+      },
+      {
+        year: 2023,
+        employers: 5,
+        income: 113456890,
+        expense: 56999000,
+        tax: 2310345,
+        earnings: 92560000,
+      },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 2,
+    ogrn: '5187746004507',
+    alterName: 'ООО «ДИКОМ СПОРТ»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИКОМ СПОРТ»',
+    name: 'ООО «ДИКОМ СПОРТ»',
+    address: '119049, г. Москва, ул. Донская, д. 6 стр. 1 этаж ПОДВАЛ, пом. 1, офис 4С',
+    directorPosition: 'генеральный директор',
+    directorName: 'Бубело Михаил Сергеевич',
+    registrationDate: '14.12.2018',
+    inn: '7706463324',
+    region: 'Москва',
+    activityType: 'Производство спортивных товаров',
+    activityTypeAdditional:
+      'Деятельность спортивных объектов; Деятельность в области спорта прочая; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах; Торговля оптовая спортивными товарами, включая велосипеды',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Частная собственность',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'да',
+    phones: ['+7 (926) 860-09-34'],
+    emails: ['grom@3sport.ru'],
+    site: 'www.123.ru',
+    firmSize: 'Микропредприятия',
+    capital: 10000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 1,
+        income: 92823000,
+        expense: 80926000,
+        tax: 14488000,
+        earnings: 113456890,
+      },
+      {
+        year: 2023,
+        employers: 5,
+        income: 113456890,
+        expense: 56999000,
+        tax: 604940,
+        earnings: 14488000,
+      },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 3,
+    ogrn: '1112130002951',
+    alterName: 'ООО «ДИНШЭН ГРУПП»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИНШЭН ГРУПП»',
+    name: 'ООО «ДИНШЭН ГРУПП»',
+    address:
+      '123098, г. Москва, вн.тер.г. муниципальный округ Щукино, ул Гамалеи, д. 19, к. 2, помещ. 1/1',
+    directorPosition: 'генеральный директор',
+    directorName: 'Чижов Александр Игоревич',
+    registrationDate: '08.12.2017',
+    inn: '7703438760',
+    region: 'Москва',
+    activityType:
+      'Торговля оптовая лесоматериалами, строительными материалами и санитарно-техническим оборудованием',
+    activityTypeAdditional: 'Торговля розничная спортивной одежой в специализированных магазинах',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Совместная частная и иностранная собственность',
+    departmentAffiliation:
+      'Хозяйственные общества и товарищества с участием иностранных юридических и (или) физических лиц, а также лиц без гражданства',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'нет',
+    phones: ['+7 (926) 860-09-34'],
+    emails: ['grom@3sport.ru'],
+    site: 'www.123.ru',
+    firmSize: 'Микропредприятия',
+    capital: 1000000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 3,
+        income: 92823000,
+        expense: 80926000,
+        tax: 14488000,
+        earnings: 309000,
+      },
+      {
+        year: 2023,
+        employers: 5,
+        income: 309000,
+        expense: 309000,
+        tax: 604940,
+        earnings: 14488000,
+      },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 4,
+    ogrn: '5177746306612',
+    alterName: 'ООО «ДИОН»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИОН»',
+    name: 'ООО «ДИОН»',
+    address:
+      '125047, г. Москва, вн.тер.г. муниципальный округ Тверской, ул 4-я Тверская-Ямская, д. 24, помещ./ком. 1/4-5',
+    directorPosition: 'генеральный директор',
+    directorName: 'Папикян Тамара Валерьевна',
+    registrationDate: '09.08.2022',
+    inn: '9710101240',
+    region: 'Москва',
+    activityType: 'Предоставление услуг парикмахерскими и салонами красоты',
+    activityTypeAdditional: 'Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Частная собственность',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'нет',
+    phones: ['+7 (926) 860-09-34'],
+    emails: ['grom@3sport.ru'],
+    site: 'http://pandapark.org/',
+    firmSize: 'Микропредприятия',
+    capital: 10000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 1,
+        income: 2482000,
+        expense: 2569000,
+        tax: 264425,
+        earnings: 2482000,
+      },
+      { year: 2023, employers: 5, income: 569000, expense: 602000, tax: 604940, earnings: 569000 },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 5,
+    ogrn: '1107746719310',
+    alterName: 'ООО «ДИСК»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИСК»',
+    name: 'ООО «ДИСК»',
+    address: '119034, г. Москва, пер. Мансуровский, д. 10 стр. 1 ПОДВ. 0 пом. VI ком. 1',
+    directorPosition: 'генеральный директор',
+    directorName: 'Пекло Виктория Станиславовна',
+    registrationDate: '20.04.2011',
+    inn: '7704781138',
+    region: 'Москва',
+    activityType: 'Деятельность в области спорта прочая',
+    activityTypeAdditional:
+      'Деятельность в области спорта прочая; Деятельность спортивных объектов; Деятельность спортивных клубов; Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Частная собственность',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'нет',
+    phones: ['+7 (903) 7801122'],
+    emails: ['grom@3sport.ru'],
+    site: 'http://pandapark.org/',
+    firmSize: 'Микропредприятия',
+    capital: 25000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 3,
+        income: 36948000,
+        expense: 36948000,
+        tax: 264425,
+        earnings: 1632000,
+      },
+      {
+        year: 2023,
+        employers: 5,
+        income: 42734000,
+        expense: 44422000,
+        tax: 604940,
+        earnings: 40146000,
+      },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 6,
+    ogrn: '1127747177051',
+    alterName: 'ООО «ДМ-ФИТНЕС»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМ-ФИТНЕС»',
+    name: 'ООО «ДМ-ФИТНЕС»',
+    address:
+      '125466, г. Москва, вн.тер.г. муниципальный округ Куркино, км МКАД 73-й, д. 7 (Торговый центр «Арфа»)',
+    directorPosition: 'генеральный директор',
+    directorName: 'Питерскова Юлия Алексеевна',
+    registrationDate: '15.08.2022',
+    inn: '7733389334',
+    region: 'Москва',
+    activityType: 'Деятельность спортивных объектов',
+    activityTypeAdditional:
+      'Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах;',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Частная собственность',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'нет',
+    phones: ['+7 (926) 860-09-34'],
+    emails: ['grom@3sport.ru'],
+    site: 'putilkovo-fitness.ru',
+    firmSize: 'Микропредприятия',
+    capital: 10000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 10,
+        income: 39630000,
+        expense: 36948000,
+        tax: 14488000,
+        earnings: 39630000,
+      },
+      {
+        year: 2023,
+        employers: 11,
+        income: 14488000,
+        expense: 13963000,
+        tax: 264425,
+        earnings: 14488000,
+      },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 7,
+    ogrn: '1227700494229',
+    alterName: 'ООО «ДМ»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМ»',
+    name: 'ООО «ДМ»',
+    address:
+      '127410, г. Москва, вн.тер.г. муниципальный округ Отрадное, ш Алтуфьевское, влд. 31Г, стр. 5, ком. 8',
+    directorPosition: 'генеральный директор',
+    directorName: 'Смирнова Ирина Ивановна',
+    registrationDate: '25.05.2015',
+    inn: '7725274499',
+    region: 'Москва',
+    activityType:
+      'Деятельность по предоставлению прочих вспомогательных услуг для бизнеса, не включенная в другие группировки',
+    activityTypeAdditional:
+      'Деятельность в области спорта прочая; Торговля оптовая спортивными товарами, включая велосипеды; Торговля розничная спортивной одеждой в специализированных магазинах',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Частная собственность',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'да',
+    phones: ['+7 (916) 3917114', '+7 (926) 9146680'],
+    emails: ['grom@3sport.ru'],
+    site: 'www.123.ru',
+    firmSize: 'Микропредприятия',
+    capital: 10000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 1,
+        income: 1741000,
+        expense: 1632000,
+        tax: 14488000,
+        earnings: 1741000,
+      },
+      {
+        year: 2023,
+        employers: 5,
+        income: 2069000,
+        expense: 1907000,
+        tax: 57540,
+        earnings: 2069000,
+      },
     ],
   },
   {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
+    reestrNumber: 8,
+    ogrn: '1157746469033',
+    alterName: 'ООО «ДМД»',
+    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМД»',
+    name: 'ООО «ДМД»',
+    address: '109156, г. Москва, ул. Генерала Кузнецова, д. 20 этаж / пом. 1/3',
+    directorPosition: 'генеральный директор',
+    directorName: 'Полякова Ирина Васильевна',
+    registrationDate: '25.11.2015',
+    inn: '7729483447',
+    region: 'Москва',
+    activityType: 'Деятельность в области медицины прочая, не включенная в другие группировки',
+    activityTypeAdditional: 'Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
+    ownershipForm: 'Частная собственность',
+    departmentAffiliation:
+      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
+    organizationCategory: 'Организация прочая спортивная',
+    FK1Form: 'нет',
+    phones: ['+7 (926) 860-09-34'],
+    emails: ['grom@3sport.ru'],
+    site: 'www.123.ru',
+    firmSize: 'Микропредприятия',
+    capital: 10000,
     years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
+      {
+        year: 2022,
+        employers: 3,
+        income: 27214000,
+        expense: 24894000,
+        tax: 1632000,
+        earnings: 27109000,
+      },
+      {
+        year: 2023,
+        employers: 5,
+        income: 27472000,
+        expense: 22171000,
+        tax: 773594,
+        earnings: 27425000,
+      },
     ],
   },
 ])
@@ -641,7 +733,7 @@ onMounted(() => {
                       >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
                     /></span>
                   </h3>
-                  <p>3 чел.</p>
+                  <p>{{ sportObject.years[0].employers }} чел.</p>
                 </div>
               </div>
             </div>
@@ -676,7 +768,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>{{sportObject.activityType}}</p>
+              <p>{{ sportObject.activityType }}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -697,7 +789,7 @@ onMounted(() => {
               </h3>
               <ul class="list-disc pl-6">
                 <li v-for="item in sportObject.activityTypeAdditional.split(';')">
-                  {{item}}
+                  {{ item }}
                 </li>
               </ul>
             </div>
@@ -769,23 +861,33 @@ onMounted(() => {
             <div class="flex max-sm:flex-col flex-wrap gap-4">
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
-                <a href="tel:+79268600934" class="flex items-center gap-2">
+                <a
+                  v-bind:href="'tel:' + sportObject.phones[0]"
+                  class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
+                >
                   <Telephone class="flex-none w-4 h-4 text-icon" />
-                  +7 926 860-09-34</a
+                  {{ sportObject.phones[0] }}</a
                 >
               </div>
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Почта</h3>
-                <a href="mailto:grom@3sport.org" class="flex items-center gap-2">
+                <a
+                  v-bind:href="'mailto:' + sportObject.emails[0]"
+                  class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
+                >
                   <Envelope class="flex-none w-4 h-4 text-icon" />
-                  grom@3sport.org</a
+                  {{ sportObject.emails[0] }}</a
                 >
               </div>
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
-                <a href="mailto:grom@3sport.org" class="flex items-center gap-2">
+                <a
+                  v-bind:href="sportObject.site"
+                  class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
+                  target="_blank"
+                >
                   <Website class="flex-none w-4 h-4 text-icon" />
-                  www.test.ru</a
+                  {{ sportObject.site }}</a
                 >
               </div>
             </div>
@@ -793,10 +895,7 @@ onMounted(() => {
               <h3 class="text-xs text-textSecondary">
                 Юридический адрес (адрес регистрации организации)
               </h3>
-              <p>
-                105082, г. Москва, вн.тёр.г. муниципальный округ Басманный, пл. Спартаковская,
-                д. 10, стр. 12 (Бизнес-центр «Флеш Ланж 10с12»)
-              </p>
+              <p>{{ sportObject.address }}</p>
             </div>
             <div class="min-h-96 bg-bgSecondaryColor rounded-2xl">
               <!-- Место для карты -->
@@ -819,25 +918,25 @@ onMounted(() => {
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
-                <p class="text-lg xl:text-2xl">90 041 000</p>
+                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].income }}</p>
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
-                <p class="text-lg xl:text-2xl">1 784 494</p>
+                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].tax }}</p>
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
-                <p class="text-lg xl:text-2xl">80 926 000</p>
+                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].expense }}</p>
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
-                <p class="text-lg xl:text-2xl">92 823 000</p>
+                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].earnings }}</p>
               </article>
             </div>
             <Chart type="bar" :data="chartData" :options="chartOptions" class="h-[30rem]" />
@@ -856,7 +955,7 @@ onMounted(() => {
 }
 
 .select-yrs {
-  @apply text-main cursor-pointer active:translate-y-px;
+  @apply text-main cursor-pointer hover:bg-linkHover active:translate-y-px transition;
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-skip-ink: auto;

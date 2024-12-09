@@ -19,11 +19,11 @@ const isDrawerOpen = ref(false)
       <menu class="flex-auto">
         <nav>
           <ul class="hidden lg:flex lg:items-center lg:justify-end">
-            <li><a href="https://sport.mos.ru/events" class="font-heading uppercase text-2xl px-3 py-2" target="_blank" rel="noopener nofollow">Афиша</a></li>
-            <li><a href="https://sport.mos.ru/facilities" class="font-heading uppercase text-2xl px-3 py-2" target="_blank" rel="noopener nofollow">Спортобъекты</a></li>
-            <li><a href="https://sport.mos.ru/coaches" class="font-heading uppercase text-2xl px-3 py-2" target="_blank" rel="noopener nofollow">Тренеры</a></li>
-            <li><a href="https://sport.mos.ru/services" class="font-heading uppercase text-2xl px-3 py-2" target="_blank" rel="noopener nofollow">Услуги</a></li>
-            <li><a href="https://sport.mos.ru/community" class="font-heading uppercase text-2xl px-3 py-2" target="_blank" rel="noopener nofollow">Сообщество</a></li>
+            <li><a href="https://sport.mos.ru/events" class="font-heading uppercase text-2xl mx-3 my-2 border-b-2 border-transparent hover:border-b-textAccent transition" target="_blank" rel="noopener nofollow">Афиша</a></li>
+            <li><a href="https://sport.mos.ru/facilities" class="font-heading uppercase text-2xl mx-3 my-2 border-b-2 border-transparent hover:border-b-textAccent transition" target="_blank" rel="noopener nofollow">Спортобъекты</a></li>
+            <li><a href="https://sport.mos.ru/coaches" class="font-heading uppercase text-2xl mx-3 my-2 border-b-2 border-transparent hover:border-b-textAccent transition" target="_blank" rel="noopener nofollow">Тренеры</a></li>
+            <li><a href="https://sport.mos.ru/services" class="font-heading uppercase text-2xl mx-3 my-2 border-b-2 border-transparent hover:border-b-textAccent transition" target="_blank" rel="noopener nofollow">Услуги</a></li>
+            <li><a href="https://sport.mos.ru/community" class="font-heading uppercase text-2xl mx-3 my-2 border-b-2 border-transparent hover:border-b-textAccent transition" target="_blank" rel="noopener nofollow">Сообщество</a></li>
           </ul>
         </nav>
       </menu>
@@ -33,7 +33,7 @@ const isDrawerOpen = ref(false)
         </Button>
         <button
           @click="isDrawerOpen = true"
-          class="w-10 h-10 flex items-center justify-center bg-bgSecondaryColor rounded-full active:translate-y-px"
+          class="w-10 h-10 flex items-center justify-center bg-bgSecondaryColor rounded-full hover:opacity-85 active:translate-y-px transition"
           type="button"
         >
           <Menu class="text-textMain w-5" aria-hidden="true" />
