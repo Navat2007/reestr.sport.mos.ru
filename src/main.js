@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { createYmaps } from 'vue-yandex-maps';
 import PrimeVue from 'primevue/config'
 import { definePreset } from '@primevue/themes'
 import Material from '@primevue/themes/material'
@@ -49,6 +50,9 @@ const MyPreset = definePreset(Material, {
   },
 })
 
+app.use(createYmaps({
+  apikey: 'qwe',
+}));
 app.use(createPinia())
 app.use(router)
 app.use(PrimeVue, {

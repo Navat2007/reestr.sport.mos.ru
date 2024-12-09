@@ -1,5 +1,7 @@
 <script setup>
 import { onMounted, reactive, ref, watchEffect } from 'vue'
+import { YandexMap, VueYandexMaps } from 'vue-yandex-maps'
+import moment from 'moment'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
 import Chart from 'primevue/chart'
@@ -18,6 +20,7 @@ import Website from '@/assets/images/icons/website.svg'
 import CloseModal from '@/assets/images/icons/close-modal.svg'
 import Avatar from '@/assets/images/avatar.jpg'
 
+
 const tabValue = ref('0')
 const isFilterShow = ref(false)
 const isDialogOpen = ref(false)
@@ -28,7 +31,8 @@ const state = reactive({
   selectedActivityTypes: [],
 })
 
-const sportObject = ref(null)
+const sportObjectCurrentYear = ref(moment().format('YYYY'));
+const sportObject = ref(null);
 const sportObjects = ref([
   {
     reestrNumber: 1,
@@ -409,7 +413,9 @@ watchEffect(() => {
 })
 
 onMounted(() => {
-  onSearch()
+  console.log(VueYandexMaps.settings.value)
+
+  onSearch();
 })
 </script>
 
@@ -609,6 +615,11 @@ onMounted(() => {
       header: 'px-4 pt-6 pb-5 lg:px-9 lg:pt-9',
       content: 'px-4 pb-6 pt-0 lg:px-9 lg:pb-9',
     }"
+    @show="() => {
+      if(!sportObject.years.find(item => item.year === sportObjectCurrentYear)){
+        console.log('not found');
+      }
+    }"
   >
     <template #header>
       <h2 class="text-modalHeading font-medium truncate">{{ sportObject.name }}</h2>
@@ -730,7 +741,7 @@ onMounted(() => {
                   <h3 class="text-xs text-textSecondary">
                     Среднесписочная численность сотрудников в
                     <span class="select-yrs"
-                      >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+                      >{{sportObjectCurrentYear}} <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
                     /></span>
                   </h3>
                   <p>{{ sportObject.years[0].employers }} чел.</p>
@@ -900,7 +911,15 @@ onMounted(() => {
               <p>{{ sportObject.address }}</p>
             </div>
             <div class="min-h-96 bg-bgSecondaryColor rounded-2xl">
-              <!-- Место для карты -->
+              <yandex-map
+                :settings="{
+                  location: {
+                    center: [sportObject.lon, sportObject.lat],
+                    zoom: 9,
+                  },
+                }"
+                width="100%" height="100%"
+              />
             </div>
           </section>
         </TabPanel>
@@ -911,7 +930,7 @@ onMounted(() => {
               <h3 class="text-sm text-textSecondary">
                 Основные показатели за
                 <span class="select-yrs"
-                  >2022 <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+                  >{{sportObjectCurrentYear}} <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
                 /></span>
               </h3>
             </div>
