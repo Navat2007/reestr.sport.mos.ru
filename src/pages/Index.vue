@@ -742,7 +742,7 @@ onMounted(() => {
                     Среднесписочная численность сотрудников в
                     <span class="select-yrs"
                       >{{sportObjectCurrentYear}} <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
-                    />
+                    /></span>
                   </h3>
                   <p>{{ sportObject.years[0].employers }} чел.</p>
                 </div>
@@ -931,7 +931,7 @@ onMounted(() => {
                 Основные показатели за
                 <span class="select-yrs"
                   >{{sportObjectCurrentYear}} <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
-                />
+                /></span>
               </h3>
             </div>
             <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
