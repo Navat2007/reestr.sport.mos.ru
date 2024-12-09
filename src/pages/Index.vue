@@ -61,7 +61,6 @@ const sportObjects = ref([
     years: [
       {year: 2022, employers: 3, income: 92823000, expense: 80926000, tax: 1784494, earnings: 90041000},
       {year: 2023, employers: 5, income: 113456890, expense: 56999000, tax: 2310345, earnings: 92560000},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
   {
