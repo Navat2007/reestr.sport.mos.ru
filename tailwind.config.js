@@ -54,5 +54,8 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-primeui')],
+  plugins: [
+    require('tailwindcss-primeui'),
+    require('tailwind-capitalize-first-letter'),
+  ],
 }

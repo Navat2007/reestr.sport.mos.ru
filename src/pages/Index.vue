@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, watchEffect } from 'vue'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
 import Chart from 'primevue/chart'
@@ -57,7 +57,7 @@ const sportObjects = ref([
     ],
     site: 'www.3sport.ru',
     firmSize: 'Микропредприятия',
-    capital: 0,
+    capital: 10000,
     years: [
       {year: 2022, employers: 3, income: 92823000, expense: 80926000, tax: 1784494, earnings: 90041000},
       {year: 2023, employers: 5, income: 113456890, expense: 56999000, tax: 2310345, earnings: 92560000},
@@ -307,11 +307,14 @@ const onSportObjectClick = (item) => {
   isDialogOpen.value = true
 }
 const onSearch = () => {
-  console.log(state.searchInput)
   filteredSportObjects.value = sportObjects.value.filter((item) =>
     item.name.toLowerCase().includes(state.searchInput.toLowerCase()),
   )
 }
+
+watchEffect(() => {
+  console.log(sportObject.value)
+})
 
 onMounted(() => {
   onSearch()
@@ -647,8 +650,8 @@ onMounted(() => {
             <div class="flex items-center gap-4">
               <img class="w-16 h-16 rounded-md" :src="Avatar" alt="Фото руководителя" />
               <div>
-                <h3 class="text-base">Генеральный директор</h3>
-                <p class="text-xl">Громов Михаил Николаевич</p>
+                <h3 class="text-base capitalize-first">{{ sportObject.directorPosition }}</h3>
+                <p class="text-xl">{{ sportObject.directorName }}</p>
               </div>
             </div>
           </section>
@@ -673,7 +676,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>Деятельность в области спорта</p>
+              <p>{{sportObject.activityType}}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -693,26 +696,9 @@ onMounted(() => {
                 />
               </h3>
               <ul class="list-disc pl-6">
-                <li>Торговля розничная спортивной одежой в специализированных магазинах</li>
-                <li>Производство пищевой продукции для питания спортсменов</li>
-                <li>
-                  Производство спортивных костюмов, лыжных костюмов, купальных костюмов и прочей
-                  трикотажной или вязаной одежды
+                <li v-for="item in sportObject.activityTypeAdditional.split(';')">
+                  {{item}}
                 </li>
-                <li>Производство спортивной обуви</li>
-                <li>Торговля оптовая спортивными товарами, включая велосипеды</li>
-                <li>
-                  Торговля розничная спортивным оборудованием и спортивными товарами
-                  в специализированных магазинах
-                </li>
-                <li>Торговля розничная спортивной одеждой в специализированных магазинах</li>
-                <li>Прокат и аренда товаров для отдыха и спортивных товаров</li>
-                <li>Деятельность спортивных объектов</li>
-                <li>Деятельность спортивных клубов</li>
-                <li>Деятельность фитнес-центров</li>
-                <li>Ремонт спортивного и туристского оборудования</li>
-                <li>Деятельность физкультурно — оздоровительная</li>
-                <li>Деятельность в области спорта прочая</li>
               </ul>
             </div>
             <div class="flex flex-col">
