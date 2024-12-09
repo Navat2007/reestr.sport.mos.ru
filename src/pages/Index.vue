@@ -302,40 +302,6 @@ const sportObjects = ref([
       {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
     ],
   },
-  {
-    reestrNumber: 0,
-    ogrn: '',
-    alterName: '',
-    fullName: '',
-    name: '',
-    address: '',
-    directorPosition: '',
-    directorName: '',
-    registrationDate: '',
-    inn: '',
-    region: '',
-    activityType: '',
-    activityTypeAdditional: '',
-    organizationalLegalForm: '',
-    ownershipForm: '',
-    departmentAffiliation: '',
-    organizationCategory: '',
-    FK1Form: '',
-    phones: [
-      '',
-    ],
-    emails: [
-      ''
-    ],
-    site: '',
-    firmSize: '',
-    capital: 0,
-    years: [
-      {year: 2022, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2023, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-      {year: 2024, employers: 0, income: 0, expense: 0, tax: 0, earnings: 0},
-    ],
-  },
 ])
 const filteredSportObjects = ref([])
 const activityTypes = ref([
