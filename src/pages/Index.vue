@@ -20,7 +20,6 @@ import Website from '@/assets/images/icons/website.svg'
 import CloseModal from '@/assets/images/icons/close-modal.svg'
 import Avatar from '@/assets/images/avatar.jpg'
 
-
 const tabValue = ref('0')
 const isFilterShow = ref(false)
 const isDialogOpen = ref(false)
@@ -31,8 +30,8 @@ const state = reactive({
   selectedActivityTypes: [],
 })
 
-const sportObjectCurrentYear = ref(moment().format('YYYY'));
-const sportObject = ref(null);
+const sportObjectCurrentYear = ref(moment().format('YYYY'))
+const sportObject = ref(null)
 const sportObjects = ref([
   {
     reestrNumber: 1,
@@ -42,6 +41,7 @@ const sportObjects = ref([
     name: 'ООО «3СПОРТ»',
     address:
       '105082, г. Москва, вн.тер.г. муниципальный округ Басманный, пл Спартаковская, д. 10, стр. 12 (Бизнес-центр «Флеш Ланж 10с12»)',
+    coordinates: { lat: 55.777802, lon: 37.679592 },
     directorPosition: 'генеральный директор',
     directorName: 'Громов Михаил Николаевич',
     registrationDate: '04.05.2012',
@@ -86,6 +86,7 @@ const sportObjects = ref([
     fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИКОМ СПОРТ»',
     name: 'ООО «ДИКОМ СПОРТ»',
     address: '119049, г. Москва, ул. Донская, д. 6 стр. 1 этаж ПОДВАЛ, пом. 1, офис 4С',
+    coordinates: { lat: 55.724604, lon: 37.607311 },
     directorPosition: 'генеральный директор',
     directorName: 'Бубело Михаил Сергеевич',
     registrationDate: '14.12.2018',
@@ -132,6 +133,7 @@ const sportObjects = ref([
     name: 'ООО «ДИНШЭН ГРУПП»',
     address:
       '123098, г. Москва, вн.тер.г. муниципальный округ Щукино, ул Гамалеи, д. 19, к. 2, помещ. 1/1',
+    coordinates: { lat: 55.801280, lon: 37.454765 },
     directorPosition: 'генеральный директор',
     directorName: 'Чижов Александр Игоревич',
     registrationDate: '08.12.2017',
@@ -178,6 +180,7 @@ const sportObjects = ref([
     name: 'ООО «ДИОН»',
     address:
       '125047, г. Москва, вн.тер.г. муниципальный округ Тверской, ул 4-я Тверская-Ямская, д. 24, помещ./ком. 1/4-5',
+    coordinates: { lat: 55.944484, lon: 36.407096 },
     directorPosition: 'генеральный директор',
     directorName: 'Папикян Тамара Валерьевна',
     registrationDate: '09.08.2022',
@@ -215,6 +218,7 @@ const sportObjects = ref([
     fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИСК»',
     name: 'ООО «ДИСК»',
     address: '119034, г. Москва, пер. Мансуровский, д. 10 стр. 1 ПОДВ. 0 пом. VI ком. 1',
+    coordinates: { lat: 55.740198, lon: 37.594270 },
     directorPosition: 'генеральный директор',
     directorName: 'Пекло Виктория Станиславовна',
     registrationDate: '20.04.2011',
@@ -261,6 +265,7 @@ const sportObjects = ref([
     name: 'ООО «ДМ-ФИТНЕС»',
     address:
       '125466, г. Москва, вн.тер.г. муниципальный округ Куркино, км МКАД 73-й, д. 7 (Торговый центр «Арфа»)',
+    coordinates: { lat: 55.876402, lon: 37.423110 },
     directorPosition: 'генеральный директор',
     directorName: 'Питерскова Юлия Алексеевна',
     registrationDate: '15.08.2022',
@@ -307,6 +312,7 @@ const sportObjects = ref([
     name: 'ООО «ДМ»',
     address:
       '127410, г. Москва, вн.тер.г. муниципальный округ Отрадное, ш Алтуфьевское, влд. 31Г, стр. 5, ком. 8',
+    coordinates: { lat: 55.863207, lon: 37.582412 },
     directorPosition: 'генеральный директор',
     directorName: 'Смирнова Ирина Ивановна',
     registrationDate: '25.05.2015',
@@ -353,6 +359,7 @@ const sportObjects = ref([
     fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМД»',
     name: 'ООО «ДМД»',
     address: '109156, г. Москва, ул. Генерала Кузнецова, д. 20 этаж / пом. 1/3',
+    coordinates: { lat: 55.688472, lon: 37.860719 },
     directorPosition: 'генеральный директор',
     directorName: 'Полякова Ирина Васильевна',
     registrationDate: '25.11.2015',
@@ -415,7 +422,7 @@ watchEffect(() => {
 onMounted(() => {
   console.log(VueYandexMaps.settings.value)
 
-  onSearch();
+  onSearch()
 })
 </script>
 
@@ -615,11 +622,13 @@ onMounted(() => {
       header: 'px-4 pt-6 pb-5 lg:px-9 lg:pt-9',
       content: 'px-4 pb-6 pt-0 lg:px-9 lg:pb-9',
     }"
-    @show="() => {
-      if(!sportObject.years.find(item => item.year === sportObjectCurrentYear)){
-        console.log('not found');
+    @show="
+      () => {
+        if (!sportObject.years.find((item) => item.year === sportObjectCurrentYear)) {
+          console.log('not found')
+        }
       }
-    }"
+    "
   >
     <template #header>
       <h2 class="text-modalHeading font-medium truncate">{{ sportObject.name }}</h2>
@@ -741,7 +750,8 @@ onMounted(() => {
                   <h3 class="text-xs text-textSecondary">
                     Среднесписочная численность сотрудников в
                     <span class="select-yrs"
-                      >{{sportObjectCurrentYear}} <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+                      >{{ sportObjectCurrentYear }}
+                      <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
                     /></span>
                   </h3>
                   <p>{{ sportObject.years[0].employers }} чел.</p>
@@ -918,7 +928,8 @@ onMounted(() => {
                     zoom: 9,
                   },
                 }"
-                width="100%" height="100%"
+                width="100%"
+                height="100%"
               />
             </div>
           </section>
@@ -930,7 +941,8 @@ onMounted(() => {
               <h3 class="text-sm text-textSecondary">
                 Основные показатели за
                 <span class="select-yrs"
-                  >{{sportObjectCurrentYear}} <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
+                  >{{ sportObjectCurrentYear }}
+                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
                 /></span>
               </h3>
             </div>
