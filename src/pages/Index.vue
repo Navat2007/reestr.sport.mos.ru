@@ -1,10 +1,9 @@
 <script setup>
-import { computed, onMounted, reactive, ref, watchEffect } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import moment from 'moment'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
 import Chart from 'primevue/chart'
-import VueNumberFormat from 'vue-number-format'
 
 import MyYandexMap from '@/components/MyYandexMap.vue'
 import Info from '@/assets/images/icons/info.svg'
@@ -12,7 +11,6 @@ import Filter from '@/assets/images/icons/filter.svg'
 import Search from '@/assets/images/icons/search.svg'
 import ArrowDown from '@/assets/images/icons/arrow-down.svg'
 import Company from '@/assets/images/icons/company.svg'
-import CheckCircle from '@/assets/images/icons/check-circle.svg'
 import ArrowLeft from '@/assets/images/icons/arrow-left.svg'
 import Telephone from '@/assets/images/icons/telephone.svg'
 import Envelope from '@/assets/images/icons/envelope.svg'
@@ -22,7 +20,7 @@ import Avatar from '@/assets/images/avatar.jpg'
 import MyFilter from '@/components/MyFilter.vue'
 
 const tabValue = ref('0')
-const isFilterShow = ref(false)
+
 const isDialogOpen = ref(false)
 const searchInput = ref(null)
 const yearSelectPopover = ref()
@@ -401,7 +399,6 @@ const sportObjects = ref([
   },
 ])
 
-const filteredSportObjects = ref([]);
 const activityTypes = computed(() => {
   let array = []
 
@@ -454,6 +451,17 @@ const departmentAffiliations = computed(() => {
 
   return array
 });
+
+const filteredSportObjects = ref([]);
+const selectedActivityTypes = ref([]);
+const selectedOrganizationalLegalForms = ref([]);
+const selectedOwnershipForms = ref([]);
+const selectedDepartmentAffiliations = ref([]);
+
+const isFilterShow = ref(false)
+const isAnyFilterSelected = computed(() => {
+  return selectedActivityTypes.value.length > 0 || selectedOrganizationalLegalForms.value.length > 0 || selectedOwnershipForms.value.length > 0 || selectedDepartmentAffiliations.value.length > 0
+})
 
 const chartData = ref()
 const chartOptions = ref()
@@ -535,18 +543,26 @@ const onSportObjectClick = (data) => {
   isDialogOpen.value = true
 }
 const onSearch = () => {
-  filteredSportObjects.value = sportObjects.value.filter((item) =>
-    item.name.toLowerCase().includes(state.searchInput.toLowerCase())
-  )
-
-  //console.log(activityTypes.value)
+  filteredSportObjects.value = sportObjects.value
+    .filter((item) => item.name.toLowerCase().includes(state.searchInput.toLowerCase()) || item.address.toLowerCase().includes(state.searchInput.toLowerCase()))
+    .filter((item) => selectedActivityTypes.value.length === 0 || selectedActivityTypes.value.includes(item.activityType))
+    .filter((item) => selectedOrganizationalLegalForms.value.length === 0 || selectedOrganizationalLegalForms.value.includes(item.organizationalLegalForm))
+    .filter((item) => selectedOwnershipForms.value.length === 0 || selectedOwnershipForms.value.includes(item.ownershipForm))
+    .filter((item) => selectedDepartmentAffiliations.value.length === 0 || selectedDepartmentAffiliations.value.includes(item.departmentAffiliation))
 }
 const onClear = () => {
+  selectedActivityTypes.value = [];
+  selectedOrganizationalLegalForms.value = [];
+  selectedOwnershipForms.value = [];
+  selectedDepartmentAffiliations.value = [];
 
+  onSearch();
 }
 const toggleFilter = () => {
   isFilterShow.value = !isFilterShow.value
-  onClear()
+
+  if(!isFilterShow.value)
+    onClear();
 }
 
 onMounted(() => {
@@ -562,7 +578,7 @@ onMounted(() => {
       <h1 class="max-w-max font-heading text-4xl md:text-heading uppercase leading-none">
         Реестр физкультурно-спортивных организаций
         <Info
-          class="inline align-top w-6 h-6 text-main active:translate-y-px"
+          class="inline align-top w-6 h-6 text-main active:translate-y-px hidden"
           role="button"
           aria-label="Подробная информация"
         />
@@ -587,10 +603,13 @@ onMounted(() => {
           </Button>
         </div>
         <Button
-          class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover md:bg-bgColor md:text-icon"
-          @click="isFilterShow = !isFilterShow"
+          class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover "
+          :class="{
+            'md:bg-bgColor md:text-icon' : !isAnyFilterSelected,
+          }"
+          @click="toggleFilter"
           v-tooltip.top="{
-            value: 'Скрыть и очистить все',
+            value: isFilterShow ? 'Скрыть и очистить все' : 'Открыть фильтр',
             pt: {
               arrow: 'border-b-bgColor border-t-bgColor',
               text: 'p-3 rounded-lg bg-bgColor text-textMain text-xs text-center shadow-card',
@@ -609,27 +628,64 @@ onMounted(() => {
       <div class="flex gap-3 items-center py-10 md:hidden">
         <Button
           class="flex-none p-0 flex items-center justify-center bg-bgColor text-main rounded-2xl active:translate-y-px border-transparent"
-          @click="toggleFilter"
+          @click="isFilterShow = false"
         >
           <ArrowLeft class="w-6 h-6" />
         </Button>
         <h3 class="text-2xl">Фильтры</h3>
       </div>
-      <MyFilter title="Вид деятельности" :items="activityTypes" />
-      <MyFilter title="Правовая форма" :items="organizationalLegalForms" />
-      <MyFilter title="Форма собственности" :items="ownershipForms" />
-      <MyFilter title="Ведомственная принадлежность" :items="departmentAffiliations" />
+      <MyFilter
+        title="Вид деятельности"
+        :items="activityTypes"
+        :itemSelected="selectedActivityTypes"
+        @onSelect="(data) => {
+          selectedActivityTypes = data;
+          onSearch();
+        }" />
+      <MyFilter
+        title="Правовая форма"
+        :items="organizationalLegalForms"
+        :itemSelected="selectedOrganizationalLegalForms"
+        @onSelect="(data) => {
+          selectedOrganizationalLegalForms = data;
+          onSearch();
+        }"
+      />
+      <MyFilter
+        title="Форма собственности"
+        :items="ownershipForms"
+        :itemSelected="selectedOwnershipForms"
+        @onSelect="(data) => {
+          selectedOwnershipForms = data;
+          onSearch();
+        }"
+      />
+      <MyFilter
+        title="Ведомственная принадлежность"
+        :items="departmentAffiliations"
+        :itemSelected="selectedDepartmentAffiliations"
+        @onSelect="(data) => {
+          selectedDepartmentAffiliations = data;
+          onSearch();
+        }"
+      />
 
       <div class="flex gap-3 justify-center py-10 md:hidden">
         <Button
           class="flex-none px-12 py-2 bg-main text-textAccent text-sm rounded-full active:translate-y-px border-transparent shadow-authButton tracking-wide"
-          @click="onSearch"
+          @click="() => {
+            isFilterShow = false;
+            onSearch();
+          }"
         >
           <span>Искать</span>
         </Button>
         <Button
           class="flex-none px-12 py-2 bg-bgColor text-main text-sm rounded-full active:translate-y-px border-transparent tracking-wide"
-          @click="onClear"
+          @click="() => {
+            isFilterShow = false;
+            onClear();
+          }"
         >
           <span>Очистить</span>
         </Button>
