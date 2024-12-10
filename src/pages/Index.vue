@@ -1,12 +1,12 @@
 <script setup>
 import { onMounted, reactive, ref, watchEffect } from 'vue'
-import { YandexMap, VueYandexMaps } from 'vue-yandex-maps'
 import moment from 'moment'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
 import Chart from 'primevue/chart'
-import Tooltip from 'primevue/tooltip'
+import VueNumberFormat from 'vue-number-format'
 
+import MyYandexMap from '@/components/MyYandexMap.vue'
 import Info from '@/assets/images/icons/info.svg'
 import Filter from '@/assets/images/icons/filter.svg'
 import Search from '@/assets/images/icons/search.svg'
@@ -25,12 +25,13 @@ const isFilterShow = ref(false)
 const isDialogOpen = ref(false)
 const searchInput = ref(null)
 const isFilterActivityTypeOpen = ref(false)
+const yearSelectPopover = ref()
 const state = reactive({
   searchInput: '',
-  selectedActivityTypes: [],
+  selectedActivityTypes: []
 })
 
-const sportObjectCurrentYear = ref(moment().format('YYYY'))
+const sportObjectCurrentYear = ref(parseInt(moment().format('YYYY')))
 const sportObject = ref(null)
 const sportObjects = ref([
   {
@@ -50,6 +51,7 @@ const sportObjects = ref([
     activityType: 'Деятельность в области спорта',
     activityTypeAdditional:
       'Торговля розничная спортивной одеждой в специализированных магазинах; Производство пищевой продукции для питания спортсменов; Производство спортивных костюмов, лыжных костюмов, купальных костюмов и прочей трикотажной или вязаной одежды; Производство спортивной обуви; Торговля оптовая спортивными товарами, включая велосипеды; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах; Торговля розничная спортивной одеждой в специализированных магазинах; Прокат и аренда товаров для отдыха и спортивных товаров; Деятельность спортивных объектов; Деятельность спортивных клубов; Деятельность фитнес-центров; Ремонт спортивного и туристского оборудования; Деятельность физкультурно- оздоровительная; Деятельность в области спорта прочая',
+    organizationalLegalForm: 'Общества с ограниченной ответственностью',
     ownershipForm: 'Частная собственность',
     departmentAffiliation:
       'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
@@ -67,7 +69,7 @@ const sportObjects = ref([
         income: 92823000,
         expense: 80926000,
         tax: 1784494,
-        earnings: 90041000,
+        earnings: 90041000
       },
       {
         year: 2023,
@@ -75,9 +77,9 @@ const sportObjects = ref([
         income: 113456890,
         expense: 56999000,
         tax: 2310345,
-        earnings: 92560000,
-      },
-    ],
+        earnings: 92560000
+      }
+    ]
   },
   {
     reestrNumber: 2,
@@ -113,7 +115,7 @@ const sportObjects = ref([
         income: 92823000,
         expense: 80926000,
         tax: 14488000,
-        earnings: 113456890,
+        earnings: 113456890
       },
       {
         year: 2023,
@@ -121,9 +123,9 @@ const sportObjects = ref([
         income: 113456890,
         expense: 56999000,
         tax: 604940,
-        earnings: 14488000,
-      },
-    ],
+        earnings: 14488000
+      }
+    ]
   },
   {
     reestrNumber: 3,
@@ -160,7 +162,7 @@ const sportObjects = ref([
         income: 92823000,
         expense: 80926000,
         tax: 14488000,
-        earnings: 309000,
+        earnings: 309000
       },
       {
         year: 2023,
@@ -168,9 +170,9 @@ const sportObjects = ref([
         income: 309000,
         expense: 309000,
         tax: 604940,
-        earnings: 14488000,
-      },
-    ],
+        earnings: 14488000
+      }
+    ]
   },
   {
     reestrNumber: 4,
@@ -206,10 +208,10 @@ const sportObjects = ref([
         income: 2482000,
         expense: 2569000,
         tax: 264425,
-        earnings: 2482000,
+        earnings: 2482000
       },
-      { year: 2023, employers: 5, income: 569000, expense: 602000, tax: 604940, earnings: 569000 },
-    ],
+      { year: 2023, employers: 5, income: 569000, expense: 602000, tax: 604940, earnings: 569000 }
+    ]
   },
   {
     reestrNumber: 5,
@@ -245,7 +247,7 @@ const sportObjects = ref([
         income: 36948000,
         expense: 36948000,
         tax: 264425,
-        earnings: 1632000,
+        earnings: 1632000
       },
       {
         year: 2023,
@@ -253,9 +255,9 @@ const sportObjects = ref([
         income: 42734000,
         expense: 44422000,
         tax: 604940,
-        earnings: 40146000,
-      },
-    ],
+        earnings: 40146000
+      }
+    ]
   },
   {
     reestrNumber: 6,
@@ -292,7 +294,7 @@ const sportObjects = ref([
         income: 39630000,
         expense: 36948000,
         tax: 14488000,
-        earnings: 39630000,
+        earnings: 39630000
       },
       {
         year: 2023,
@@ -300,9 +302,9 @@ const sportObjects = ref([
         income: 14488000,
         expense: 13963000,
         tax: 264425,
-        earnings: 14488000,
-      },
-    ],
+        earnings: 14488000
+      }
+    ]
   },
   {
     reestrNumber: 7,
@@ -340,7 +342,7 @@ const sportObjects = ref([
         income: 1741000,
         expense: 1632000,
         tax: 14488000,
-        earnings: 1741000,
+        earnings: 1741000
       },
       {
         year: 2023,
@@ -348,9 +350,9 @@ const sportObjects = ref([
         income: 2069000,
         expense: 1907000,
         tax: 57540,
-        earnings: 2069000,
-      },
-    ],
+        earnings: 2069000
+      }
+    ]
   },
   {
     reestrNumber: 8,
@@ -385,7 +387,7 @@ const sportObjects = ref([
         income: 27214000,
         expense: 24894000,
         tax: 1632000,
-        earnings: 27109000,
+        earnings: 27109000
       },
       {
         year: 2023,
@@ -393,25 +395,98 @@ const sportObjects = ref([
         income: 27472000,
         expense: 22171000,
         tax: 773594,
-        earnings: 27425000,
-      },
-    ],
-  },
+        earnings: 27425000
+      }
+    ]
+  }
 ])
 const filteredSportObjects = ref([])
 const activityTypes = ref([
   { name: 'Деятельность 1', value: 'Деятельность 1' },
   { name: 'Деятельность 2', value: 'Деятельность 2' },
-  { name: 'Деятельность 3', value: 'Деятельность 3' },
+  { name: 'Деятельность 3', value: 'Деятельность 3' }
 ])
 
-const onSportObjectClick = (item) => {
-  sportObject.value = item
+const chartData = ref();
+const chartOptions = ref();
+const setChartData = (data) => {
+  const documentStyle = getComputedStyle(document.documentElement);
+
+  return {
+    labels: data.years.map(year => year.year),
+    datasets: [
+      {
+        type: 'bar',
+        label: 'Выручка',
+        backgroundColor: documentStyle.getPropertyValue('--p-red-500'),
+        borderColor: documentStyle.getPropertyValue('--p-red-500'),
+        data: data.years.map(year => year.earnings)
+      },
+      {
+        type: 'bar',
+        label: 'Доходы',
+        backgroundColor: documentStyle.getPropertyValue('--p-blue-600'),
+        borderColor: documentStyle.getPropertyValue('--p-blue-600'),
+        data: data.years.map(year => year.income)
+      }
+    ]
+  };
+};
+const setChartOptions = () => {
+  const documentStyle = getComputedStyle(document.documentElement);
+  const textColor = documentStyle.getPropertyValue('--p-text-color');
+  const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color');
+  const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color');
+
+  return {
+    maintainAspectRatio: false,
+    aspectRatio: 0.8,
+    plugins: {
+      legend: {
+        labels: {
+          color: textColor
+        }
+      }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: textColorSecondary,
+          font: {
+            weight: 500
+          }
+        },
+        grid: {
+          display: false,
+          drawBorder: false
+        }
+      },
+      y: {
+        ticks: {
+          color: textColorSecondary
+        },
+        grid: {
+          color: surfaceBorder,
+          drawBorder: false
+        }
+      }
+    }
+  };
+}
+
+const onSportObjectClick = (data) => {
+  if (!data.years.find((item) => item.year === sportObjectCurrentYear.value)) {
+    sportObjectCurrentYear.value = Math.max(...data.years.map((item) => item.year))
+  }
+
+  chartData.value = setChartData(data);
+
+  sportObject.value = data
   isDialogOpen.value = true
 }
 const onSearch = () => {
   filteredSportObjects.value = sportObjects.value.filter((item) =>
-    item.name.toLowerCase().includes(state.searchInput.toLowerCase()),
+    item.name.toLowerCase().includes(state.searchInput.toLowerCase())
   )
 }
 
@@ -420,9 +495,8 @@ watchEffect(() => {
 })
 
 onMounted(() => {
-  console.log(VueYandexMaps.settings.value)
-
-  onSearch()
+  onSearch();
+  chartOptions.value = setChartOptions();
 })
 </script>
 
@@ -513,7 +587,7 @@ onMounted(() => {
         class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
       >
         <span class="flex-auto text-left xl:text-center xl:flex-none"
-          >Ведомственная принадлежность</span
+        >Ведомственная принадлежность</span
         >
         <ArrowDown class="w-6 h-6" aria-hidden="true" />
       </Button>
@@ -622,13 +696,6 @@ onMounted(() => {
       header: 'px-4 pt-6 pb-5 lg:px-9 lg:pt-9',
       content: 'px-4 pb-6 pt-0 lg:px-9 lg:pb-9',
     }"
-    @show="
-      () => {
-        if (!sportObject.years.find((item) => item.year === sportObjectCurrentYear)) {
-          console.log('not found')
-        }
-      }
-    "
   >
     <template #header>
       <h2 class="text-modalHeading font-medium truncate">{{ sportObject.name }}</h2>
@@ -744,17 +811,22 @@ onMounted(() => {
                       }"
                     />
                   </h3>
-                  <p>{{ sportObject.capital }}</p>
+                  <p>
+                    <VueNumberFormat
+                      :value="sportObject.capital"
+                      :options="{ precision: 0, prefix: '', suffix: '', decimal: ',', thousand: ' ', acceptNegative: false, isInteger: false  }"
+                    />
+                  </p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Среднесписочная численность сотрудников в
-                    <span class="select-yrs"
-                      >{{ sportObjectCurrentYear }}
-                      <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
-                    /></span>
+                    <span class="select-yrs" @click="(event) => yearSelectPopover.toggle(event)">
+                      {{ sportObjectCurrentYear }}
+                      <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button" />
+                    </span>
                   </h3>
-                  <p>{{ sportObject.years[0].employers }} чел.</p>
+                  <p>{{ sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.employers }} чел.</p>
                 </div>
               </div>
             </div>
@@ -831,7 +903,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>Общества с ограниченной ответственностью</p>
+              <p>{{ sportObject.organizationalLegalForm }}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -850,7 +922,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>Частная собственность</p>
+              <p>{{ sportObject.ownershipForm }}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -870,8 +942,7 @@ onMounted(() => {
                 />
               </h3>
               <p>
-                Организации, учреждённые юридическими лицами или гражданами, или юридическими лицами
-                и гражданами совместно
+                {{ sportObject.departmentAffiliation }}
               </p>
             </div>
           </section>
@@ -920,18 +991,12 @@ onMounted(() => {
               </h3>
               <p>{{ sportObject.address }}</p>
             </div>
-            <div class="min-h-96 bg-bgSecondaryColor rounded-2xl">
-              <yandex-map
-                :settings="{
-                  location: {
-                    center: [sportObject.lon, sportObject.lat],
-                    zoom: 9,
-                  },
-                }"
-                width="100%"
-                height="100%"
-              />
-            </div>
+
+            <MyYandexMap
+              :title="sportObject.name"
+              :lon="sportObject.coordinates.lon"
+              :lat="sportObject.coordinates.lat"
+            />
           </section>
         </TabPanel>
         <TabPanel value="3">
@@ -940,10 +1005,10 @@ onMounted(() => {
               <h2 class="text-2xl font-medium">Финансы</h2>
               <h3 class="text-sm text-textSecondary">
                 Основные показатели за
-                <span class="select-yrs"
-                  >{{ sportObjectCurrentYear }}
-                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"
-                /></span>
+                <span class="select-yrs" @click="(event) => yearSelectPopover.toggle(event)">
+                  {{ sportObjectCurrentYear }}
+                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"/>
+                </span>
               </h3>
             </div>
             <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
@@ -951,33 +1016,67 @@ onMounted(() => {
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
-                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].income }}</p>
+                <p class="text-lg xl:text-2xl">
+                  <VueNumberFormat
+                    :value="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.earnings"
+                    :options="{ precision: 0, prefix: '', suffix: '', decimal: ',', thousand: ' ', acceptNegative: true, isInteger: false  }"
+                  />
+                </p>
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
-                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].tax }}</p>
+                <p class="text-lg xl:text-2xl">
+                  <VueNumberFormat
+                    :value="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.tax"
+                    :options="{ precision: 0, prefix: '', suffix: '', decimal: ',', thousand: ' ', acceptNegative: true, isInteger: false  }"
+                  />
+                </p>
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
-                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].expense }}</p>
+                <p class="text-lg xl:text-2xl">
+                  <VueNumberFormat
+                    :value="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.expense"
+                    :options="{ precision: 0, prefix: '', suffix: '', decimal: ',', thousand: ' ', acceptNegative: true, isInteger: false  }"
+                  />
+                </p>
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
-                <p class="text-lg xl:text-2xl">{{ sportObject.years[0].earnings }}</p>
+                <p class="text-lg xl:text-2xl">
+                  <VueNumberFormat
+                    :value="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.income"
+                    :options="{ precision: 0, prefix: '', suffix: '', decimal: ',', thousand: ' ', acceptNegative: true, isInteger: false  }"
+                  />
+                </p>
               </article>
             </div>
+
             <Chart type="bar" :data="chartData" :options="chartOptions" class="h-[30rem]" />
           </section>
         </TabPanel>
       </TabPanels>
     </Tabs>
   </Dialog>
+  <Popover ref="yearSelectPopover">
+    <ul>
+      <li
+        v-for="year in sportObject.years" v-bind:key="year.year"
+        @click="() => {
+          sportObjectCurrentYear = year.year;
+          yearSelectPopover.toggle();
+        }"
+      >
+        {{ year.year }}
+      </li>
+    </ul>
+  </Popover>
 </template>
 
 <style scoped>
@@ -996,6 +1095,7 @@ onMounted(() => {
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
 .myBtn {
   inline-size: 100px;
   height: 100px;

@@ -20,6 +20,9 @@ importers:
       '@vicons/utils':
         specifier: ^0.1.4
         version: 0.1.4(vue@3.5.13)
+      '@yandex/ymaps3-types':
+        specifier: ^1.0.15471498
+        version: 1.0.15471498(@vue/runtime-core@3.5.13)
       chart.js:
         specifier: ^4.4.7
         version: 4.4.7
@@ -50,6 +53,9 @@ importers:
       vue:
         specifier: ^3.5.13
         version: 3.5.13
+      vue-number-format:
+        specifier: ^1.3.1
+        version: 1.3.1
       vue-router:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13)
@@ -1781,6 +1787,9 @@ packages:
       '@vue/composition-api':
         optional: true
 
+  vue-number-format@1.3.1:
+    resolution: {integrity: sha512-I6ljaMoKwm06qZwzCc4dU0xFK9hhzu9p8QGSt51d1mEMY9rcUyMdoeosX3uXN8rH42Hm+1p86yJuB9E74PNUDA==}
+
   vue-router@4.5.0:
     resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
     peerDependencies:
@@ -3417,6 +3426,8 @@ snapshots:
   vue-demi@0.14.10(vue@3.5.13):
     dependencies:
       vue: 3.5.13
+
+  vue-number-format@1.3.1: {}
 
   vue-router@4.5.0(vue@3.5.13):
     dependencies:

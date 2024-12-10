@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { createYmaps } from 'vue-yandex-maps';
 import PrimeVue from 'primevue/config'
 import { definePreset } from '@primevue/themes'
 import Material from '@primevue/themes/material'
 import Tooltip from 'primevue/tooltip'
+import VueNumberFormat from 'vue-number-format'
 
 import App from './App.vue'
 import router from './router'
@@ -48,13 +48,10 @@ const MyPreset = definePreset(Material, {
       },
     },
   },
-})
+});
 
-app.use(createYmaps({
-  apikey: 'qwe',
-}));
-app.use(createPinia())
-app.use(router)
+app.use(createPinia());
+app.use(router);
 app.use(PrimeVue, {
   ripple: true,
   locale: {
@@ -222,8 +219,9 @@ app.use(PrimeVue, {
       },
     },
   },
-})
+});
+app.use(VueNumberFormat, {prefix: '', decimal: ',', thousand: ' '})
 
-app.directive('tooltip', Tooltip)
+app.directive('tooltip', Tooltip);
 
-app.mount('#app')
+app.mount('#app');
