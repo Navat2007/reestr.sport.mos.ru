@@ -804,20 +804,7 @@ onMounted(() => {
                       }"
                     />
                   </h3>
-                  <p>
-                    <VueNumberFormat
-                      :value="sportObject.capital"
-                      :options="{
-                        precision: 0,
-                        prefix: '',
-                        suffix: '',
-                        decimal: ',',
-                        thousand: ' ',
-                        acceptNegative: false,
-                        isInteger: false,
-                      }"
-                    />
-                  </p>
+                  <p>{{vueNumberFormat(sportObject.capital, {precision: 0})}}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
@@ -1017,81 +1004,25 @@ onMounted(() => {
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
-                <VueNumberFormat
-                  class="text-lg xl:text-2xl"
-                  :value="
-                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.earnings
-                  "
-                  :options="{
-                    precision: 0,
-                    prefix: '',
-                    suffix: '',
-                    decimal: ',',
-                    thousand: ' ',
-                    acceptNegative: true,
-                    isInteger: false,
-                  }"
-                />
+                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.earnings, {precision: 0})}}
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
-                <VueNumberFormat
-                  class="text-lg xl:text-2xl"
-                  :value="
-                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.tax
-                  "
-                  :options="{
-                    precision: 0,
-                    prefix: '',
-                    suffix: '',
-                    decimal: ',',
-                    thousand: ' ',
-                    acceptNegative: true,
-                    isInteger: false,
-                  }"
-                />
+                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.tax, {precision: 0})}}
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
-                <VueNumberFormat
-                  class="text-lg xl:text-2xl"
-                  :value="
-                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.expense
-                  "
-                  :options="{
-                    precision: 0,
-                    prefix: '',
-                    suffix: '',
-                    decimal: ',',
-                    thousand: ' ',
-                    acceptNegative: true,
-                    isInteger: false,
-                  }"
-                />
+                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.expense, {precision: 0})}}
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
-                <VueNumberFormat
-                  class="text-lg xl:text-2xl"
-                  :value="
-                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.income
-                  "
-                  :options="{
-                    precision: 0,
-                    prefix: '',
-                    suffix: '',
-                    decimal: ',',
-                    thousand: ' ',
-                    acceptNegative: true,
-                    isInteger: false,
-                  }"
-                />
+                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.income, {precision: 0})}}
               </article>
             </div>
 
