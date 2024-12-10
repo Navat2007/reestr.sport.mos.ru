@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive, ref, watchEffect } from 'vue'
+import { computed, onMounted, reactive, ref, watchEffect } from 'vue'
 import moment from 'moment'
 import Dialog from 'primevue/dialog'
 import Popover from 'primevue/popover'
@@ -19,12 +19,12 @@ import Envelope from '@/assets/images/icons/envelope.svg'
 import Website from '@/assets/images/icons/website.svg'
 import CloseModal from '@/assets/images/icons/close-modal.svg'
 import Avatar from '@/assets/images/avatar.jpg'
+import MyFilter from '@/components/MyFilter.vue'
 
 const tabValue = ref('0')
 const isFilterShow = ref(false)
 const isDialogOpen = ref(false)
 const searchInput = ref(null)
-const isFilterActivityTypeOpen = ref(false)
 const yearSelectPopover = ref()
 const state = reactive({
   searchInput: '',
@@ -400,17 +400,65 @@ const sportObjects = ref([
     ]
   }
 ])
-const filteredSportObjects = ref([])
-const activityTypes = ref([
-  { name: 'Деятельность 1', value: 'Деятельность 1' },
-  { name: 'Деятельность 2', value: 'Деятельность 2' },
-  { name: 'Деятельность 3', value: 'Деятельность 3' }
-])
 
-const chartData = ref();
-const chartOptions = ref();
+const filteredSportObjects = ref([]);
+const activityTypes = computed(() => {
+  let array = []
+
+  sportObjects.value.map(sportObject => {
+    if (!array.includes(sportObject.activityType)) {
+      array.push(sportObject.activityType)
+    }
+  })
+
+  array.sort()
+
+  return array
+});
+const organizationalLegalForms = computed(() => {
+  let array = []
+
+  sportObjects.value.map(sportObject => {
+    if (!array.includes(sportObject.organizationalLegalForm)) {
+      array.push(sportObject.organizationalLegalForm)
+    }
+  })
+
+  array.sort()
+
+  return array
+});
+const ownershipForms = computed(() => {
+  let array = []
+
+  sportObjects.value.map(sportObject => {
+    if (!array.includes(sportObject.ownershipForm)) {
+      array.push(sportObject.ownershipForm)
+    }
+  })
+
+  array.sort()
+
+  return array
+});
+const departmentAffiliations = computed(() => {
+  let array = []
+
+  sportObjects.value.map(sportObject => {
+    if (!array.includes(sportObject.departmentAffiliation)) {
+      array.push(sportObject.departmentAffiliation)
+    }
+  })
+
+  array.sort()
+
+  return array
+});
+
+const chartData = ref()
+const chartOptions = ref()
 const setChartData = (data) => {
-  const documentStyle = getComputedStyle(document.documentElement);
+  const documentStyle = getComputedStyle(document.documentElement)
 
   return {
     labels: data.years.map(year => year.year),
@@ -432,13 +480,13 @@ const setChartData = (data) => {
         data: data.years.map(year => year.income)
       }
     ]
-  };
-};
+  }
+}
 const setChartOptions = () => {
-  const documentStyle = getComputedStyle(document.documentElement);
-  const textColor = documentStyle.getPropertyValue('--p-text-color');
-  const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color');
-  const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color');
+  const documentStyle = getComputedStyle(document.documentElement)
+  const textColor = documentStyle.getPropertyValue('--p-text-color')
+  const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color')
+  const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color')
 
   return {
     maintainAspectRatio: false,
@@ -473,7 +521,7 @@ const setChartOptions = () => {
         }
       }
     }
-  };
+  }
 }
 
 const onSportObjectClick = (data) => {
@@ -481,7 +529,7 @@ const onSportObjectClick = (data) => {
     sportObjectCurrentYear.value = Math.max(...data.years.map((item) => item.year))
   }
 
-  chartData.value = setChartData(data);
+  chartData.value = setChartData(data)
 
   sportObject.value = data
   isDialogOpen.value = true
@@ -490,15 +538,20 @@ const onSearch = () => {
   filteredSportObjects.value = sportObjects.value.filter((item) =>
     item.name.toLowerCase().includes(state.searchInput.toLowerCase())
   )
+
+  //console.log(activityTypes.value)
+}
+const onClear = () => {
+
+}
+const toggleFilter = () => {
+  isFilterShow.value = !isFilterShow.value
+  onClear()
 }
 
-watchEffect(() => {
-  console.log(sportObject.value)
-})
-
 onMounted(() => {
-  onSearch();
-  chartOptions.value = setChartOptions();
+  onSearch()
+  chartOptions.value = setChartOptions()
 })
 </script>
 
@@ -551,98 +604,36 @@ onMounted(() => {
     <!-- Фильтры -->
     <div
       v-if="isFilterShow"
-      class="flex flex-col gap-4 max-md:px-main max-md:shadow-filter bg-bgColor max-md:fixed max-md:left-0 max-md:right-0 max-md:bottom-0 md:flex-wrap md:flex-row xl:justify-end"
+      class="filter-container"
     >
       <div class="flex gap-3 items-center py-10 md:hidden">
         <Button
           class="flex-none p-0 flex items-center justify-center bg-bgColor text-main rounded-2xl active:translate-y-px border-transparent"
-          @click="isFilterShow = !isFilterShow"
+          @click="toggleFilter"
         >
           <ArrowLeft class="w-6 h-6" />
         </Button>
         <h3 class="text-2xl">Фильтры</h3>
       </div>
-      <Button
-        rounded
-        class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
-        @click="(event) => isFilterActivityTypeOpen.toggle(event)"
-      >
-        <span class="flex-auto text-left xl:text-center xl:flex-none">Вид деятельности</span>
-        <ArrowDown class="w-6 h-6" aria-hidden="true" />
-      </Button>
-      <Button
-        rounded
-        class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
-      >
-        <span class="flex-auto text-left xl:text-center xl:flex-none">Правовая форма</span>
-        <ArrowDown class="w-6 h-6" aria-hidden="true" />
-      </Button>
-      <Button
-        rounded
-        class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
-      >
-        <span class="flex-auto text-left xl:text-center xl:flex-none">Форма собственности</span>
-        <ArrowDown class="w-6 h-6" aria-hidden="true" />
-      </Button>
-      <Button
-        rounded
-        class="bg-bgColor bg-transparent border-divider xl:border-transparent xl:shadow-button flex gap-2 items-center px-4 py-2 text-textMain hover:bg-main hover:text-textAccent active:translate-y-px"
-      >
-        <span class="flex-auto text-left xl:text-center xl:flex-none"
-        >Ведомственная принадлежность</span
-        >
-        <ArrowDown class="w-6 h-6" aria-hidden="true" />
-      </Button>
+      <MyFilter title="Вид деятельности" :items="activityTypes" />
+      <MyFilter title="Правовая форма" :items="organizationalLegalForms" />
+      <MyFilter title="Форма собственности" :items="ownershipForms" />
+      <MyFilter title="Ведомственная принадлежность" :items="departmentAffiliations" />
+
       <div class="flex gap-3 justify-center py-10 md:hidden">
         <Button
           class="flex-none px-12 py-2 bg-main text-textAccent text-sm rounded-full active:translate-y-px border-transparent shadow-authButton tracking-wide"
+          @click="onSearch"
         >
           <span>Искать</span>
         </Button>
         <Button
           class="flex-none px-12 py-2 bg-bgColor text-main text-sm rounded-full active:translate-y-px border-transparent tracking-wide"
+          @click="onClear"
         >
           <span>Очистить</span>
         </Button>
       </div>
-
-      <Popover ref="isFilterActivityTypeOpen">
-        <div class="-m-3">
-          <div class="m-2 flex gap-2 px-2 items-center rounded-xl bg-bgColor border border-divider">
-            <Button
-              class="flex-none p-0 flex items-center justify-center bg-transparent border-transparent active:translate-y-px"
-            >
-              <Search class="text-icon w-6 h-6" aria-hidden="true" />
-            </Button>
-            <input
-              type="search"
-              class="w-full py-2 rounded-2xl focus:outline-none"
-              placeholder="Поиск по наименованию, адресу и виду спорта"
-            />
-          </div>
-          <ul class="max-w-lg max-h-48 xl:max-w-none overflow-y-auto">
-            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
-              <CheckCircle class="flex-none w-5 h-5 text-icon" />
-              <p>
-                Растениеводство и животноводство, охота и предоставление соответствующих услуг в
-                этих областях
-              </p>
-            </li>
-            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
-              <CheckCircle class="flex-none w-5 h-5 text-main" />
-              <p>Лесоводство и лесозаготовки</p>
-            </li>
-            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
-              <CheckCircle class="flex-none w-5 h-5 text-icon" />
-              <p>Предоставление услуг в области добычи полезных ископаемых</p>
-            </li>
-            <li class="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-linkHover">
-              <CheckCircle class="flex-none w-5 h-5 text-icon" />
-              <p>Деятельность в области спорта</p>
-            </li>
-          </ul>
-        </div>
-      </Popover>
     </div>
   </section>
   <!-- Результаты поиска -->
@@ -1009,7 +1000,7 @@ onMounted(() => {
                 Основные показатели за
                 <span class="select-yrs" @click="(event) => yearSelectPopover.toggle(event)">
                   {{ sportObjectCurrentYear }}
-                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"/>
+                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button" />
                 </span>
               </h3>
             </div>
@@ -1098,8 +1089,7 @@ onMounted(() => {
   text-underline-position: from-font;
 }
 
-.myBtn {
-  inline-size: 100px;
-  height: 100px;
+.filter-container {
+  @apply flex flex-col gap-4 max-md:px-main max-md:shadow-filter bg-bgColor max-md:fixed max-md:left-0 max-md:right-0 max-md:bottom-0 md:flex-wrap md:flex-row xl:justify-end;
 }
 </style>
