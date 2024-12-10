@@ -48,5 +48,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="yandex-map" class="min-h-96 min-w-96 bg-bgSecondaryColor rounded-2xl"/>
+  <div id="yandex-map" class="min-h-96 min-w-96 bg-bgSecondaryColor rounded-2xl overflow-hidden"/>
 </template>
