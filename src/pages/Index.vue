@@ -466,17 +466,17 @@ const setChartData = (data) => {
       {
         type: 'bar',
         label: 'Выручка',
-        backgroundColor: documentStyle.getPropertyValue('--p-red-500'),
-        borderColor: documentStyle.getPropertyValue('--p-red-500'),
-        borderRadius: 10,
+        backgroundColor: documentStyle.getPropertyValue('--p-primary-color'),
+        borderColor: documentStyle.getPropertyValue('--p-primary-color'),
+        borderRadius: 4,
         data: data.years.map(year => year.earnings)
       },
       {
         type: 'bar',
         label: 'Доходы',
-        backgroundColor: documentStyle.getPropertyValue('--p-blue-600'),
-        borderColor: documentStyle.getPropertyValue('--p-blue-600'),
-        borderRadius: 10,
+        backgroundColor: documentStyle.getPropertyValue('--p-blue-500'),
+        borderColor: documentStyle.getPropertyValue('--p-blue-500'),
+        borderRadius: 4,
         data: data.years.map(year => year.income)
       }
     ]
