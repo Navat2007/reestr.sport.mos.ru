@@ -420,6 +420,7 @@ const setChartData = (data) => {
         label: 'Выручка',
         backgroundColor: documentStyle.getPropertyValue('--p-red-500'),
         borderColor: documentStyle.getPropertyValue('--p-red-500'),
+        borderRadius: 10,
         data: data.years.map(year => year.earnings)
       },
       {
@@ -427,6 +428,7 @@ const setChartData = (data) => {
         label: 'Доходы',
         backgroundColor: documentStyle.getPropertyValue('--p-blue-600'),
         borderColor: documentStyle.getPropertyValue('--p-blue-600'),
+        borderRadius: 10,
         data: data.years.map(year => year.income)
       }
     ]
