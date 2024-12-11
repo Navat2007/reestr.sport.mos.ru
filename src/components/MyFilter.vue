@@ -80,9 +80,10 @@ onMounted(() => {
           @click="onSelect(item)"
         >
           <CheckCircle
-            class="flex-none w-5 h-5 text-icon"
+            class="flex-none w-5 h-5 "
             :class="{
-              'text-green-500': selectedItems.includes(item)
+              'text-green-500': selectedItems.includes(item),
+              'text-icon': !selectedItems.includes(item),
             }"
           />
           <p>{{ item }}</p>
