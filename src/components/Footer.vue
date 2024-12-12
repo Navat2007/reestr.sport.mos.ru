@@ -55,7 +55,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
           </address>
           <ul class="flex gap-4 mt-5 w-full justify-center xl:w-auto xl:justify-normal">
             <li>
-              <a href="https://t.me/MoscowSportOfficial" class="grid active:translate-y-px" rel="noopener nofollow">
+              <a href="https://t.me/MoscowSportOfficial" class="grid active:translate-y-px" target="_blank" rel="noopener nofollow">
                 <Telegram
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
@@ -67,7 +67,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
               </a>
             </li>
             <li>
-              <a href="https://vk.com/moscowsportofficial" class="grid active:translate-y-px" rel="noopener nofollow">
+              <a href="https://vk.com/moscowsportofficial" class="grid active:translate-y-px" target="_blank" rel="noopener nofollow">
                 <Vkontakte
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
@@ -79,7 +79,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
               </a>
             </li>
             <li>
-              <a href="https://rutube.ru/channel/24673075" class="grid active:translate-y-px" rel="noopener nofollow">
+              <a href="https://rutube.ru/channel/24673075" class="grid active:translate-y-px" target="_blank" rel="noopener nofollow">
                 <Rutube
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
