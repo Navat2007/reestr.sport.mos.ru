@@ -67,7 +67,7 @@ import AppStore from '@/assets/images/icons/appstore.svg'
               </a>
             </li>
             <li>
-              <a href="https://.com/moscowsportofficial" class="grid active:translate-y-px" rel="noopener nofollow">
+              <a href="https://vk.com/moscowsportofficial" class="grid active:translate-y-px" rel="noopener nofollow">
                 <Vkontakte
                   class="row-start-1 row-end-2 col-start-1 col-end-2 w-10 opacity-100 hover:opacity-0 transition-opacity"
                   aria-label="hidden"
