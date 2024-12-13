@@ -822,7 +822,7 @@ onMounted(() => {
                       }"
                     />
                   </h3>
-                  <p>{{ sportObject.ogrn }}</p>
+                  <p>{{ sportObject.inn }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
@@ -841,7 +841,7 @@ onMounted(() => {
                       }"
                     />
                   </h3>
-                  <p>{{ sportObject.inn }}</p>
+                  <p>{{ sportObject.ogrn }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
