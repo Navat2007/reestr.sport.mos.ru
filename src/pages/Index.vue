@@ -33,367 +33,538 @@ const sportObjectCurrentYear = ref(parseInt(moment().format('YYYY')))
 const sportObject = ref(null)
 const sportObjects = ref([
   {
-    reestrNumber: 1,
-    ogrn: '1127746355670',
-    alterName: 'ООО «3СПОРТ»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «3СПОРТ»',
-    name: 'ООО «3СПОРТ»',
-    address:
-      '105082, г. Москва, вн.тер.г. муниципальный округ Басманный, пл Спартаковская, д. 10, стр. 12 (Бизнес-центр «Флеш Ланж 10с12»)',
-    coordinates: { lat: 55.777802, lon: 37.679592 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Громов Михаил Николаевич',
-    registrationDate: '04.05.2012',
-    inn: '7708762136',
-    region: 'Москва',
-    activityType: 'Деятельность в области спорта',
+    reestrNumber: 259590,
+    ogrn: '1025000656185',
+    alterName: 'ФГАУ «ОЗДОРОВИТЕЛЬНЫЙ КОМПЛЕКС «ДЕСНА»',
+    fullName:
+      'ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ «ОЗДОРОВИТЕЛЬНЫЙ КОМПЛЕКС «ДЕСНА» УПРАВЛЕНИЯ ДЕЛАМИ ПРЕЗИДЕНТА РОССИЙСКОЙ ФЕДЕРАЦИИ',
+    name: 'ФГАУ «ОЗДОРОВИТЕЛЬНЫЙ КОМПЛЕКС «ДЕСНА»',
+    address: '108803, г. Москва, Воскресенское пос., км. Калужское Ш 32-Й, домовладение 1 стр. 1',
+    coordinates: { lat: 55.521827, lon: 37.406585 },
+    directorPosition: 'Генеральный директор',
+    directorName: 'Афанасьев Максим Павлович',
+    registrationDate: '27.09.1994',
+    inn: '5003006930',
+    region: 'г. Москва',
+    activityType: 'Деятельность по предоставлению мест для краткосрочного проживания',
     activityTypeAdditional:
-      'Торговля розничная спортивной одеждой в специализированных магазинах; Производство пищевой продукции для питания спортсменов; Производство спортивных костюмов, лыжных костюмов, купальных костюмов и прочей трикотажной или вязаной одежды; Производство спортивной обуви; Торговля оптовая спортивными товарами, включая велосипеды; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах; Торговля розничная спортивной одеждой в специализированных магазинах; Прокат и аренда товаров для отдыха и спортивных товаров; Деятельность спортивных объектов; Деятельность спортивных клубов; Деятельность фитнес-центров; Ремонт спортивного и туристского оборудования; Деятельность физкультурно- оздоровительная; Деятельность в области спорта прочая',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
+      'Деятельность спортивных объектов; Деятельность физкультурно-оздоровительная; Прокат и аренда товаров для отдыха и спортивных товаров',
+    organizationalLegalForm: 'Федеральные государственные автономные учреждения',
+    ownershipForm: 'Федеральная собственность',
     departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'да',
-    phones: ['+7 (926) 860-09-34'],
-    emails: ['grom@3sport.ru'],
-    site: 'www.3sport.ru',
-    firmSize: 'Микропредприятия',
-    capital: 10000,
+      'Управление делами Президента Российской Федерации (федеральное агентство)',
+    organizationCategory: 'Орган исполнительной власти РФ прочие',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 6593220',
+      '+7 (495) 6594268',
+      '+7 (495) 6594348',
+      '+7 (495) 6594378',
+      '+7 (495) 6594393',
+      '+7 (495) 6594452',
+      '+7 (495) 6594389',
+      '+7 (495) 6594200',
+      '+7 (495) 6594220',
+      '+7 (495) 6594310',
+      '+7 (495) 6594376',
+      '+7 (495) 6594392',
+      '+7 (495) 6594417',
+    ],
+    emails: ['desna@mail.ru', 'parkavenue@bk.ru', 'voskresenskoe@inbox.ru', 'vsk-hotel@mail.ru'],
+    sites: ['www.desna-udp.ru'],
+    firmSize: '',
+    capital: '',
     years: [
       {
-        year: 2022,
-        employers: 3,
-        income: 92823000,
-        expense: 80926000,
-        tax: 1784494,
-        earnings: 90041000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
       {
-        year: 2023,
-        employers: 5,
-        income: 113456890,
-        expense: 56999000,
-        tax: 2310345,
-        earnings: 92560000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
     ],
   },
   {
-    reestrNumber: 2,
-    ogrn: '5187746004507',
-    alterName: 'ООО «ДИКОМ СПОРТ»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИКОМ СПОРТ»',
-    name: 'ООО «ДИКОМ СПОРТ»',
-    address: '119049, г. Москва, ул. Донская, д. 6 стр. 1 этаж ПОДВАЛ, пом. 1, офис 4С',
-    coordinates: { lat: 55.724604, lon: 37.607311 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Бубело Михаил Сергеевич',
-    registrationDate: '14.12.2018',
-    inn: '7706463324',
-    region: 'Москва',
-    activityType: 'Производство спортивных товаров',
+    reestrNumber: 254123,
+    ogrn: '1025003750628',
+    alterName: 'ГБОУ ШКОЛА № 2057',
+    fullName:
+      'ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ГОРОДА МОСКВЫ «ШКОЛА № 2057»',
+    name: 'ГБОУ ШКОЛА № 2057',
+    address: '108804, г. Москва, Кокошкино п, дп. Кокошкино, ул. Дачная, д. 3А',
+    coordinates: { lat: 55.597821, lon: 37.160797 },
+    directorPosition: 'Директор',
+    directorName: 'Кусакина Светлана Николаевна',
+    registrationDate: '06.12.1996',
+    inn: '773172828276',
+    region: 'г. Москва',
+    activityType: 'Образование среднее общее',
     activityTypeAdditional:
-      'Деятельность спортивных объектов; Деятельность в области спорта прочая; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах; Торговля оптовая спортивными товарами, включая велосипеды',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
+      'Деятельность спортивных объектов; Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Государственные бюджетные учреждения субъектов Российской Федерации',
+    ownershipForm: 'Собственность субъектов Российской Федерации',
     departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'да',
-    phones: ['+7 (926) 860-09-34'],
-    emails: ['grom@3sport.ru'],
-    site: 'www.123.ru',
-    firmSize: 'Микропредприятия',
-    capital: 10000,
+      'Органы власти субъектов Российской Федерации, осуществляющие функции в области образования и науки',
+    organizationCategory: 'Орган исполнительной власти РФ прочие',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8478457',
+      '+7 (495) 8458557',
+      '+7 (495) 8458906',
+      '+7 (495) 8478661',
+      '+7 (49634) 78557',
+      '+7 (903) 6663582',
+      '+7 (909) 1501795',
+      '+7 (916) 7333210',
+      '+7 (929) 6091840',
+      '+7 (965) 2473550',
+    ],
+    emails: [
+      '2057@edu.mos.ru',
+      'contract2059@mail.ru',
+      'pluzhnikova-taty@mail.ru',
+      'tanya.sviridova2010@yandex.ru',
+    ],
+    sites: ['sch2057.mskobr.ru'],
+    firmSize: '',
+    capital: '',
     years: [
       {
-        year: 2022,
-        employers: 1,
-        income: 92823000,
-        expense: 80926000,
-        tax: 14488000,
-        earnings: 113456890,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
       {
-        year: 2023,
-        employers: 5,
-        income: 113456890,
-        expense: 56999000,
-        tax: 604940,
-        earnings: 14488000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
     ],
   },
   {
-    reestrNumber: 3,
-    ogrn: '1112130002951',
-    alterName: 'ООО «ДИНШЭН ГРУПП»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИНШЭН ГРУПП»',
-    name: 'ООО «ДИНШЭН ГРУПП»',
-    address:
-      '123098, г. Москва, вн.тер.г. муниципальный округ Щукино, ул Гамалеи, д. 19, к. 2, помещ. 1/1',
-    coordinates: { lat: 55.80128, lon: 37.454765 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Чижов Александр Игоревич',
-    registrationDate: '08.12.2017',
-    inn: '7703438760',
-    region: 'Москва',
-    activityType:
-      'Торговля оптовая лесоматериалами, строительными материалами и санитарно-техническим оборудованием',
-    activityTypeAdditional: 'Торговля розничная спортивной одежой в специализированных магазинах',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Совместная частная и иностранная собственность',
-    departmentAffiliation:
-      'Хозяйственные общества и товарищества с участием иностранных юридических и (или) физических лиц, а также лиц без гражданства',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'нет',
-    phones: ['+7 (926) 860-09-34'],
-    emails: ['grom@3sport.ru'],
-    site: 'www.123.ru',
-    firmSize: 'Микропредприятия',
-    capital: 1000000,
+    reestrNumber: 254129,
+    ogrn: '1025006034701',
+    alterName: 'МАОУ «ГИМНАЗИЯ Г.ТРОИЦКА»',
+    fullName: 'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ «ГИМНАЗИЯ Г.ТРОИЦКА»',
+    name: 'МАОУ «ГИМНАЗИЯ Г.ТРОИЦКА»',
+    address: '108840, г. Москва, г. Троицк, проспект Октябрьский, д. 6',
+    coordinates: { lat: 55.472291, lon: 37.294502 },
+    directorPosition: 'Директор',
+    directorName: 'Веригина Наталия Алексеевна',
+    registrationDate: '14.02.1994',
+    inn: '507402514242',
+    region: 'г. Москва',
+    activityType: 'Образование основное общее',
+    activityTypeAdditional:
+      'Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Муниципальные автономные учреждения',
+    ownershipForm: 'Муниципальная собственность',
+    departmentAffiliation: 'Муниципальные организации',
+    organizationCategory: 'Муниципалитеты',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8510389',
+      '+7 (495) 8510641',
+      '+7 (495) 8510822',
+      '+7 (495) 8512226',
+      '+7 (495) 8512389',
+      '+7 (495) 8512644',
+      '+7 (495) 8512848',
+      '+7 (495) 8514027',
+      '+7 (495) 8514064',
+      '+7 (495) 8519793',
+      '+7 (49675) 10389',
+      '+7 (903) 7358123',
+      '+7 (910) 4156920',
+      '+7 (916) 1420703',
+      '+7 (916) 8380238',
+    ],
+    emails: ['gurova@gym.trtk.ru', 'gymtr@edu.mos.ru', 'markova@gym.trtk.ru'],
+    sites: ['gymtroitska.mskobr.ru'],
+    firmSize: '',
+    capital: '',
     years: [
       {
-        year: 2022,
-        employers: 3,
-        income: 92823000,
-        expense: 80926000,
-        tax: 14488000,
-        earnings: 309000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
       {
-        year: 2023,
-        employers: 5,
-        income: 309000,
-        expense: 309000,
-        tax: 604940,
-        earnings: 14488000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
     ],
   },
   {
-    reestrNumber: 4,
-    ogrn: '5177746306612',
-    alterName: 'ООО «ДИОН»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИОН»',
-    name: 'ООО «ДИОН»',
-    address:
-      '125047, г. Москва, вн.тер.г. муниципальный округ Тверской, ул 4-я Тверская-Ямская, д. 24, помещ./ком. 1/4-5',
-    coordinates: { lat: 55.944484, lon: 36.407096 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Папикян Тамара Валерьевна',
-    registrationDate: '09.08.2022',
-    inn: '9710101240',
-    region: 'Москва',
-    activityType: 'Предоставление услуг парикмахерскими и салонами красоты',
+    reestrNumber: 254130,
+    ogrn: '1025006034723',
+    alterName: 'МАОУ «ГИМНАЗИЯ ИМ. Н.В. ПУШКОВА»',
+    fullName:
+      'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ «ГИМНАЗИЯ ИМЕНИ Н.В. ПУШКОВА»',
+    name: 'МАОУ «ГИМНАЗИЯ ИМ. Н.В. ПУШКОВА»',
+    address: '108840, г. Москва, г. Троицк, ул. Школьная, д. 10',
+    coordinates: { lat: 55.474362, lon: 37.300808 },
+    directorPosition: 'Директор',
+    directorName: 'Тимошенко Наталья Анатольевна',
+    registrationDate: '28.05.1996',
+    inn: '507401291508',
+    region: 'г. Москва',
+    activityType: 'Образование основное общее',
+    activityTypeAdditional:
+      'Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Муниципальные автономные учреждения',
+    ownershipForm: 'Муниципальная собственность',
+    departmentAffiliation: 'Муниципальные организации',
+    organizationCategory: 'Муниципалитеты',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8510311',
+      '+7 (495) 8510548',
+      '+7 (495) 8511767',
+      '+7 (495) 8513161',
+      '+7 (49675) 10311',
+      '+7 (903) 6155961',
+      '+7 (905) 5514660',
+      '+7 (905) 7736285',
+    ],
+    emails: [
+      'elsnit@mail.ru',
+      'gimnvp@mail.ru',
+      'gtimofieieva@bk.ru',
+      'gympushkova@edu.mos.ru',
+      'tatiana-savinova@rambler.ru',
+    ],
+    sites: ['gympushkova.mskobr.ru'],
+    firmSize: '',
+    capital: '',
+    years: [
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
+    ],
+  },
+  {
+    reestrNumber: 219564,
+    ogrn: '1025006034900',
+    alterName: 'МАУ ДО ДЮСШ-2',
+    fullName:
+      'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ «ДЕТСКО-ЮНОШЕСКАЯ СПОРТИВНАЯ ШКОЛА-2»',
+    name: 'МАУ ДО ДЮСШ-2',
+    address: '108841, г. Москва, г. Троицк, микрорайон В, д. 6А',
+    coordinates: { lat: 55.487764, lon: 37.295616 },
+    directorPosition: 'Директор',
+    directorName: 'Юдин Андрей Юрьевич',
+    registrationDate: '25.01.2001',
+    inn: '5046060805',
+    region: 'г. Москва',
+    activityType: 'Образование дополнительное детей и взрослых',
+    activityTypeAdditional:
+      'Деятельность спортивных объектов; Деятельность в области спорта прочая',
+    organizationalLegalForm: 'Муниципальные автономные учреждения',
+    ownershipForm: 'Муниципальная собственность',
+    departmentAffiliation: 'Муниципальные организации',
+    organizationCategory: 'Муниципалитеты',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8510692',
+      '+7 (495) 8512190',
+      '+7 (495) 8512438',
+      '+7 (495) 8512622',
+      '+7 (495) 8514067',
+      '+7 (495) 8515050',
+      '+7 (495) 8516047',
+      '+7 (4967) 404594',
+      '+7 (49675) 16047',
+      '+7 (916) 9794729',
+      '+7 (968) 0138401',
+    ],
+    emails: ['dush2@edu.mos.ru', 'dussh2@list.ru'],
+    sites: ['dusash2tn.mskobr.ru'],
+    firmSize: '',
+    capital: '',
+    years: [
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
+    ],
+  },
+  {
+    reestrNumber: 254131,
+    ogrn: '1025006036263',
+    alterName: 'МАОУ «ЛИЦЕЙ ГОРОДА ТРОИЦКА»',
+    fullName: 'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ «ЛИЦЕЙ ГОРОДА ТРОИЦКА»',
+    name: 'МАОУ «ЛИЦЕЙ ГОРОДА ТРОИЦКА»',
+    address: '108840, г. Москва, г. Троицк, ул. Школьная, д. 10А',
+    coordinates: { lat: 55.475368, lon: 37.300808 },
+    directorPosition: 'Директор',
+    directorName: 'Зюзикова Юлия Мардарьевна',
+    registrationDate: '25.05.1996',
+    inn: '504600995768',
+    region: 'г. Москва',
+    activityType: 'Образование основное общее',
     activityTypeAdditional: 'Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
-    departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'нет',
-    phones: ['+7 (926) 860-09-34'],
-    emails: ['grom@3sport.ru'],
-    site: 'http://pandapark.org/',
-    firmSize: 'Микропредприятия',
-    capital: 10000,
+    organizationalLegalForm: 'Муниципальные автономные учреждения',
+    ownershipForm: 'Муниципальная собственность',
+    departmentAffiliation: 'Муниципальные организации',
+    organizationCategory: 'Муниципалитеты',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8510056',
+      '+7 (495) 8510639',
+      '+7 (495) 8510674',
+      '+7 (495) 8511056',
+      '+7 (495) 8513111',
+      '+7 (495) 8513449',
+      '+7 (495) 8514015',
+      '+7 (495) 8515052',
+      '+7 (495) 8519808',
+      '+7 (49675) 10056',
+      '+7 (903) 7399400',
+      '+7 (909) 9078822',
+      '+7 (916) 4878733',
+    ],
+    emails: [
+      'akimova-msk@yandex.ru',
+      'arkimilena@yandex.ru',
+      'lrumyanzeva@gmail.com',
+      'lyceum@trtk.ru',
+      'lyctroicka@edu.mos.ru',
+      'pipko_en@trlyceum.ru',
+      'trlyceum@gmail.com',
+      'vedeneeva.76@bk.ru',
+    ],
+    sites: ['lyctroicka.mskobr.ru'],
+    firmSize: '',
+    capital: '',
     years: [
       {
-        year: 2022,
-        employers: 1,
-        income: 2482000,
-        expense: 2569000,
-        tax: 264425,
-        earnings: 2482000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
-      { year: 2023, employers: 5, income: 569000, expense: 602000, tax: 604940, earnings: 569000 },
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
     ],
   },
   {
-    reestrNumber: 5,
-    ogrn: '1107746719310',
-    alterName: 'ООО «ДИСК»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДИСК»',
-    name: 'ООО «ДИСК»',
-    address: '119034, г. Москва, пер. Мансуровский, д. 10 стр. 1 ПОДВ. 0 пом. VI ком. 1',
-    coordinates: { lat: 55.740198, lon: 37.59427 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Пекло Виктория Станиславовна',
-    registrationDate: '20.04.2011',
-    inn: '7704781138',
-    region: 'Москва',
-    activityType: 'Деятельность в области спорта прочая',
+    reestrNumber: 259938,
+    ogrn: '1025007510043',
+    alterName: 'МБУ «СПОРТИВНЫЙ КОМПЛЕКС «ВОРОНОВО»',
+    fullName: 'МУНИЦИПАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ «СПОРТИВНЫЙ КОМПЛЕКС «ВОРОНОВО»',
+    name: 'МБУ «СПОРТИВНЫЙ КОМПЛЕКС «ВОРОНОВО»',
+    address: '108830, г. Москва, Вороновское пос., пос. Лмс, микрорайон Центральный, д. 40 к. 1',
+    coordinates: { lat: 55.312573, lon: 37.181728 },
+    directorPosition: 'Директор',
+    directorName: 'Володин Алексей Николаевич',
+    registrationDate: '02.09.2002',
+    inn: '5074024492',
+    region: 'г. Москва',
+    activityType: 'Деятельность спортивных объектов',
+    activityTypeAdditional: 'Деятельность в области спорта прочая',
+    organizationalLegalForm: 'Муниципальные бюджетные учреждения',
+    ownershipForm: 'Муниципальная собственность',
+    departmentAffiliation: 'Муниципальные организации',
+    organizationCategory: 'Муниципалитеты',
+    FK1Form: '',
+    phones: [
+      '+7 (916) 7697130',
+      '+7 (926) 0876864',
+      '+7 (495) 5924678',
+      '+7 (495) 5924776',
+      '+7 (495) 8506686',
+      '+7 (49675) 06686',
+    ],
+    emails: [''],
+    sites: ['skvoronovo.ru'],
+    firmSize: '',
+    capital: '',
+    years: [
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
+      {
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
+      },
+    ],
+  },
+  {
+    reestrNumber: 254149,
+    ogrn: '1025007515510',
+    alterName: 'ГБОУ ШКОЛА № 2120',
+    fullName:
+      'ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ГОРОДА МОСКВЫ «ШКОЛА № 2120»',
+    name: 'ГБОУ ШКОЛА № 2120',
+    address: '108811, г. Москва, Московский пос., г. Московский, ул. Атласова, д. 7 корп. 3',
+    coordinates: { lat: 55.600781, lon: 37.360295 },
+    directorPosition: 'Директор',
+    directorName: 'Ланщиков Дмитрий Николаевич',
+    registrationDate: '30.09.1999',
+    inn: '643964884563',
+    region: 'г. Москва',
+    activityType: 'Образование среднее общее',
     activityTypeAdditional:
-      'Деятельность в области спорта прочая; Деятельность спортивных объектов; Деятельность спортивных клубов; Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
+      'Деятельность спортивных объектов; Деятельнось спортивных клубов; Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
+    organizationalLegalForm: 'Государственные бюджетные учреждения субъектов Российской Федерации',
+    ownershipForm: 'Собственность субъектов Российской Федерации',
     departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'нет',
-    phones: ['+7 (903) 7801122'],
-    emails: ['grom@3sport.ru'],
-    site: 'http://pandapark.org/',
-    firmSize: 'Микропредприятия',
-    capital: 25000,
+      'Органы власти субъектов Российской Федерации, осуществляющие функции в области образования и науки',
+    organizationCategory: 'Орган исполнительной власти РФ прочие',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8670770',
+      '+7 (985) 3100556',
+      '+7 (985) 7642317',
+      '+7 (495) 8670232',
+      '+7 (495) 9785565',
+      '+7 (916) 6467715',
+      '+7 (916) 8212310',
+      '+7 (925) 8381030',
+    ],
+    emails: [
+      '2120@edu.mos.ru',
+      'luadmila.volkova@gmail.com',
+      'natalyzubarev@yandex.ru',
+      'sergeevama78@mail.ru',
+    ],
+    sites: ['http://sch2120tn.mskobr.ru', 'sch4tn.mskobr.ru'],
+    firmSize: '',
+    capital: '',
     years: [
       {
-        year: 2022,
-        employers: 3,
-        income: 36948000,
-        expense: 36948000,
-        tax: 264425,
-        earnings: 1632000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
       {
-        year: 2023,
-        employers: 5,
-        income: 42734000,
-        expense: 44422000,
-        tax: 604940,
-        earnings: 40146000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
     ],
   },
   {
-    reestrNumber: 6,
-    ogrn: '1127747177051',
-    alterName: 'ООО «ДМ-ФИТНЕС»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМ-ФИТНЕС»',
-    name: 'ООО «ДМ-ФИТНЕС»',
-    address:
-      '125466, г. Москва, вн.тер.г. муниципальный округ Куркино, км МКАД 73-й, д. 7 (Торговый центр «Арфа»)',
-    coordinates: { lat: 55.876402, lon: 37.42311 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Питерскова Юлия Алексеевна',
-    registrationDate: '15.08.2022',
-    inn: '7733389334',
-    region: 'Москва',
+    reestrNumber: 225251,
+    ogrn: '1025007515521',
+    alterName: 'МАУ ДО СШ',
+    fullName:
+      'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ ГОРОДСКОГО ОКРУГА ЩЕРБИНКА В ГОРОДЕ МОСКВЕ СПОРТИВНАЯ ШКОЛА',
+    name: 'МАУ ДО СШ',
+    address: '108851, г. Москва, г. Щербинка, ул. Новостроевская, д. 4',
+    coordinates: { lat: 55.505506, lon: 37.559281 },
+    directorPosition: 'Директор',
+    directorName: 'Шашкин Константин Анатольевич',
+    registrationDate: '27.04.1998',
+    inn: '5051005493',
+    region: 'г. Москва',
     activityType: 'Деятельность спортивных объектов',
     activityTypeAdditional:
-      'Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная; Торговля розничная спортивным оборудованием и спортивными товарами в специализированных магазинах',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
-    departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'нет',
-    phones: ['+7 (926) 860-09-34'],
-    emails: ['grom@3sport.ru'],
-    site: 'putilkovo-fitness.ru',
-    firmSize: 'Микропредприятия',
-    capital: 10000,
-    years: [
-      {
-        year: 2022,
-        employers: 10,
-        income: 39630000,
-        expense: 36948000,
-        tax: 14488000,
-        earnings: 39630000,
-      },
-      {
-        year: 2023,
-        employers: 11,
-        income: 14488000,
-        expense: 13963000,
-        tax: 264425,
-        earnings: 14488000,
-      },
+      'Деятельнось спортивных клубов; Деятельность в области спорта прочая; Образование в области спорта и отдыха',
+    organizationalLegalForm: 'Муниципальные бюджетные учреждения',
+    ownershipForm: 'Муниципальная собственность',
+    departmentAffiliation: 'Муниципальные организации',
+    organizationCategory: 'Муниципалитеты',
+    FK1Form: '',
+    phones: [
+      '+7 (495) 8494655',
+      '+7 (49676) 71008',
+      '+7 (916) 6488923',
+      '+7 (916) 7244414',
+      '+7 (925) 0002216',
+      '+7 (963) 6999158',
     ],
-  },
-  {
-    reestrNumber: 7,
-    ogrn: '1227700494229',
-    alterName: 'ООО «ДМ»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМ»',
-    name: 'ООО «ДМ»',
-    address:
-      '127410, г. Москва, вн.тер.г. муниципальный округ Отрадное, ш Алтуфьевское, влд. 31Г, стр. 5, ком. 8',
-    coordinates: { lat: 55.863207, lon: 37.582412 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Смирнова Ирина Ивановна',
-    registrationDate: '25.05.2015',
-    inn: '7725274499',
-    region: 'Москва',
-    activityType:
-      'Деятельность по предоставлению прочих вспомогательных услуг для бизнеса, не включенная в другие группировки',
-    activityTypeAdditional:
-      'Деятельность в области спорта прочая; Торговля оптовая спортивными товарами, включая велосипеды; Торговля розничная спортивной одеждой в специализированных магазинах',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
-    departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'да',
-    phones: ['+7 (916) 3917114', '+7 (926) 9146680'],
-    emails: ['grom@3sport.ru'],
-    site: 'www.123.ru',
-    firmSize: 'Микропредприятия',
-    capital: 10000,
+    emails: ['dush@edu.mos.ru', 'dusshsch@yandex.ru', 'sportsherbinka@yandex.ru'],
+    sites: ['dusashch.mskobr.ru'],
+    firmSize: '',
+    capital: '',
     years: [
       {
-        year: 2022,
-        employers: 1,
-        income: 1741000,
-        expense: 1632000,
-        tax: 14488000,
-        earnings: 1741000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
       {
-        year: 2023,
-        employers: 5,
-        income: 2069000,
-        expense: 1907000,
-        tax: 57540,
-        earnings: 2069000,
-      },
-    ],
-  },
-  {
-    reestrNumber: 8,
-    ogrn: '1157746469033',
-    alterName: 'ООО «ДМД»',
-    fullName: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ДМД»',
-    name: 'ООО «ДМД»',
-    address: '109156, г. Москва, ул. Генерала Кузнецова, д. 20 этаж / пом. 1/3',
-    coordinates: { lat: 55.688472, lon: 37.860719 },
-    directorPosition: 'генеральный директор',
-    directorName: 'Полякова Ирина Васильевна',
-    registrationDate: '25.11.2015',
-    inn: '7729483447',
-    region: 'Москва',
-    activityType: 'Деятельность в области медицины прочая, не включенная в другие группировки',
-    activityTypeAdditional: 'Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Общества с ограниченной ответственностью',
-    ownershipForm: 'Частная собственность',
-    departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация прочая спортивная',
-    FK1Form: 'нет',
-    phones: ['+7 (926) 860-09-34'],
-    emails: ['grom@3sport.ru'],
-    site: 'www.123.ru',
-    firmSize: 'Микропредприятия',
-    capital: 10000,
-    years: [
-      {
-        year: 2022,
-        employers: 3,
-        income: 27214000,
-        expense: 24894000,
-        tax: 1632000,
-        earnings: 27109000,
-      },
-      {
-        year: 2023,
-        employers: 5,
-        income: 27472000,
-        expense: 22171000,
-        tax: 773594,
-        earnings: 27425000,
+        year: '',
+        employers: '',
+        income: '',
+        expense: '',
+        tax: '',
+        earnings: '',
       },
     ],
   },
@@ -402,7 +573,7 @@ const sportObjects = ref([
 const activityTypes = computed(() => {
   let array = []
 
-  sportObjects.value.map(sportObject => {
+  sportObjects.value.map((sportObject) => {
     if (!array.includes(sportObject.activityType)) {
       array.push(sportObject.activityType)
     }
@@ -411,11 +582,11 @@ const activityTypes = computed(() => {
   array.sort()
 
   return array
-});
+})
 const organizationalLegalForms = computed(() => {
   let array = []
 
-  sportObjects.value.map(sportObject => {
+  sportObjects.value.map((sportObject) => {
     if (!array.includes(sportObject.organizationalLegalForm)) {
       array.push(sportObject.organizationalLegalForm)
     }
@@ -424,11 +595,11 @@ const organizationalLegalForms = computed(() => {
   array.sort()
 
   return array
-});
+})
 const ownershipForms = computed(() => {
   let array = []
 
-  sportObjects.value.map(sportObject => {
+  sportObjects.value.map((sportObject) => {
     if (!array.includes(sportObject.ownershipForm)) {
       array.push(sportObject.ownershipForm)
     }
@@ -437,11 +608,11 @@ const ownershipForms = computed(() => {
   array.sort()
 
   return array
-});
+})
 const departmentAffiliations = computed(() => {
   let array = []
 
-  sportObjects.value.map(sportObject => {
+  sportObjects.value.map((sportObject) => {
     if (!array.includes(sportObject.departmentAffiliation)) {
       array.push(sportObject.departmentAffiliation)
     }
@@ -450,17 +621,22 @@ const departmentAffiliations = computed(() => {
   array.sort()
 
   return array
-});
+})
 
-const filteredSportObjects = ref([]);
-const selectedActivityTypes = ref([]);
-const selectedOrganizationalLegalForms = ref([]);
-const selectedOwnershipForms = ref([]);
-const selectedDepartmentAffiliations = ref([]);
+const filteredSportObjects = ref([])
+const selectedActivityTypes = ref([])
+const selectedOrganizationalLegalForms = ref([])
+const selectedOwnershipForms = ref([])
+const selectedDepartmentAffiliations = ref([])
 
 const isFilterShow = ref(false)
 const isAnyFilterSelected = computed(() => {
-  return selectedActivityTypes.value.length > 0 || selectedOrganizationalLegalForms.value.length > 0 || selectedOwnershipForms.value.length > 0 || selectedDepartmentAffiliations.value.length > 0
+  return (
+    selectedActivityTypes.value.length > 0 ||
+    selectedOrganizationalLegalForms.value.length > 0 ||
+    selectedOwnershipForms.value.length > 0 ||
+    selectedDepartmentAffiliations.value.length > 0
+  )
 })
 
 const chartData = ref()
@@ -469,7 +645,7 @@ const setChartData = (data) => {
   const documentStyle = getComputedStyle(document.documentElement)
 
   return {
-    labels: data.years.map(year => year.year),
+    labels: data.years.map((year) => year.year),
     datasets: [
       {
         type: 'bar',
@@ -477,7 +653,7 @@ const setChartData = (data) => {
         backgroundColor: documentStyle.getPropertyValue('--p-primary-color'),
         borderColor: documentStyle.getPropertyValue('--p-primary-color'),
         borderRadius: 4,
-        data: data.years.map(year => year.earnings)
+        data: data.years.map((year) => year.earnings),
       },
       {
         type: 'bar',
@@ -485,16 +661,16 @@ const setChartData = (data) => {
         backgroundColor: documentStyle.getPropertyValue('--p-blue-500'),
         borderColor: documentStyle.getPropertyValue('--p-blue-500'),
         borderRadius: 4,
-        data: data.years.map(year => year.income)
-      }
-    ]
+        data: data.years.map((year) => year.income),
+      },
+    ],
   }
 }
 const setChartOptions = () => {
-  const documentStyle = getComputedStyle(document.documentElement);
-  const textColor = documentStyle.getPropertyValue('--p-text-color');
-  const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color');
-  const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color');
+  const documentStyle = getComputedStyle(document.documentElement)
+  const textColor = documentStyle.getPropertyValue('--p-text-color')
+  const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color')
+  const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color')
 
   return {
     maintainAspectRatio: false,
@@ -502,33 +678,33 @@ const setChartOptions = () => {
     plugins: {
       legend: {
         labels: {
-          color: textColor
-        }
-      }
+          color: textColor,
+        },
+      },
     },
     scales: {
       x: {
         ticks: {
           color: textColorSecondary,
           font: {
-            weight: 500
-          }
+            weight: 500,
+          },
         },
         grid: {
           display: false,
-          drawBorder: false
-        }
+          drawBorder: false,
+        },
       },
       y: {
         ticks: {
-          color: textColorSecondary
+          color: textColorSecondary,
         },
         grid: {
           color: surfaceBorder,
-          drawBorder: false
-        }
-      }
-    }
+          drawBorder: false,
+        },
+      },
+    },
   }
 }
 
@@ -544,30 +720,49 @@ const onSportObjectClick = (data) => {
 }
 const onSearch = () => {
   filteredSportObjects.value = sportObjects.value
-    .filter((item) => item.name.toLowerCase().includes(state.searchInput.toLowerCase()) || item.address.toLowerCase().includes(state.searchInput.toLowerCase()))
-    .filter((item) => selectedActivityTypes.value.length === 0 || selectedActivityTypes.value.includes(item.activityType))
-    .filter((item) => selectedOrganizationalLegalForms.value.length === 0 || selectedOrganizationalLegalForms.value.includes(item.organizationalLegalForm))
-    .filter((item) => selectedOwnershipForms.value.length === 0 || selectedOwnershipForms.value.includes(item.ownershipForm))
-    .filter((item) => selectedDepartmentAffiliations.value.length === 0 || selectedDepartmentAffiliations.value.includes(item.departmentAffiliation))
+    .filter(
+      (item) =>
+        item.name.toLowerCase().includes(state.searchInput.toLowerCase()) ||
+        item.address.toLowerCase().includes(state.searchInput.toLowerCase()),
+    )
+    .filter(
+      (item) =>
+        selectedActivityTypes.value.length === 0 ||
+        selectedActivityTypes.value.includes(item.activityType),
+    )
+    .filter(
+      (item) =>
+        selectedOrganizationalLegalForms.value.length === 0 ||
+        selectedOrganizationalLegalForms.value.includes(item.organizationalLegalForm),
+    )
+    .filter(
+      (item) =>
+        selectedOwnershipForms.value.length === 0 ||
+        selectedOwnershipForms.value.includes(item.ownershipForm),
+    )
+    .filter(
+      (item) =>
+        selectedDepartmentAffiliations.value.length === 0 ||
+        selectedDepartmentAffiliations.value.includes(item.departmentAffiliation),
+    )
 }
 const onClear = () => {
-  selectedActivityTypes.value = [];
-  selectedOrganizationalLegalForms.value = [];
-  selectedOwnershipForms.value = [];
-  selectedDepartmentAffiliations.value = [];
+  selectedActivityTypes.value = []
+  selectedOrganizationalLegalForms.value = []
+  selectedOwnershipForms.value = []
+  selectedDepartmentAffiliations.value = []
 
-  onSearch();
+  onSearch()
 }
 const toggleFilter = () => {
   isFilterShow.value = !isFilterShow.value
 
-  if(!isFilterShow.value)
-    onClear();
+  if (!isFilterShow.value) onClear()
 }
 
 onMounted(() => {
-  onSearch();
-  chartOptions.value = setChartOptions();
+  onSearch()
+  chartOptions.value = setChartOptions()
 })
 </script>
 
@@ -603,9 +798,9 @@ onMounted(() => {
           </Button>
         </div>
         <Button
-          class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover "
+          class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover"
           :class="{
-            'md:bg-bgColor md:text-icon' : !isAnyFilterSelected,
+            'md:bg-bgColor md:text-icon': !isAnyFilterSelected,
           }"
           @click="toggleFilter"
           v-tooltip.top="{
@@ -621,10 +816,7 @@ onMounted(() => {
       </div>
     </div>
     <!-- Фильтры -->
-    <div
-      v-if="isFilterShow"
-      class="filter-container"
-    >
+    <div v-if="isFilterShow" class="filter-container">
       <div class="flex gap-3 items-center py-10 md:hidden">
         <Button
           class="flex-none p-0 flex items-center justify-center bg-bgColor text-main rounded-2xl active:translate-y-px border-transparent"
@@ -638,54 +830,67 @@ onMounted(() => {
         title="Вид деятельности"
         :items="activityTypes"
         :itemSelected="selectedActivityTypes"
-        @onSelect="(data) => {
-          selectedActivityTypes = data;
-          onSearch();
-        }" />
+        @onSelect="
+          (data) => {
+            selectedActivityTypes = data
+            onSearch()
+          }
+        "
+      />
       <MyFilter
         title="Правовая форма"
         :items="organizationalLegalForms"
         :itemSelected="selectedOrganizationalLegalForms"
-        @onSelect="(data) => {
-          selectedOrganizationalLegalForms = data;
-          onSearch();
-        }"
+        @onSelect="
+          (data) => {
+            selectedOrganizationalLegalForms = data
+            onSearch()
+          }
+        "
       />
       <MyFilter
         title="Форма собственности"
         :items="ownershipForms"
         :itemSelected="selectedOwnershipForms"
-        @onSelect="(data) => {
-          selectedOwnershipForms = data;
-          onSearch();
-        }"
+        @onSelect="
+          (data) => {
+            selectedOwnershipForms = data
+            onSearch()
+          }
+        "
       />
       <MyFilter
         title="Ведомственная принадлежность"
         :items="departmentAffiliations"
         :itemSelected="selectedDepartmentAffiliations"
-        @onSelect="(data) => {
-          selectedDepartmentAffiliations = data;
-          onSearch();
-        }"
+        @onSelect="
+          (data) => {
+            selectedDepartmentAffiliations = data
+            onSearch()
+          }
+        "
       />
 
       <div class="flex gap-3 justify-center py-10 md:hidden">
         <Button
           class="flex-none px-12 py-2 bg-main text-textAccent text-sm rounded-full active:translate-y-px border-transparent shadow-authButton tracking-wide"
-          @click="() => {
-            isFilterShow = false;
-            onSearch();
-          }"
+          @click="
+            () => {
+              isFilterShow = false
+              onSearch()
+            }
+          "
         >
           <span>Искать</span>
         </Button>
         <Button
           class="flex-none px-12 py-2 bg-bgColor text-main text-sm rounded-full active:translate-y-px border-transparent tracking-wide"
-          @click="() => {
-            isFilterShow = false;
-            onClear();
-          }"
+          @click="
+            () => {
+              isFilterShow = false
+              onClear()
+            }
+          "
         >
           <span>Очистить</span>
         </Button>
@@ -860,7 +1065,7 @@ onMounted(() => {
                       }"
                     />
                   </h3>
-                  <p>{{vueNumberFormat(sportObject.capital, {precision: 0})}}</p>
+                  <p>{{ vueNumberFormat(sportObject.capital, { precision: 0 }) }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
@@ -870,7 +1075,12 @@ onMounted(() => {
                       <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button" />
                     </span>
                   </h3>
-                  <p>{{ sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.employers }} чел.</p>
+                  <p>
+                    {{
+                      sportObject.years.find((year) => year.year === sportObjectCurrentYear)
+                        ?.employers
+                    }} чел.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1020,12 +1230,12 @@ onMounted(() => {
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
                 <a
-                  v-bind:href="sportObject.site"
+                  v-for="site in sportObject.sites"
+                  v-bind:href="site"
                   class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
-                  target="_blank"
                 >
                   <Website class="flex-none w-4 h-4 text-icon" />
-                  {{ sportObject.site }}</a
+                  {{ site }}</a
                 >
               </div>
             </div>
@@ -1051,7 +1261,7 @@ onMounted(() => {
                 Основные показатели за
                 <span class="select-yrs" @click="(event) => yearSelectPopover.toggle(event)">
                   {{ sportObjectCurrentYear }}
-                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button"/>
+                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button" />
                 </span>
               </h3>
             </div>
@@ -1060,25 +1270,46 @@ onMounted(() => {
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
-                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.earnings, {precision: 0})}}
+                {{
+                  vueNumberFormat(
+                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)
+                      ?.earnings,
+                    { precision: 0 },
+                  )
+                }}
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
-                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.tax, {precision: 0})}}
+                {{
+                  vueNumberFormat(
+                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.tax,
+                    { precision: 0 },
+                  )
+                }}
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
-                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.expense, {precision: 0})}}
+                {{
+                  vueNumberFormat(
+                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.expense,
+                    { precision: 0 },
+                  )
+                }}
               </article>
               <article
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
-                {{vueNumberFormat(sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.income, {precision: 0})}}
+                {{
+                  vueNumberFormat(
+                    sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.income,
+                    { precision: 0 },
+                  )
+                }}
               </article>
             </div>
 
