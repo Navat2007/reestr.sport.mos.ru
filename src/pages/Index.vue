@@ -1207,36 +1207,48 @@ onMounted(() => {
             <div class="flex max-sm:flex-col flex-wrap gap-4">
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
-                <a
-                  v-for="phone in sportObject.phones"
-                  v-bind:href="'tel:' + phone"
-                  class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
-                >
-                  <Telephone class="flex-none w-4 h-4 text-icon" />
-                  {{ phone }}</a
-                >
+                <p class="flex gap-2">
+                  <Telephone class="flex-none w-4 h-4 text-icon mt-1" />
+                  <span class="flex-auto flex flex-col">
+                    <a
+                      v-for="phone in sportObject.phones"
+                      v-bind:href="'tel:' + phone"
+                      class="w-fit border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
+                    >
+                      {{ phone }}
+                    </a>
+                  </span>
+                </p>
               </div>
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Почта</h3>
-                <a
-                  v-for="email in sportObject.emails"
-                  v-bind:href="'mailto:' + email"
-                  class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
-                >
-                  <Envelope class="flex-none w-4 h-4 text-icon" />
-                  {{ email }}</a
-                >
+                <p class="flex gap-2">
+                  <Envelope class="flex-none w-4 h-4 text-icon mt-1" />
+                  <span class="flex-auto flex flex-col">
+                    <a
+                      v-for="email in sportObject.emails"
+                      v-bind:href="'mailto:' + email"
+                      class="w-fit border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
+                    >
+                      {{ email }}
+                    </a>
+                  </span>
+                </p>
               </div>
               <div class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
-                <a
-                  v-for="site in sportObject.sites"
-                  v-bind:href="site"
-                  class="flex w-fit items-center gap-2 border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
-                >
-                  <Website class="flex-none w-4 h-4 text-icon" />
-                  {{ site }}</a
-                >
+                <p class="flex gap-2">
+                  <Website class="flex-none w-4 h-4 text-icon mt-1" />
+                  <span class="flex-auto flex flex-col">
+                    <a
+                      v-for="site in sportObject.sites"
+                      v-bind:href="site"
+                      class="w-fit border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
+                    >
+                      {{ site }}
+                    </a>
+                  </span>
+                </p>
               </div>
             </div>
             <div class="flex flex-col">
