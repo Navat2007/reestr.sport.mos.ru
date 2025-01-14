@@ -31,681 +31,15 @@ const state = reactive({
 
 const sportObjectCurrentYear = ref(parseInt(moment().format('YYYY')))
 const sportObject = ref(null)
-const sportObjects = ref([
-  {
-    reestrNumber: 269533,
-    ogrn: '1027700022074',
-    alterName: 'АО «ЛОТТЕ РУС»',
-    fullName: 'АКЦИОНЕРНОЕ ОБЩЕСТВО «ЛОТТЕ РУС»',
-    name: 'АО «ЛОТТЕ РУС»',
-    address: '121099, г. Москва, бульвар Новинский, д. 8 стр. 2',
-    coordinates: { lat: 55.750332, lon: 37.583957 },
-    directorPosition: 'Генеральный директор',
-    directorName: 'Андерсен Мортен Бундгорд',
-    registrationDate: '18.06.1997',
-    inn: '770474865913',
-    region: 'г. Москва',
-    activityType: 'Деятельность гостиниц и прочих мест для временного проживания',
-    activityTypeAdditional: 'Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Непубличные акционерные общества',
-    ownershipForm: 'Собственность иностранных юридических лиц',
-    departmentAffiliation:
-      'Хозяйственные общества и товарищества с участием иностранных юридических и (или) физических лиц, а также лиц без гражданства',
-    organizationCategory: 'Некоммерческое партнерство',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 7752704',
-      '+7 (905) 5376565',
-      '+7 (495) 6262781',
-      '+7 (495) 6262783',
-      '+7 (495) 6262784',
-      '+7 (495) 6262786',
-      '+7 (495) 6264083',
-      '+7 (495) 6264614',
-      '+7 (495) 7451000',
-      '+7 (495) 7752702',
-      '+7 (499) 2413248',
-      '+7 (499) 2414147',
-      '+7 (499) 2527751',
-      '+7 (903) 1177600',
-    ],
-    emails: [
-      'akorol@lotterus.ru',
-      'akorol@lottrrus.ru',
-      'antonkorol@lotte.ru',
-      'info@lotterus.ru',
-      'reservations@lottehotel.ru',
-    ],
-    sites: [
-      'http://www.lottehotel.com;/moscow/ru/',
-      'https://www.lottehotel.com;/moscow-hotel/ru.html',
-    ],
-    firmSize: 'Средние предприятия',
-    capital: '1305812000',
-    years: [
-      {
-        year: 2022,
-        employers: 342,
-        income: 5897372000,
-        expense: 5864422000,
-        tax: 931700331,
-        earnings: 3707049000,
-      },
-      {
-        year: 2023,
-        employers: 333,
-        income: 5506478000,
-        expense: 5571545000,
-        tax: '',
-        earnings: 4396447000,
-      },
-    ],
-  },
-  {
-    reestrNumber: 260729,
-    ogrn: '1027700045614',
-    alterName: 'ЗАО КСЦ «ИЗМАЙЛОВО»',
-    fullName: 'ЗАКРЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО «КОННОСПОРТИВНЫЙ ЦЕНТР «ИЗМАЙЛОВО»',
-    name: 'ЗАО КСЦ «ИЗМАЙЛОВО»',
-    address: '111123, г. Москва, шоссе Энтузиастов, д. 31 д',
-    coordinates: { lat: 55.761421, lon: 37.756021 },
-    directorPosition: 'Генеральный директор',
-    directorName: 'Бакеев Александр Васильевич',
-    registrationDate: '12.04.2002',
-    inn: '7720264666',
-    region: 'г. Москва',
-    activityType: 'Деятельность в области спорта прочая',
-    activityTypeAdditional: 'Прочие виды полиграфической деятельности',
-    organizationalLegalForm: 'Непубличные акционерные общества',
-    ownershipForm: 'Частная собственность',
-    departmentAffiliation:
-      'Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно',
-    organizationCategory: 'Организация, требующая уточнения',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 1099088',
-      '+7 (925) 1771214',
-      '+7 (925) 8488251',
-      '+7 (495) 3047936',
-      '+7 (495) 3048358',
-      '+7 (495) 3048563',
-      '+7 (495) 5174382',
-      '+7 (495) 5174391',
-      '+7 (495) 6721556',
-      '+7 (495) 6723203',
-      '+7 (495) 6723211',
-      '+7 (495) 6723215',
-      '+7 (495) 6723224',
-      '+7 (495) 6723238',
-      '+7 (495) 6723412',
-    ],
-    emails: ['poni-kl@mail.ru'],
-    sites: ['kskizmailovo.ru'],
-    firmSize: 'Малые предприятия',
-    capital: '25200000',
-    years: [
-      {
-        year: 2022,
-        employers: 22,
-        income: 31379000,
-        expense: 34845000,
-        tax: 2138809,
-        earnings: 30536000,
-      },
-      {
-        year: 2023,
-        employers: 20,
-        income: 31684000,
-        expense: 33712000,
-        tax: '',
-        earnings: 31684000,
-      },
-    ],
-  },
-  {
-    reestrNumber: 259590,
-    ogrn: '1025000656185',
-    alterName: 'ФГАУ «ОЗДОРОВИТЕЛЬНЫЙ КОМПЛЕКС «ДЕСНА»',
-    fullName:
-      'ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ «ОЗДОРОВИТЕЛЬНЫЙ КОМПЛЕКС «ДЕСНА» УПРАВЛЕНИЯ ДЕЛАМИ ПРЕЗИДЕНТА РОССИЙСКОЙ ФЕДЕРАЦИИ',
-    name: 'ФГАУ «ОЗДОРОВИТЕЛЬНЫЙ КОМПЛЕКС «ДЕСНА»',
-    address: '108803, г. Москва, Воскресенское пос., км. Калужское Ш 32-Й, домовладение 1 стр. 1',
-    coordinates: { lat: 55.521827, lon: 37.406585 },
-    directorPosition: 'Генеральный директор',
-    directorName: 'Афанасьев Максим Павлович',
-    registrationDate: '27.09.1994',
-    inn: '5003006930',
-    region: 'г. Москва',
-    activityType: 'Деятельность по предоставлению мест для краткосрочного проживания',
-    activityTypeAdditional:
-      'Деятельность спортивных объектов; Деятельность физкультурно-оздоровительная; Прокат и аренда товаров для отдыха и спортивных товаров',
-    organizationalLegalForm: 'Федеральные государственные автономные учреждения',
-    ownershipForm: 'Федеральная собственность',
-    departmentAffiliation:
-      'Управление делами Президента Российской Федерации (федеральное агентство)',
-    organizationCategory: 'Орган исполнительной власти РФ прочие',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 6593220',
-      '+7 (495) 6594268',
-      '+7 (495) 6594348',
-      '+7 (495) 6594378',
-      '+7 (495) 6594393',
-      '+7 (495) 6594452',
-      '+7 (495) 6594389',
-      '+7 (495) 6594200',
-      '+7 (495) 6594220',
-      '+7 (495) 6594310',
-      '+7 (495) 6594376',
-      '+7 (495) 6594392',
-      '+7 (495) 6594417',
-    ],
-    emails: ['desna@mail.ru', 'parkavenue@bk.ru', 'voskresenskoe@inbox.ru', 'vsk-hotel@mail.ru'],
-    sites: ['www.desna-udp.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  {
-    reestrNumber: 254123,
-    ogrn: '1025003750628',
-    alterName: 'ГБОУ ШКОЛА № 2057',
-    fullName:
-      'ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ГОРОДА МОСКВЫ «ШКОЛА № 2057»',
-    name: 'ГБОУ ШКОЛА № 2057',
-    address: '108804, г. Москва, Кокошкино п, дп. Кокошкино, ул. Дачная, д. 3А',
-    coordinates: { lat: 55.597821, lon: 37.160797 },
-    directorPosition: 'Директор',
-    directorName: 'Кусакина Светлана Николаевна',
-    registrationDate: '06.12.1996',
-    inn: '773172828276',
-    region: 'г. Москва',
-    activityType: 'Образование среднее общее',
-    activityTypeAdditional:
-      'Деятельность спортивных объектов; Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Государственные бюджетные учреждения субъектов Российской Федерации',
-    ownershipForm: 'Собственность субъектов Российской Федерации',
-    departmentAffiliation:
-      'Органы власти субъектов Российской Федерации, осуществляющие функции в области образования и науки',
-    organizationCategory: 'Орган исполнительной власти РФ прочие',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 8478457',
-      '+7 (495) 8458557',
-      '+7 (495) 8458906',
-      '+7 (495) 8478661',
-      '+7 (49634) 78557',
-      '+7 (903) 6663582',
-      '+7 (909) 1501795',
-      '+7 (916) 7333210',
-      '+7 (929) 6091840',
-      '+7 (965) 2473550',
-    ],
-    emails: [
-      '2057@edu.mos.ru',
-      'contract2059@mail.ru',
-      'pluzhnikova-taty@mail.ru',
-      'tanya.sviridova2010@yandex.ru',
-    ],
-    sites: ['sch2057.mskobr.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  {
-    reestrNumber: 254129,
-    ogrn: '1025006034701',
-    alterName: 'МАОУ «ГИМНАЗИЯ Г.ТРОИЦКА»',
-    fullName: 'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ «ГИМНАЗИЯ Г.ТРОИЦКА»',
-    name: 'МАОУ «ГИМНАЗИЯ Г.ТРОИЦКА»',
-    address: '108840, г. Москва, г. Троицк, проспект Октябрьский, д. 6',
-    coordinates: { lat: 55.472291, lon: 37.294502 },
-    directorPosition: 'Директор',
-    directorName: 'Веригина Наталия Алексеевна',
-    registrationDate: '14.02.1994',
-    inn: '507402514242',
-    region: 'г. Москва',
-    activityType: 'Образование основное общее',
-    activityTypeAdditional:
-      'Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Муниципальные автономные учреждения',
-    ownershipForm: 'Муниципальная собственность',
-    departmentAffiliation: 'Муниципальные организации',
-    organizationCategory: 'Муниципалитеты',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 8510389',
-      '+7 (495) 8510641',
-      '+7 (495) 8510822',
-      '+7 (495) 8512226',
-      '+7 (495) 8512389',
-      '+7 (495) 8512644',
-      '+7 (495) 8512848',
-      '+7 (495) 8514027',
-      '+7 (495) 8514064',
-      '+7 (495) 8519793',
-      '+7 (49675) 10389',
-      '+7 (903) 7358123',
-      '+7 (910) 4156920',
-      '+7 (916) 1420703',
-      '+7 (916) 8380238',
-    ],
-    emails: ['gurova@gym.trtk.ru', 'gymtr@edu.mos.ru', 'markova@gym.trtk.ru'],
-    sites: ['gymtroitska.mskobr.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  {
-    reestrNumber: 254130,
-    ogrn: '1025006034723',
-    alterName: 'МАОУ «ГИМНАЗИЯ ИМ. Н.В. ПУШКОВА»',
-    fullName:
-      'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ «ГИМНАЗИЯ ИМЕНИ Н.В. ПУШКОВА»',
-    name: 'МАОУ «ГИМНАЗИЯ ИМ. Н.В. ПУШКОВА»',
-    address: '108840, г. Москва, г. Троицк, ул. Школьная, д. 10',
-    coordinates: { lat: 55.474362, lon: 37.300808 },
-    directorPosition: 'Директор',
-    directorName: 'Тимошенко Наталья Анатольевна',
-    registrationDate: '28.05.1996',
-    inn: '507401291508',
-    region: 'г. Москва',
-    activityType: 'Образование основное общее',
-    activityTypeAdditional:
-      'Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Муниципальные автономные учреждения',
-    ownershipForm: 'Муниципальная собственность',
-    departmentAffiliation: 'Муниципальные организации',
-    organizationCategory: 'Муниципалитеты',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 8510311',
-      '+7 (495) 8510548',
-      '+7 (495) 8511767',
-      '+7 (495) 8513161',
-      '+7 (49675) 10311',
-      '+7 (903) 6155961',
-      '+7 (905) 5514660',
-      '+7 (905) 7736285',
-    ],
-    emails: [
-      'elsnit@mail.ru',
-      'gimnvp@mail.ru',
-      'gtimofieieva@bk.ru',
-      'gympushkova@edu.mos.ru',
-      'tatiana-savinova@rambler.ru',
-    ],
-    sites: ['gympushkova.mskobr.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  {
-    reestrNumber: 219564,
-    ogrn: '1025006034900',
-    alterName: 'МАУ ДО ДЮСШ-2',
-    fullName:
-      'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ «ДЕТСКО-ЮНОШЕСКАЯ СПОРТИВНАЯ ШКОЛА-2»',
-    name: 'МАУ ДО ДЮСШ-2',
-    address: '108841, г. Москва, г. Троицк, микрорайон В, д. 6А',
-    coordinates: { lat: 55.487764, lon: 37.295616 },
-    directorPosition: 'Директор',
-    directorName: 'Юдин Андрей Юрьевич',
-    registrationDate: '25.01.2001',
-    inn: '5046060805',
-    region: 'г. Москва',
-    activityType: 'Образование дополнительное детей и взрослых',
-    activityTypeAdditional:
-      'Деятельность спортивных объектов; Деятельность в области спорта прочая',
-    organizationalLegalForm: 'Муниципальные автономные учреждения',
-    ownershipForm: 'Муниципальная собственность',
-    departmentAffiliation: 'Муниципальные организации',
-    organizationCategory: 'Муниципалитеты',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 8510692',
-      '+7 (495) 8512190',
-      '+7 (495) 8512438',
-      '+7 (495) 8512622',
-      '+7 (495) 8514067',
-      '+7 (495) 8515050',
-      '+7 (495) 8516047',
-      '+7 (4967) 404594',
-      '+7 (49675) 16047',
-      '+7 (916) 9794729',
-      '+7 (968) 0138401',
-    ],
-    emails: ['dush2@edu.mos.ru', 'dussh2@list.ru'],
-    sites: ['dusash2tn.mskobr.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  {
-    reestrNumber: 254131,
-    ogrn: '1025006036263',
-    alterName: 'МАОУ «ЛИЦЕЙ ГОРОДА ТРОИЦКА»',
-    fullName: 'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ «ЛИЦЕЙ ГОРОДА ТРОИЦКА»',
-    name: 'МАОУ «ЛИЦЕЙ ГОРОДА ТРОИЦКА»',
-    address: '108840, г. Москва, г. Троицк, ул. Школьная, д. 10А',
-    coordinates: { lat: 55.475368, lon: 37.300808 },
-    directorPosition: 'Директор',
-    directorName: 'Зюзикова Юлия Мардарьевна',
-    registrationDate: '25.05.1996',
-    inn: '504600995768',
-    region: 'г. Москва',
-    activityType: 'Образование основное общее',
-    activityTypeAdditional: 'Деятельность физкультурно-оздоровительная',
-    organizationalLegalForm: 'Муниципальные автономные учреждения',
-    ownershipForm: 'Муниципальная собственность',
-    departmentAffiliation: 'Муниципальные организации',
-    organizationCategory: 'Муниципалитеты',
-    FK1Form: '',
-    phones: [
-      '+7 (495) 8510056',
-      '+7 (495) 8510639',
-      '+7 (495) 8510674',
-      '+7 (495) 8511056',
-      '+7 (495) 8513111',
-      '+7 (495) 8513449',
-      '+7 (495) 8514015',
-      '+7 (495) 8515052',
-      '+7 (495) 8519808',
-      '+7 (49675) 10056',
-      '+7 (903) 7399400',
-      '+7 (909) 9078822',
-      '+7 (916) 4878733',
-    ],
-    emails: [
-      'akimova-msk@yandex.ru',
-      'arkimilena@yandex.ru',
-      'lrumyanzeva@gmail.com',
-      'lyceum@trtk.ru',
-      'lyctroicka@edu.mos.ru',
-      'pipko_en@trlyceum.ru',
-      'trlyceum@gmail.com',
-      'vedeneeva.76@bk.ru',
-    ],
-    sites: ['lyctroicka.mskobr.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  {
-    reestrNumber: 259938,
-    ogrn: '1025007510043',
-    alterName: 'МБУ «СПОРТИВНЫЙ КОМПЛЕКС «ВОРОНОВО»',
-    fullName: 'МУНИЦИПАЛЬНОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ «СПОРТИВНЫЙ КОМПЛЕКС «ВОРОНОВО»',
-    name: 'МБУ «СПОРТИВНЫЙ КОМПЛЕКС «ВОРОНОВО»',
-    address: '108830, г. Москва, Вороновское пос., пос. Лмс, микрорайон Центральный, д. 40 к. 1',
-    coordinates: { lat: 55.312573, lon: 37.181728 },
-    directorPosition: 'Директор',
-    directorName: 'Володин Алексей Николаевич',
-    registrationDate: '02.09.2002',
-    inn: '5074024492',
-    region: 'г. Москва',
-    activityType: 'Деятельность спортивных объектов',
-    activityTypeAdditional: 'Деятельность в области спорта прочая',
-    organizationalLegalForm: 'Муниципальные бюджетные учреждения',
-    ownershipForm: 'Муниципальная собственность',
-    departmentAffiliation: 'Муниципальные организации',
-    organizationCategory: 'Муниципалитеты',
-    FK1Form: '',
-    phones: [
-      '+7 (916) 7697130',
-      '+7 (926) 0876864',
-      '+7 (495) 5924678',
-      '+7 (495) 5924776',
-      '+7 (495) 8506686',
-      '+7 (49675) 06686',
-    ],
-    emails: [''],
-    sites: ['skvoronovo.ru'],
-    firmSize: '',
-    capital: '',
-    years: [
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-      {
-        year: '',
-        employers: '',
-        income: '',
-        expense: '',
-        tax: '',
-        earnings: '',
-      },
-    ],
-  },
-  // {
-  //   reestrNumber: 254149,
-  //   ogrn: '1025007515510',
-  //   alterName: 'ГБОУ ШКОЛА № 2120',
-  //   fullName:
-  //     'ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ГОРОДА МОСКВЫ «ШКОЛА № 2120»',
-  //   name: 'ГБОУ ШКОЛА № 2120',
-  //   address: '108811, г. Москва, Московский пос., г. Московский, ул. Атласова, д. 7 корп. 3',
-  //   coordinates: { lat: 55.600781, lon: 37.360295 },
-  //   directorPosition: 'Директор',
-  //   directorName: 'Ланщиков Дмитрий Николаевич',
-  //   registrationDate: '30.09.1999',
-  //   inn: '643964884563',
-  //   region: 'г. Москва',
-  //   activityType: 'Образование среднее общее',
-  //   activityTypeAdditional:
-  //     'Деятельность спортивных объектов; Деятельнось спортивных клубов; Деятельность в области спорта прочая; Деятельность физкультурно-оздоровительная',
-  //   organizationalLegalForm: 'Государственные бюджетные учреждения субъектов Российской Федерации',
-  //   ownershipForm: 'Собственность субъектов Российской Федерации',
-  //   departmentAffiliation:
-  //     'Органы власти субъектов Российской Федерации, осуществляющие функции в области образования и науки',
-  //   organizationCategory: 'Орган исполнительной власти РФ прочие',
-  //   FK1Form: '',
-  //   phones: [
-  //     '+7 (495) 8670770',
-  //     '+7 (985) 3100556',
-  //     '+7 (985) 7642317',
-  //     '+7 (495) 8670232',
-  //     '+7 (495) 9785565',
-  //     '+7 (916) 6467715',
-  //     '+7 (916) 8212310',
-  //     '+7 (925) 8381030',
-  //   ],
-  //   emails: [
-  //     '2120@edu.mos.ru',
-  //     'luadmila.volkova@gmail.com',
-  //     'natalyzubarev@yandex.ru',
-  //     'sergeevama78@mail.ru',
-  //   ],
-  //   sites: ['http://sch2120tn.mskobr.ru', 'sch4tn.mskobr.ru'],
-  //   firmSize: '',
-  //   capital: '',
-  //   years: [
-  //     {
-  //       year: '',
-  //       employers: '',
-  //       income: '',
-  //       expense: '',
-  //       tax: '',
-  //       earnings: '',
-  //     },
-  //     {
-  //       year: '',
-  //       employers: '',
-  //       income: '',
-  //       expense: '',
-  //       tax: '',
-  //       earnings: '',
-  //     },
-  //   ],
-  // },
-  // {
-  //   reestrNumber: 225251,
-  //   ogrn: '1025007515521',
-  //   alterName: 'МАУ ДО СШ',
-  //   fullName:
-  //     'МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ ГОРОДСКОГО ОКРУГА ЩЕРБИНКА В ГОРОДЕ МОСКВЕ СПОРТИВНАЯ ШКОЛА',
-  //   name: 'МАУ ДО СШ',
-  //   address: '108851, г. Москва, г. Щербинка, ул. Новостроевская, д. 4',
-  //   coordinates: { lat: 55.505506, lon: 37.559281 },
-  //   directorPosition: 'Директор',
-  //   directorName: 'Шашкин Константин Анатольевич',
-  //   registrationDate: '27.04.1998',
-  //   inn: '5051005493',
-  //   region: 'г. Москва',
-  //   activityType: 'Деятельность спортивных объектов',
-  //   activityTypeAdditional:
-  //     'Деятельнось спортивных клубов; Деятельность в области спорта прочая; Образование в области спорта и отдыха',
-  //   organizationalLegalForm: 'Муниципальные бюджетные учреждения',
-  //   ownershipForm: 'Муниципальная собственность',
-  //   departmentAffiliation: 'Муниципальные организации',
-  //   organizationCategory: 'Муниципалитеты',
-  //   FK1Form: '',
-  //   phones: [
-  //     '+7 (495) 8494655',
-  //     '+7 (49676) 71008',
-  //     '+7 (916) 6488923',
-  //     '+7 (916) 7244414',
-  //     '+7 (925) 0002216',
-  //     '+7 (963) 6999158',
-  //   ],
-  //   emails: ['dush@edu.mos.ru', 'dusshsch@yandex.ru', 'sportsherbinka@yandex.ru'],
-  //   sites: ['dusashch.mskobr.ru'],
-  //   firmSize: '',
-  //   capital: '',
-  //   years: [
-  //     {
-  //       year: '',
-  //       employers: '',
-  //       income: '',
-  //       expense: '',
-  //       tax: '',
-  //       earnings: '',
-  //     },
-  //     {
-  //       year: '',
-  //       employers: '',
-  //       income: '',
-  //       expense: '',
-  //       tax: '',
-  //       earnings: '',
-  //     },
-  //   ],
-  // },
-])
+const sportObjectsLoading = ref(true)
+const sportObjects = ref([])
 
 const activityTypes = computed(() => {
   let array = []
 
   sportObjects.value.map((sportObject) => {
-    if (!array.includes(sportObject.activityType)) {
-      array.push(sportObject.activityType)
+    if (!array.includes(sportObject.activity_type)) {
+      array.push(sportObject.activity_type)
     }
   })
 
@@ -717,8 +51,8 @@ const organizationalLegalForms = computed(() => {
   let array = []
 
   sportObjects.value.map((sportObject) => {
-    if (!array.includes(sportObject.organizationalLegalForm)) {
-      array.push(sportObject.organizationalLegalForm)
+    if (!array.includes(sportObject.organizational_legal_form)) {
+      array.push(sportObject.organizational_legal_form)
     }
   })
 
@@ -730,8 +64,8 @@ const ownershipForms = computed(() => {
   let array = []
 
   sportObjects.value.map((sportObject) => {
-    if (!array.includes(sportObject.ownershipForm)) {
-      array.push(sportObject.ownershipForm)
+    if (!array.includes(sportObject.ownership_form)) {
+      array.push(sportObject.ownership_form)
     }
   })
 
@@ -743,8 +77,8 @@ const departmentAffiliations = computed(() => {
   let array = []
 
   sportObjects.value.map((sportObject) => {
-    if (!array.includes(sportObject.departmentAffiliation)) {
-      array.push(sportObject.departmentAffiliation)
+    if (!array.includes(sportObject.department_affiliation)) {
+      array.push(sportObject.department_affiliation)
     }
   })
 
@@ -838,12 +172,41 @@ const setChartOptions = () => {
   }
 }
 
-const onSportObjectClick = (data) => {
+const onSportObjectClick = async (data) => {
   if (!data.years.find((item) => item.year === sportObjectCurrentYear.value)) {
     sportObjectCurrentYear.value = Math.max(...data.years.map((item) => item.year))
   }
 
-  chartData.value = setChartData(data)
+  chartData.value = setChartData(data);
+
+  console.log(data)
+
+  if(data.lat === null || data.lon === null){
+    const response = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=0af8f1a2-66fe-4b67-a879-42fb1f35cfdb&geocode=${data.address}&format=json`);
+    const result = await response.json();
+
+    try {
+      const coordinates = result.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ');
+      data.lat = coordinates[1];
+      data.lon = coordinates[0];
+
+      if(coordinates){
+        let form = new FormData();
+        form.append('id', data.ID);
+        form.append('lat', data.lat);
+        form.append('lon', data.lon);
+
+
+        let response = await fetch('http://reestr.sport.mos.ru/php/yandex/save_coordinates.php', {
+          method: 'POST',
+          body: form
+        });
+
+        //let result = await response?.json();
+      }
+    }
+    catch (e){}
+  }
 
   sportObject.value = data
   isDialogOpen.value = true
@@ -852,28 +215,28 @@ const onSearch = () => {
   filteredSportObjects.value = sportObjects.value
     .filter(
       (item) =>
-        item.name.toLowerCase().includes(state.searchInput.toLowerCase()) ||
+        item.full_title.toLowerCase().includes(state.searchInput.toLowerCase()) ||
         item.address.toLowerCase().includes(state.searchInput.toLowerCase()),
     )
     .filter(
       (item) =>
         selectedActivityTypes.value.length === 0 ||
-        selectedActivityTypes.value.includes(item.activityType),
+        selectedActivityTypes.value.includes(item.activity_type),
     )
     .filter(
       (item) =>
         selectedOrganizationalLegalForms.value.length === 0 ||
-        selectedOrganizationalLegalForms.value.includes(item.organizationalLegalForm),
+        selectedOrganizationalLegalForms.value.includes(item.organizational_legal_form),
     )
     .filter(
       (item) =>
         selectedOwnershipForms.value.length === 0 ||
-        selectedOwnershipForms.value.includes(item.ownershipForm),
+        selectedOwnershipForms.value.includes(item.ownership_form),
     )
     .filter(
       (item) =>
         selectedDepartmentAffiliations.value.length === 0 ||
-        selectedDepartmentAffiliations.value.includes(item.departmentAffiliation),
+        selectedDepartmentAffiliations.value.includes(item.department_affiliation),
     )
 }
 const onClear = () => {
@@ -890,7 +253,23 @@ const toggleFilter = () => {
   if (!isFilterShow.value) onClear()
 }
 
-onMounted(() => {
+const fetchSportObjects = async () => {
+  sportObjectsLoading.value = true;
+  let form = new FormData();
+
+  let response = await fetch('http://reestr.sport.mos.ru/php/sportobjects/load.php', {
+    method: 'POST',
+    body: form
+  });
+
+  let result = await response?.json();
+
+  sportObjects.value = result;
+  sportObjectsLoading.value = false;
+}
+
+onMounted(async () => {
+  await fetchSportObjects();
   onSearch()
   chartOptions.value = setChartOptions()
 })
@@ -913,6 +292,7 @@ onMounted(() => {
           class="w-full md:max-w-96 rounded-full bg-bgColor shadow-button flex gap-2 items-center pr-4"
         >
           <input
+            :disabled="sportObjectsLoading"
             type="search"
             class="w-full py-2 px-4 rounded-full focus:outline-none"
             placeholder="Поиск по наименованию, адресу и виду спорта"
@@ -921,6 +301,7 @@ onMounted(() => {
           />
           <div class="search-divider"></div>
           <Button
+            :disabled="sportObjectsLoading"
             class="p-2 flex items-center justify-center bg-transparent border-transparent active:translate-y-px"
             @click="onSearch"
           >
@@ -928,6 +309,7 @@ onMounted(() => {
           </Button>
         </div>
         <Button
+          :disabled="sportObjectsLoading"
           class="flex-none p-2 flex items-center justify-center bg-main text-textAccent rounded-2xl shadow-button active:translate-y-px border-transparent hover:bg-linkHover"
           :class="{
             'md:bg-bgColor md:text-icon': !isAnyFilterSelected,
@@ -1027,47 +409,84 @@ onMounted(() => {
       </div>
     </div>
   </section>
+  <!-- Загрузка -->
+  <section v-if="sportObjectsLoading" class="w-viewport max-w-full mx-auto px-main pb-section" aria-label="Результаты поиска">
+    <DataView :value="['1']" layout="grid">
+      <template #grid>
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
+          <article
+            v-for="i in 9" :key="i"
+            class="p-6 pb-4 bg-bgColor shadow-card rounded-2xl flex flex-col gap-3 cursor-pointer border-icon hover:shadow-cardHover transition-shadow active:shadow-card"
+          >
+            <div class="flex items-end gap-3">
+              <Company class="flex-none w-8 h-8 text-main" aria-hidden="true" />
+              <Skeleton width="100%" height="2rem" />
+            </div>
+            <div>
+              <p class="text-sm text-textSecondary mb-1">Юридический адрес</p>
+              <Skeleton width="100%" height="1rem" />
+            </div>
+            <div class="flex gap-2">
+              <div class="flex-auto">
+                <p class="text-sm text-textSecondary mb-1">ОГРН</p>
+                <Skeleton width="100%" height="1rem" />
+              </div>
+              <div class="flex-auto">
+                <p class="text-sm text-textSecondary mb-1">Дата регистрации</p>
+                <Skeleton width="100%" height="1rem" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </template>
+    </DataView>
+  </section>
   <!-- Результаты поиска -->
-  <section class="w-viewport max-w-full mx-auto px-main pb-section" aria-label="Результаты поиска">
+  <section v-if="!sportObjectsLoading" class="w-viewport max-w-full mx-auto px-main pb-section" aria-label="Результаты поиска">
     <p v-if="filteredSportObjects.length !== 0" class="text-center mb-10 md:text-right">
       Всего найдено: {{ filteredSportObjects.length }}
     </p>
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
-      <p
-        v-if="filteredSportObjects.length === 0"
-        class="col-span-full flex items-center justify-center gap-4"
-      >
-        <Search class="text-icon w-8 h-8" aria-hidden="true" />
-        Не найдено ни одного объекта. <br />
-        Попробуйте изменить критерии поиска
-      </p>
 
-      <!-- Карточка организации -->
-      <article
-        v-for="item in filteredSportObjects"
-        class="p-6 pb-4 bg-bgColor shadow-card rounded-2xl flex flex-col gap-3 cursor-pointer border-icon hover:shadow-cardHover transition-shadow active:shadow-card"
-        @click="() => onSportObjectClick(item)"
-      >
-        <div class="flex items-end gap-3">
-          <Company class="flex-none w-8 h-8 text-main" aria-hidden="true" />
-          <h3 class="text-xl font-medium tracking-tight leading-tight">{{ item.name }}</h3>
+    <DataView :value="filteredSportObjects" layout="grid" paginator :rows="9">
+      <template #grid="slotProps">
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
+          <article
+            v-for="item in slotProps.items"
+            class="p-6 pb-4 bg-bgColor shadow-card rounded-2xl flex flex-col gap-3 cursor-pointer border-icon hover:shadow-cardHover transition-shadow active:shadow-card"
+            @click="() => onSportObjectClick(item)"
+          >
+            <div class="flex items-end gap-3">
+              <Company class="flex-none w-8 h-8 text-main" aria-hidden="true" />
+              <h3 class="text-xl font-medium tracking-tight leading-tight">{{ item.short_title }}</h3>
+            </div>
+            <div>
+              <p class="text-sm text-textSecondary mb-1">Юридический адрес</p>
+              <p class="text-sm font-medium">{{ item.address }}</p>
+            </div>
+            <div class="flex gap-2">
+              <div class="flex-auto">
+                <p class="text-sm text-textSecondary mb-1">ОГРН</p>
+                <p class="text-sm font-medium">{{ item.ogrn }}</p>
+              </div>
+              <div class="flex-auto">
+                <p class="text-sm text-textSecondary mb-1">Дата регистрации</p>
+                <p class="text-sm font-medium">{{ moment(item.registration_date).format('DD.MM.YYYY') }}</p>
+              </div>
+            </div>
+          </article>
         </div>
-        <div>
-          <p class="text-sm text-textSecondary mb-1">Юридический адрес</p>
-          <p class="text-sm font-medium">{{ item.address }}</p>
-        </div>
-        <div class="flex gap-2">
-          <div class="flex-auto">
-            <p class="text-sm text-textSecondary mb-1">ОГРН</p>
-            <p class="text-sm font-medium">{{ item.ogrn }}</p>
-          </div>
-          <div class="flex-auto">
-            <p class="text-sm text-textSecondary mb-1">Дата регистрации</p>
-            <p class="text-sm font-medium">{{ item.registrationDate }}</p>
-          </div>
-        </div>
-      </article>
-    </div>
+      </template>
+      <template #empty>
+        <p
+          v-if="filteredSportObjects.length === 0"
+          class="col-span-full flex items-center justify-center gap-4"
+        >
+          <Search class="text-icon w-8 h-8" aria-hidden="true" />
+          Не найдено ни одного объекта. <br />
+          Попробуйте изменить критерии поиска
+        </p>
+      </template>
+    </DataView>
   </section>
 
   <Dialog
@@ -1082,7 +501,7 @@ onMounted(() => {
     }"
   >
     <template #header>
-      <h2 class="text-modalHeading font-medium tracking-tight leading-tight">{{ sportObject.name }}</h2>
+      <h2 class="text-modalHeading font-medium tracking-tight leading-tight">{{ sportObject.short_title }}</h2>
     </template>
 
     <template #closeicon>
@@ -1102,13 +521,13 @@ onMounted(() => {
             <h2 class="text-2xl font-medium">Общие сведения</h2>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">Полное наименование организации</h3>
-              <p>{{ sportObject.fullName }}</p>
+              <p>{{ sportObject.full_title }}</p>
             </div>
             <div class="flex flex-col gap-4 md:flex-row">
               <div class="flex-auto flex flex-col gap-4">
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">Краткое наименование организации</h3>
-                  <p>{{ sportObject.name }}</p>
+                  <p>{{ sportObject.short_title }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">Регион регистрации</h3>
@@ -1131,11 +550,11 @@ onMounted(() => {
                       }"
                     />
                   </h3>
-                  <p>{{ sportObject.firmSize }}</p>
+                  <p>{{ sportObject.firm_size === 'NULL' ? 'Не указан' : sportObject.firm_size }}</p>
                 </div>
                 <div class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">Дата регистрации</h3>
-                  <p>{{ sportObject.registrationDate }}</p>
+                  <p>{{ moment(sportObject.registration_date).format('DD.MM.YYYY') }}</p>
                 </div>
               </div>
               <div class="w-px bg-divider"></div>
@@ -1219,8 +638,8 @@ onMounted(() => {
             <div class="flex items-center gap-4">
               <img class="w-16 h-16 rounded-md" :src="Avatar" alt="Фото руководителя" />
               <div>
-                <h3 class="text-base capitalize-first">{{ sportObject.directorPosition }}</h3>
-                <p class="text-xl">{{ sportObject.directorName }}</p>
+                <h3 class="text-base capitalize-first">{{ sportObject.director_position }}</h3>
+                <p class="text-xl">{{ sportObject.director_fio }}</p>
               </div>
             </div>
           </section>
@@ -1245,7 +664,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>{{ sportObject.activityType }}</p>
+              <p>{{ sportObject.activity_type }}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -1265,7 +684,7 @@ onMounted(() => {
                 />
               </h3>
               <ul class="list-disc pl-6">
-                <li v-for="item in sportObject.activityTypeAdditional.split(';')">
+                <li v-for="item in sportObject.activity_type_additional.split(';')">
                   {{ item }}
                 </li>
               </ul>
@@ -1287,7 +706,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>{{ sportObject.organizationalLegalForm }}</p>
+              <p>{{ sportObject.organizational_legal_form }}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -1306,7 +725,7 @@ onMounted(() => {
                   }"
                 />
               </h3>
-              <p>{{ sportObject.ownershipForm }}</p>
+              <p>{{ sportObject.ownership_form }}</p>
             </div>
             <div class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
@@ -1326,7 +745,7 @@ onMounted(() => {
                 />
               </h3>
               <p>
-                {{ sportObject.departmentAffiliation }}
+                {{ sportObject.department_affiliation }}
               </p>
             </div>
           </section>
@@ -1339,10 +758,14 @@ onMounted(() => {
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
                 <p class="flex gap-2">
                   <Telephone class="flex-none w-4 h-4 text-icon mt-1" />
-                  <span class="flex-auto flex flex-col">
+                  <span v-if="sportObject.phones === 'NULL'" class="flex-auto flex flex-col">
+                    Не указан
+                  </span>
+                  <span v-else class="flex-auto flex flex-col">
                     <a
-                      v-for="phone in sportObject.phones"
+                      v-for="phone in sportObject.phones.split(';')"
                       v-bind:href="'tel:' + phone"
+                      target="_blank"
                       class="w-fit border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
                     >
                       {{ phone }}
@@ -1354,10 +777,14 @@ onMounted(() => {
                 <h3 class="text-xs text-textSecondary">Почта</h3>
                 <p class="flex gap-2">
                   <Envelope class="flex-none w-4 h-4 text-icon mt-1" />
-                  <span class="flex-auto flex flex-col">
+                  <span v-if="sportObject.emails === 'NULL'" class="flex-auto flex flex-col">
+                    Не указана
+                  </span>
+                  <span v-else class="flex-auto flex flex-col">
                     <a
-                      v-for="email in sportObject.emails"
+                      v-for="email in sportObject.emails.split(';')"
                       v-bind:href="'mailto:' + email"
+                      target="_blank"
                       class="w-fit border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
                     >
                       {{ email }}
@@ -1369,10 +796,14 @@ onMounted(() => {
                 <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
                 <p class="flex gap-2">
                   <Website class="flex-none w-4 h-4 text-icon mt-1" />
-                  <span class="flex-auto flex flex-col">
+                  <span v-if="sportObject.sites === 'NULL'" class="flex-auto flex flex-col">
+                    Не указан
+                  </span>
+                  <span v-else class="flex-auto flex flex-col">
                     <a
-                      v-for="site in sportObject.sites"
-                      v-bind:href="site"
+                      v-for="site in sportObject.sites.split(';')"
+                      v-bind:href="site.includes('http') ? site : 'https://' + site"
+                      target="_blank"
                       class="w-fit border-b-2 border-b-transparent hover:border-main hover:bg-linkHover transition"
                     >
                       {{ site }}
@@ -1390,8 +821,8 @@ onMounted(() => {
 
             <MyYandexMap
               :title="sportObject.name"
-              :lon="sportObject.coordinates.lon"
-              :lat="sportObject.coordinates.lat"
+              :lon="sportObject.lon"
+              :lat="sportObject.lat"
             />
           </section>
         </TabPanel>

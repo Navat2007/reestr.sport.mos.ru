@@ -59,7 +59,7 @@ onMounted(() => {
   </Button>
 
   <Popover ref="isFilterActivityTypeOpen">
-    <div class="-m-3">
+    <div class="-m-3 max-w-screen-md">
       <div class="m-2 flex gap-2 px-2 items-center rounded-xl bg-bgColor border border-divider">
         <Button
           class="flex-none p-0 flex items-center justify-center bg-transparent border-transparent active:translate-y-px"
