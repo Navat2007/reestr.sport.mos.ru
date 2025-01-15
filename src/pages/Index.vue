@@ -179,8 +179,6 @@ const onSportObjectClick = async (data) => {
 
   chartData.value = setChartData(data);
 
-  console.log(data)
-
   if(data.lat === null || data.lon === null){
     const response = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=0af8f1a2-66fe-4b67-a879-42fb1f35cfdb&geocode=${data.address}&format=json`);
     const result = await response.json();
@@ -457,7 +455,7 @@ onMounted(async () => {
           >
             <div class="flex items-end gap-3">
               <Company class="flex-none w-8 h-8 text-main" aria-hidden="true" />
-              <h3 class="text-xl font-medium tracking-tight leading-tight">{{ item.short_title }}</h3>
+              <h3 class="text-xl font-medium tracking-tight leading-tight">{{ item.alt_title }}</h3>
             </div>
             <div>
               <p class="text-sm text-textSecondary mb-1">Юридический адрес</p>
