@@ -24,12 +24,14 @@ const tabValue = ref('0')
 const isDialogOpen = ref(false)
 const searchInput = ref(null)
 const yearSelectPopover = ref()
+const yearEmployersSelectPopover = ref()
 const state = reactive({
   searchInput: '',
   selectedActivityTypes: [],
 })
 
 const sportObjectCurrentYear = ref(parseInt(moment().format('YYYY')))
+const sportObjectEmployersCurrentYear = ref(parseInt(moment().format('YYYY')))
 const sportObject = ref(null)
 const sportObjectsLoading = ref(true)
 const sportObjects = ref([])
@@ -137,28 +139,40 @@ const isAnyFilterSelected = computed(() => {
 const chartData = ref()
 const chartOptions = ref()
 const setChartData = (data) => {
-  const documentStyle = getComputedStyle(document.documentElement)
+  if(data.years){
+    const documentStyle = getComputedStyle(document.documentElement)
 
-  return {
-    labels: data.years.map((year) => year.year),
-    datasets: [
-      {
+    let datasets = [];
+
+    if(data.years.find((year) => year.earnings !== null && year.earnings !== 0)){
+      datasets.push({
         type: 'bar',
         label: 'Выручка',
         backgroundColor: documentStyle.getPropertyValue('--p-primary-color'),
         borderColor: documentStyle.getPropertyValue('--p-primary-color'),
         borderRadius: 4,
         data: data.years.map((year) => year.earnings),
-      },
-      {
+      });
+    }
+
+    if(data.years.find((year) => year.income !== null && year.income !== 0)){
+      datasets.push({
         type: 'bar',
         label: 'Доходы',
         backgroundColor: documentStyle.getPropertyValue('--p-blue-500'),
         borderColor: documentStyle.getPropertyValue('--p-blue-500'),
         borderRadius: 4,
         data: data.years.map((year) => year.income),
-      },
-    ],
+      });
+    }
+
+    if(datasets.length === 0)
+      return null;
+
+    return {
+      labels: data.years.map((year) => year.year),
+      datasets: datasets,
+    }
   }
 }
 const setChartOptions = () => {
@@ -204,8 +218,14 @@ const setChartOptions = () => {
 }
 
 const onSportObjectClick = async (data) => {
-  if (!data.years.find((item) => item.year === sportObjectCurrentYear.value)) {
+  console.log(data)
+
+  if (data.years && !data.years.find((item) => item.year === sportObjectCurrentYear.value)) {
     sportObjectCurrentYear.value = Math.max(...data.years.map((item) => item.year))
+  }
+
+  if (data.employers && !data.employers.find((item) => item.year === sportObjectEmployersCurrentYear.value)) {
+    sportObjectEmployersCurrentYear.value = Math.max(...data.employers.map((item) => item.year))
   }
 
   chartData.value = setChartData(data);
@@ -542,7 +562,7 @@ onMounted(async () => {
         <Tab value="0" pt:root="py-2 px-0 mr-5 text-sm font-normal">Общие сведения</Tab>
         <Tab value="1" pt:root="py-2 px-0 mr-5 text-sm font-normal">Характеристики</Tab>
         <Tab value="2" pt:root="py-2 px-0 mr-5 text-sm font-normal">Контакты</Tab>
-        <Tab value="3" pt:root="py-2 px-0 mr-5 text-sm font-normal">Финансы</Tab>
+        <Tab v-if="sportObject.years" value="3" pt:root="py-2 px-0 mr-5 text-sm font-normal">Финансы</Tab>
       </TabList>
       <TabPanels pt:root="px-0 pt-5 pb-0">
         <TabPanel value="0">
@@ -626,7 +646,7 @@ onMounted(async () => {
                   </h3>
                   <p>{{ sportObject.ogrn }}</p>
                 </div>
-                <div class="flex flex-col">
+                <div v-if="sportObject.capital" class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Уставный капитал, руб.
                     <Info
@@ -645,17 +665,17 @@ onMounted(async () => {
                   </h3>
                   <p>{{ vueNumberFormat(sportObject.capital, { precision: 0 }) }}</p>
                 </div>
-                <div class="flex flex-col">
+                <div v-if="sportObject.employers" class="flex flex-col">
                   <h3 class="text-xs text-textSecondary">
                     Среднесписочная численность сотрудников в
-                    <span class="select-yrs" @click="(event) => yearSelectPopover.toggle(event)">
-                      {{ sportObjectCurrentYear }}
-                      <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button" />
+                    <span class="select-yrs" @click="(event) => yearEmployersSelectPopover.toggle(event)">
+                      {{ sportObjectEmployersCurrentYear }}
+                      <ArrowDown v-if="sportObject.employers.length > 1" class="inline align-top w-4 h-4 text-icon" role="button" />
                     </span>
                   </h3>
                   <p>
                     {{
-                      sportObject.years.find((year) => year.year === sportObjectCurrentYear)
+                      sportObject.employers.find((year) => year.year === sportObjectEmployersCurrentYear)
                         ?.employers
                     }} чел.
                   </p>
@@ -676,7 +696,7 @@ onMounted(async () => {
         <TabPanel value="1">
           <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Характеристики</h2>
-            <div class="flex flex-col">
+            <div v-if="sportObject.activity_type !== null" class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 ОКВЭД основной
                 <Info
@@ -695,7 +715,7 @@ onMounted(async () => {
               </h3>
               <p>{{ sportObject.activity_type }}</p>
             </div>
-            <div class="flex flex-col">
+            <div v-if="sportObject.activity_type_additional !== null" class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 ОКВЭД дополнительный
                 <Info
@@ -718,7 +738,7 @@ onMounted(async () => {
                 </li>
               </ul>
             </div>
-            <div class="flex flex-col">
+            <div v-if="sportObject.organizational_legal_form !== null" class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Организационно-правовая форма
                 <Info
@@ -737,7 +757,7 @@ onMounted(async () => {
               </h3>
               <p>{{ sportObject.organizational_legal_form }}</p>
             </div>
-            <div class="flex flex-col">
+            <div v-if="sportObject.ownership_form !== null" class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Форма собственности
                 <Info
@@ -756,7 +776,7 @@ onMounted(async () => {
               </h3>
               <p>{{ sportObject.ownership_form }}</p>
             </div>
-            <div class="flex flex-col">
+            <div v-if="sportObject.department_affiliation !== null" class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Ведомственная принадлежность
                 <Info
@@ -783,7 +803,7 @@ onMounted(async () => {
           <section class="flex flex-col gap-4">
             <h2 class="text-2xl font-medium">Контактная информация</h2>
             <div class="flex max-sm:flex-col flex-wrap gap-4">
-              <div class="flex-auto flex flex-col">
+              <div v-if="sportObject.phones !== null" class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Телефон</h3>
                 <p class="flex gap-2">
                   <Telephone class="flex-none w-4 h-4 text-icon mt-1" />
@@ -802,7 +822,7 @@ onMounted(async () => {
                   </span>
                 </p>
               </div>
-              <div class="flex-auto flex flex-col">
+              <div v-if="sportObject.emails !== null" class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Почта</h3>
                 <p class="flex gap-2">
                   <Envelope class="flex-none w-4 h-4 text-icon mt-1" />
@@ -821,7 +841,7 @@ onMounted(async () => {
                   </span>
                 </p>
               </div>
-              <div class="flex-auto flex flex-col">
+              <div v-if="sportObject.sites !== null" class="flex-auto flex flex-col">
                 <h3 class="text-xs text-textSecondary">Сайт в сети Интернет</h3>
                 <p class="flex gap-2">
                   <Website class="flex-none w-4 h-4 text-icon mt-1" />
@@ -841,7 +861,7 @@ onMounted(async () => {
                 </p>
               </div>
             </div>
-            <div class="flex flex-col">
+            <div v-if="sportObject.address !== null" class="flex flex-col">
               <h3 class="text-xs text-textSecondary">
                 Юридический адрес (адрес регистрации организации)
               </h3>
@@ -849,13 +869,14 @@ onMounted(async () => {
             </div>
 
             <MyYandexMap
+              v-if="sportObject.address !== null"
               :title="sportObject.name"
               :lon="sportObject.lon"
               :lat="sportObject.lat"
             />
           </section>
         </TabPanel>
-        <TabPanel value="3">
+        <TabPanel v-if="sportObject.years" value="3">
           <section class="flex flex-col gap-4">
             <div>
               <h2 class="text-2xl font-medium">Финансы</h2>
@@ -863,12 +884,13 @@ onMounted(async () => {
                 Основные показатели за
                 <span class="select-yrs" @click="(event) => yearSelectPopover.toggle(event)">
                   {{ sportObjectCurrentYear }}
-                  <ArrowDown class="inline align-top w-4 h-4 text-icon" role="button" />
+                  <ArrowDown v-if="sportObject.years.length > 1" class="inline align-top w-4 h-4 text-icon" role="button" />
                 </span>
               </h3>
             </div>
             <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
               <article
+                v-if="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.earnings"
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Выручка, руб.</h3>
@@ -881,6 +903,7 @@ onMounted(async () => {
                 }}
               </article>
               <article
+                v-if="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.tax"
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Налоги, руб.</h3>
@@ -892,6 +915,7 @@ onMounted(async () => {
                 }}
               </article>
               <article
+                v-if="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.expense"
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Расходы, руб.</h3>
@@ -903,6 +927,7 @@ onMounted(async () => {
                 }}
               </article>
               <article
+                v-if="sportObject.years.find((year) => year.year === sportObjectCurrentYear)?.income"
                 class="flex flex-col bg-bgColor rounded-2xl border border-bgSecondaryColor shadow-button gap-1 px-4 pt-4 pb-3"
               >
                 <h3 class="text-xs md:text-sm font-normal text-textSecondary">Доходы, руб.</h3>
@@ -915,7 +940,7 @@ onMounted(async () => {
               </article>
             </div>
 
-            <Chart type="bar" :data="chartData" :options="chartOptions" class="h-[30rem]" />
+            <Chart v-if="chartData" type="bar" :data="chartData" :options="chartOptions" class="h-[30rem]" />
           </section>
         </TabPanel>
       </TabPanels>
@@ -926,11 +951,28 @@ onMounted(async () => {
       <li
         class="px-3 p-[6px] pb-1 cursor-pointer hover:bg-linkHover transition"
         v-for="year in sportObject.years"
-        v-bind:key="year.year"
+        :key="year.year"
         @click="
           () => {
             sportObjectCurrentYear = year.year
             yearSelectPopover.toggle()
+          }
+        "
+      >
+        {{ year.year }}
+      </li>
+    </ul>
+  </Popover>
+  <Popover ref="yearEmployersSelectPopover" pt:content="p-0">
+    <ul>
+      <li
+        class="px-3 p-[6px] pb-1 cursor-pointer hover:bg-linkHover transition"
+        v-for="year in sportObject.employers"
+        :key="year.year"
+        @click="
+          () => {
+            sportObjectEmployersCurrentYear = year.year
+            yearEmployersSelectPopover.toggle()
           }
         "
       >
